@@ -15,6 +15,6 @@ namespace Istip.DataAcquisition.Core.EntityModels
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
-        public virtual ICollection<WorkStation> WorkStations { get; set; }
+        public virtual ICollection<Workstation> WorkStations { get; set; }
     }
 }

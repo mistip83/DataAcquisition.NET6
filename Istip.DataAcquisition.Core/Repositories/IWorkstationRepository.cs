@@ -6,8 +6,8 @@ using Istip.DataAcquisition.Core.EntityModels;
 
 namespace Istip.DataAcquisition.Core.Repositories
 {
-    public interface IWorkstationRepository : IRepository<WorkStation>
+    public interface IWorkstationRepository : IRepository<Workstation>
     {
-        Task<WorkStation> GetWorkstationWithExperimentsByExperimentIdAsync(int id);
+        Task<Workstation> GetWorkstationWithExperimentsByWorkstationIdAsync(int id);
     }
 }

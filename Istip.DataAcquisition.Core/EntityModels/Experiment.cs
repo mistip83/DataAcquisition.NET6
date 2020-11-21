@@ -13,7 +13,7 @@ namespace Istip.DataAcquisition.Core.EntityModels
         public virtual ICollection<Device> Devices { get; set; }
 
         [ForeignKey("WorkStationId")]
-        public virtual WorkStation WorkStation { get; set; }
+        public virtual Workstation WorkStation { get; set; }
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
