@@ -4,10 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj" />
-    <ProjectReference Include="..\Istip.DataAcquisition.LicenseManager\Istip.DataAcquisition.LicenseManager.csproj" />
-    <ProjectReference Include="..\Istip.DataAcquisition.Scanner\Istip.DataAcquisition.Scanner.csproj" />
-  </ItemGroup>
-
 </Project>

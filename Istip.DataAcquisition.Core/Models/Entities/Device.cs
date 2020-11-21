@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Istip.DataAcquisition.Core.EntityModels
+namespace Istip.DataAcquisition.Core.Models.Entities
 {
     public class Device
     {

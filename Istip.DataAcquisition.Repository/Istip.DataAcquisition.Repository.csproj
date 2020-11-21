@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj" />
-  </ItemGroup>
-
 </Project>

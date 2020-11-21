@@ -1,4 +1,4 @@
-﻿namespace Istip.DataAcquisition.Scanner.Models
+﻿namespace Istip.DataAcquisition.Core.Models.Scanner
 {
     public class Data
     {

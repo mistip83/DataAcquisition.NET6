@@ -1,4 +1,4 @@
-﻿namespace Istip.DataAcquisition.LicenseManager.Models
+﻿namespace Istip.DataAcquisition.Core.Models.License
 {
     public class LicenseInfo
     {

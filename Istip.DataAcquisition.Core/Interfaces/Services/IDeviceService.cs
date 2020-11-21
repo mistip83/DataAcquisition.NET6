@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Istip.DataAcquisition.Service.Models;
+using Istip.DataAcquisition.Core.Models.Services;
 
-namespace Istip.DataAcquisition.Service.Interfaces
+namespace Istip.DataAcquisition.Core.Interfaces.Services
 {
     interface IDeviceService : IService<DeviceChannels>
     {

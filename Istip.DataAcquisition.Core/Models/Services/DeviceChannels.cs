@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Istip.DataAcquisition.Scanner.Models;
+using Istip.DataAcquisition.Core.Models.Scanner;
 
-namespace Istip.DataAcquisition.Service.Models
+namespace Istip.DataAcquisition.Core.Models.Services
 {
     public class DeviceChannels
     {

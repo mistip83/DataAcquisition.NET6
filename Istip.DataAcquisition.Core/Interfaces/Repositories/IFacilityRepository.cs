@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Istip.DataAcquisition.Core.EntityModels;
+using Istip.DataAcquisition.Core.Models.Entities;
 
-namespace Istip.DataAcquisition.Repository.Interfaces
+namespace Istip.DataAcquisition.Core.Interfaces.Repositories
 {
     public interface IFacilityRepository : IRepository<Facility>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Istip.DataAcquisition.Service.Interfaces
+namespace Istip.DataAcquisition.Core.Interfaces.Services
 {
     /// <summary>
     /// Communicate with repositories

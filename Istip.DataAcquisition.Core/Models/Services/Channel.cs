@@ -1,4 +1,4 @@
-﻿namespace Istip.DataAcquisition.Service.Models
+﻿namespace Istip.DataAcquisition.Core.Models.Services
 {
     public class Channel
     {

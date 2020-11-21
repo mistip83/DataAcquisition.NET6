@@ -1,4 +1,4 @@
-﻿namespace Istip.DataAcquisition.Core.EntityModels
+﻿namespace Istip.DataAcquisition.Core.Models.Entities
 {
     public class AppConfiguration
     {
