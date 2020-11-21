@@ -9,7 +9,7 @@ namespace Istip.DataAcquisition.Core.Repositories
     /// Single point for data access
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    interface IRepository<T> where T:class
+    public interface IRepository<T> where T:class
     {
         /// <summary>
         /// Provide user list for login screen
