@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\Istip.DataAcquisition.Service\Istip.DataAcquisition.Service.csproj" />
   </ItemGroup>
 

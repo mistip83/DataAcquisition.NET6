@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Licen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ConnectionManager", "Istip.DataAcquisition.ConnectionManager\Istip.DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Scanner", "Istip.DataAcquisition.Scanner\Istip.DataAcquisition.Scanner.csproj", "{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.DeviceLibrary", "Istip.DataAcquisition.DeviceLibrary\Istip.DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.NotificationManager", "Istip.DataAcquisition.NotificationManager\Istip.DataAcquisition.NotificationManager.csproj", "{F127C7CE-3B66-43F7-8C55-D6F055702402}"
@@ -34,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.DeviceSimulator", "Istip.DataAcquisition.DeviceSimulator\Istip.DataAcquisition.DeviceSimulator.csproj", "{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.Repository", "Istip.DataAcquisition.Repository\Istip.DataAcquisition.Repository.csproj", "{97C86BED-654D-4D6D-B457-9A4BA0611B30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.Scanner", "Istip.DataAcquisition.Scanner\Istip.DataAcquisition.Scanner.csproj", "{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,6 @@ Global
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{97C86BED-654D-4D6D-B457-9A4BA0611B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97C86BED-654D-4D6D-B457-9A4BA0611B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97C86BED-654D-4D6D-B457-9A4BA0611B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
