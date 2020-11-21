@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.API", "Istip.DataAcquisition.API\Istip.DataAcquisition.API.csproj", "{0EDE08D1-6815-416A-AC7A-B18974813AA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Core", "Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj", "{339EA34F-7807-440A-8C3D-2FDE56A694A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Data", "Istip.DataAcquisition.Data\Istip.DataAcquisition.Data.csproj", "{540E8DE7-A54F-448F-81F2-2B78A0789455}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Service", "Istip.DataAcquisition.Service\Istip.DataAcquisition.Service.csproj", "{B343F2EE-5028-46D2-8CB2-EE95C8211344}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.LicenseManager", "Istip.DataAcquisition.LicenseManager\Istip.DataAcquisition.LicenseManager.csproj", "{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ConnectionManager", "Istip.DataAcquisition.ConnectionManager\Istip.DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Scanner", "Istip.DataAcquisition.Scanner\Istip.DataAcquisition.Scanner.csproj", "{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.DeviceLibrary", "Istip.DataAcquisition.DeviceLibrary\Istip.DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.NotificationManager", "Istip.DataAcquisition.NotificationManager\Istip.DataAcquisition.NotificationManager.csproj", "{F127C7CE-3B66-43F7-8C55-D6F055702402}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Analyser", "Istip.DataAcquisition.Analyser\Istip.DataAcquisition.Analyser.csproj", "{B0D8AC94-981A-4F96-89FE-8438AEE018FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.FileManager", "Istip.DataAcquisition.FileManager\Istip.DataAcquisition.FileManager.csproj", "{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.CalibrationManager", "Istip.DataAcquisition.CalibrationManager\Istip.DataAcquisition.CalibrationManager.csproj", "{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ReportManager", "Istip.DataAcquisition.ReportManager\Istip.DataAcquisition.ReportManager.csproj", "{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.InstrumentSimulator", "Istip.DataAcquisition.InstrumentSimulator\Istip.DataAcquisition.InstrumentSimulator.csproj", "{DFCC05D4-DA90-4B54-8FC1-AFF3B31CDAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.ExperimentManager", "Istip.DataAcquisition.ExperimentManager\Istip.DataAcquisition.ExperimentManager.csproj", "{A843086A-B732-4009-AAA0-A7066DCC12B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339EA34F-7807-440A-8C3D-2FDE56A694A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339EA34F-7807-440A-8C3D-2FDE56A694A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339EA34F-7807-440A-8C3D-2FDE56A694A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339EA34F-7807-440A-8C3D-2FDE56A694A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540E8DE7-A54F-448F-81F2-2B78A0789455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540E8DE7-A54F-448F-81F2-2B78A0789455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540E8DE7-A54F-448F-81F2-2B78A0789455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540E8DE7-A54F-448F-81F2-2B78A0789455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0281E19F-CCCD-4270-8E62-3175E3635934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0281E19F-CCCD-4270-8E62-3175E3635934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0281E19F-CCCD-4270-8E62-3175E3635934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0281E19F-CCCD-4270-8E62-3175E3635934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34F68DA-21DC-42BE-9BC6-4C18BC178A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F127C7CE-3B66-43F7-8C55-D6F055702402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F127C7CE-3B66-43F7-8C55-D6F055702402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F127C7CE-3B66-43F7-8C55-D6F055702402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F127C7CE-3B66-43F7-8C55-D6F055702402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D8AC94-981A-4F96-89FE-8438AEE018FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D8AC94-981A-4F96-89FE-8438AEE018FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D8AC94-981A-4F96-89FE-8438AEE018FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D8AC94-981A-4F96-89FE-8438AEE018FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCC05D4-DA90-4B54-8FC1-AFF3B31CDAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCC05D4-DA90-4B54-8FC1-AFF3B31CDAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCC05D4-DA90-4B54-8FC1-AFF3B31CDAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCC05D4-DA90-4B54-8FC1-AFF3B31CDAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A843086A-B732-4009-AAA0-A7066DCC12B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A843086A-B732-4009-AAA0-A7066DCC12B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A843086A-B732-4009-AAA0-A7066DCC12B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A843086A-B732-4009-AAA0-A7066DCC12B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C46F81A3-47CA-4878-8A73-052BCEB673E7}
+	EndGlobalSection
+EndGlobal
