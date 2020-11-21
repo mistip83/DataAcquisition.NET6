@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Istip.DataAcquisition.Core.Repositories
+namespace Istip.DataAcquisition.Repository.Interfaces
 {
     /// <summary>
     /// Single point for data access

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Istip.DataAcquisition.Core.EntityModels;
 using System.Threading.Tasks;
-using Istip.DataAcquisition.Core.EntityModels;
 
-namespace Istip.DataAcquisition.Core.Repositories
+namespace Istip.DataAcquisition.Repository.Interfaces
 {
     interface IExperimentRepository : IRepository<Experiment>
     {
