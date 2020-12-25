@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>

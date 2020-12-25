@@ -9,7 +9,7 @@ namespace Istip.DataAcquisition.Data.DataAccess
         {
         }
 
-        public DbSet<AppConfiguration> AppConfigurations { get; set; }
+        public DbSet<AppConfig> AppConfigurations { get; set; }
         public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<Experiment> Experiments { get; set; }
