@@ -1,4 +1,5 @@
 ﻿using Istip.DataAcquisition.Core.Models.Entities;
+using Istip.DataAcquisition.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Istip.DataAcquisition.Data.DataAccess
@@ -20,7 +21,14 @@ namespace Istip.DataAcquisition.Data.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
+            modelBuilder.ApplyConfiguration(new ApplicationInfoConfiguration());
+            modelBuilder.ApplyConfiguration(new DeviceConfiguration());
+            modelBuilder.ApplyConfiguration(new ExperimentConfiguration());
+            modelBuilder.ApplyConfiguration(new FacilityConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganizationConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new WorkstationConfiguration());
         }
     }
 }
