@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj" />
+    <ProjectReference Include="..\Istip.DataAcquisition.Core\DataAcquisition.Core.csproj" />
   </ItemGroup>
 
 </Project>

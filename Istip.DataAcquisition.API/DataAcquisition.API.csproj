@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Istip.DataAcquisition.Service\Istip.DataAcquisition.Service.csproj" />
+    <ProjectReference Include="..\Istip.DataAcquisition.Service\DataAcquisition.Service.csproj" />
   </ItemGroup>
 
 

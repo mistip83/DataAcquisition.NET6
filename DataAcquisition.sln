@@ -3,37 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.API", "Istip.DataAcquisition.API\Istip.DataAcquisition.API.csproj", "{0EDE08D1-6815-416A-AC7A-B18974813AA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "Istip.DataAcquisition.API\DataAcquisition.API.csproj", "{0EDE08D1-6815-416A-AC7A-B18974813AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Service", "Istip.DataAcquisition.Service\Istip.DataAcquisition.Service.csproj", "{B343F2EE-5028-46D2-8CB2-EE95C8211344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Service", "Istip.DataAcquisition.Service\DataAcquisition.Service.csproj", "{B343F2EE-5028-46D2-8CB2-EE95C8211344}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.LicenseManager", "Istip.DataAcquisition.LicenseManager\Istip.DataAcquisition.LicenseManager.csproj", "{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.LicenseManager", "Istip.DataAcquisition.LicenseManager\DataAcquisition.LicenseManager.csproj", "{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ConnectionManager", "Istip.DataAcquisition.ConnectionManager\Istip.DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "Istip.DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.DeviceLibrary", "Istip.DataAcquisition.DeviceLibrary\Istip.DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceLibrary", "Istip.DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.NotificationManager", "Istip.DataAcquisition.NotificationManager\Istip.DataAcquisition.NotificationManager.csproj", "{F127C7CE-3B66-43F7-8C55-D6F055702402}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.NotificationManager", "Istip.DataAcquisition.NotificationManager\DataAcquisition.NotificationManager.csproj", "{F127C7CE-3B66-43F7-8C55-D6F055702402}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Analyser", "Istip.DataAcquisition.Analyser\Istip.DataAcquisition.Analyser.csproj", "{B0D8AC94-981A-4F96-89FE-8438AEE018FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Analyser", "Istip.DataAcquisition.Analyser\DataAcquisition.Analyser.csproj", "{B0D8AC94-981A-4F96-89FE-8438AEE018FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.FileManager", "Istip.DataAcquisition.FileManager\Istip.DataAcquisition.FileManager.csproj", "{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.FileManager", "Istip.DataAcquisition.FileManager\DataAcquisition.FileManager.csproj", "{E468FCF7-ED6C-4EAB-85D0-D55BDAE32CBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.CalibrationManager", "Istip.DataAcquisition.CalibrationManager\Istip.DataAcquisition.CalibrationManager.csproj", "{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.CalibrationManager", "Istip.DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj", "{157D0D70-E5A0-44FF-B16E-F3838C0A36A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ReportManager", "Istip.DataAcquisition.ReportManager\Istip.DataAcquisition.ReportManager.csproj", "{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ReportManager", "Istip.DataAcquisition.ReportManager\DataAcquisition.ReportManager.csproj", "{87FF4E6B-0FC1-4EED-BCFA-D8AB205CEDF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.ExperimentManager", "Istip.DataAcquisition.ExperimentManager\Istip.DataAcquisition.ExperimentManager.csproj", "{A843086A-B732-4009-AAA0-A7066DCC12B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ExperimentManager", "Istip.DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj", "{A843086A-B732-4009-AAA0-A7066DCC12B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.DeviceSimulator", "Istip.DataAcquisition.DeviceSimulator\Istip.DataAcquisition.DeviceSimulator.csproj", "{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceSimulator", "Istip.DataAcquisition.DeviceSimulator\DataAcquisition.DeviceSimulator.csproj", "{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Repository", "Istip.DataAcquisition.Repository\Istip.DataAcquisition.Repository.csproj", "{97C86BED-654D-4D6D-B457-9A4BA0611B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Repository", "Istip.DataAcquisition.Repository\DataAcquisition.Repository.csproj", "{97C86BED-654D-4D6D-B457-9A4BA0611B30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istip.DataAcquisition.Scanner", "Istip.DataAcquisition.Scanner\Istip.DataAcquisition.Scanner.csproj", "{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Scanner", "Istip.DataAcquisition.Scanner\DataAcquisition.Scanner.csproj", "{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.Data", "Istip.DataAcquisition.Data\Istip.DataAcquisition.Data.csproj", "{F45FCAAD-C920-420E-B44A-4A681058BFD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Data", "Istip.DataAcquisition.Data\DataAcquisition.Data.csproj", "{F45FCAAD-C920-420E-B44A-4A681058BFD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istip.DataAcquisition.Core", "Istip.DataAcquisition.Core\Istip.DataAcquisition.Core.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "Istip.DataAcquisition.Core\DataAcquisition.Core.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
