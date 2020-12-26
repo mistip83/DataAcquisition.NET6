@@ -10,11 +10,8 @@ namespace DataAcquisition.Core.Models.Entities
         [Key]
         public Guid FacilityId { get; set; }
         public string FacilityName { get; set; }
-        public Guid OrganizationId { get; set; }
-
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-
+        public virtual Organization Organization { get; set; }
         public virtual ICollection<Workstation> WorkStations { get; set; }
+        public virtual User User { get; set; }
     }
 }

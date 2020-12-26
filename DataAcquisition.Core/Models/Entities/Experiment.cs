@@ -11,11 +11,7 @@ namespace DataAcquisition.Core.Models.Entities
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
         public virtual ICollection<Device> Devices { get; set; }
-
-        [ForeignKey("WorkStationId")]
         public virtual Workstation WorkStation { get; set; }
-
-        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }

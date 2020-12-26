@@ -12,8 +12,6 @@ namespace DataAcquisition.Core.Models.Entities
         public string Email { get; set; }
         public DateTime LastLogin { get; set; }
         public virtual ICollection<Facility> Facilities { get; set; }
-
-        [ForeignKey("OrganizationId")]
         public virtual Organization Organization { get; set; }
     }
 }

@@ -8,8 +8,7 @@ namespace DataAcquisition.Core.Models.Entities
         public Guid DeviceId { get; set; }
         public string DeviceModel { get; set; }
         public string DeviceName { get; set; }
-
-        [ForeignKey("ExperimentId")]
         public virtual Experiment Experiment { get; set; }
+        public virtual User User { get; set; }
     }
 }

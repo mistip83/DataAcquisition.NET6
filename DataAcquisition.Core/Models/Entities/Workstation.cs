@@ -9,8 +9,7 @@ namespace DataAcquisition.Core.Models.Entities
         public Guid WorkStationId { get; set; }
         public string WorkStationName { get; set; }
         public virtual ICollection<Experiment> Experiments { get; set; }
-
-        [ForeignKey("FacilityId")]
         public virtual Facility Facility { get; set; }
+        public virtual User User { get; set; }
     }
 }
