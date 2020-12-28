@@ -6,20 +6,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAcquisition.Data.SeedData
 {
-    public class OrganizationSeed : IEntityTypeConfiguration<Organization>
+    public class CompanySeed : IEntityTypeConfiguration<Company>
     {
         private readonly ICollection<User> _users;
-        public OrganizationSeed(ICollection<User> user)
+        public CompanySeed(ICollection<User> user)
         {
             _users = user;
         }
 
-        public void Configure(EntityTypeBuilder<Organization> builder)
+        public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.HasData(new Organization
+            builder.HasData(new Company
             {
-                OrganizationId = new Guid(),
-                OrganizationName = "AcmeCompany",
+                CompanyId = new Guid(),
+                CompanyName = "AcmeCompany",
                 Users = _users
             });
         }

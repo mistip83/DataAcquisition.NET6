@@ -3,7 +3,7 @@ using DataAcquisition.Core.Models.License;
 
 namespace DataAcquisition.Core.Interfaces.Services
 {
-    public interface IOrganizationService : IService<Organization>
+    public interface ICompanyService : IService<Company>
     {
         bool CheckLicense(LicenseInfo license);
     }

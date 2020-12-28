@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataAcquisition.Data.Configurations
 {
-    public class OrganizationConfiguration : IEntityTypeConfiguration<Organization>
+    public class OrganizationConfiguration : IEntityTypeConfiguration<Company>
     {
-        public void Configure(EntityTypeBuilder<Organization> builder)
+        public void Configure(EntityTypeBuilder<Company> builder)
         {
             //TODO: OrganizationConfiguration
         }

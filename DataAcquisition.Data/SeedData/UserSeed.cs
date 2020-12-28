@@ -8,10 +8,10 @@ namespace DataAcquisition.Data.SeedData
 {
     public class UserSeed : IEntityTypeConfiguration<User>
     {
-        private readonly Organization _organization;
-        public UserSeed(Organization organization)
+        private readonly Company _company;
+        public UserSeed(Company company)
         {
-            _organization = organization;
+            _company = company;
         }
 
         public void Configure(EntityTypeBuilder<User> builder)
@@ -23,7 +23,7 @@ namespace DataAcquisition.Data.SeedData
                     Password = new MD5CryptoServiceProvider().ToString(),
                     UserName = "Murat",
                     Email = "acmeCompany@acme.com",
-                    Organization = _organization
+                    Company = _company
                 });
         }
     }
