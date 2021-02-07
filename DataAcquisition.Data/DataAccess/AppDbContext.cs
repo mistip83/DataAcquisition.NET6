@@ -13,7 +13,7 @@ namespace DataAcquisition.Data.DataAccess
 
         public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
         public DbSet<Experiment> Experiments { get; set; }
-        public DbSet<Facility> Facilitys { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Workstation> Workstations { get; set; }
