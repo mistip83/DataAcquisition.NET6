@@ -1,4 +1,6 @@
+using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Data.DataAccess;
+using DataAcquisition.Data.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,8 @@ namespace DataAcquisition.API
                 {
                     options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"]);
                 });
+
+            services.AddScoped<IUnitOfWorks, UnitOfWork>();
 
             services.AddControllers();
         }
