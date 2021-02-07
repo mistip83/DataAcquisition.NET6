@@ -9,7 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAcquisition.Service\DataAcquisition.Service.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAcquisition.Data\DataAcquisition.Data.csproj" />
   </ItemGroup>
 
 
