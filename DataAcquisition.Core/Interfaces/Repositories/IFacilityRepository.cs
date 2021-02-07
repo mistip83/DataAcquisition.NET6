@@ -6,6 +6,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
 {
     public interface IFacilityRepository : IRepository<Facility>
     {
-        Task<Facility> GetFacilityWithWorkStationsByFacilityIdAsync(Guid id);
+        Task<Facility> GetFacilityWithWorkStationsAsync(Guid id);
     }
 }

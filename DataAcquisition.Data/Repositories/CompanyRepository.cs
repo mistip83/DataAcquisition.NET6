@@ -15,7 +15,7 @@ namespace DataAcquisition.Data.Repositories
         {
         }
 
-        public async Task<Company> GetCompanyWithFacilitiesByOrganizationIdAsync(Guid id)
+        public async Task<Company> GetCompanyWithFacilitiesAsync(Guid id)
         {
             return await AppDbContext.Companies.Include(x => x.Facilities)
                 .SingleOrDefaultAsync(x => x.CompanyId == id);

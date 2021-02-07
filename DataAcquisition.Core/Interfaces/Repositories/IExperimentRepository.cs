@@ -5,6 +5,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
 {
     public interface IExperimentRepository : IRepository<Experiment>
     {
-        Task<Experiment> GetExperimentWithDevicesByExperimentIdAsync(int id);
+        Task<Experiment> GetExperimentWithDevicesAsync(int id);
     }
 }

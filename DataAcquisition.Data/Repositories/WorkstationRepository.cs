@@ -15,7 +15,7 @@ namespace DataAcquisition.Data.Repositories
         {
         }
 
-        public async Task<Workstation> GetWorkstationWithExperimentsByWorkstationIdAsync(Guid id)
+        public async Task<Workstation> GetWorkstationWithExperimentsAsync(Guid id)
         {
             return await AppDbContext.Workstations.Include(x => x.Experiments)
                 .SingleOrDefaultAsync(x => x.WorkStationId == id);

@@ -6,6 +6,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
 {
     public interface IWorkstationRepository : IRepository<Workstation>
     {
-        Task<Workstation> GetWorkstationWithExperimentsByWorkstationIdAsync(Guid id);
+        Task<Workstation> GetWorkstationWithExperimentsAsync(Guid id);
     }
 }

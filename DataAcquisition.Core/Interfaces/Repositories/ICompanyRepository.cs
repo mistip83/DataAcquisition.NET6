@@ -6,6 +6,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
 {
     public interface ICompanyRepository : IRepository<Company>
     {
-        Task<Company> GetCompanyWithFacilitiesByOrganizationIdAsync(Guid id);
+        Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
     }
 }
