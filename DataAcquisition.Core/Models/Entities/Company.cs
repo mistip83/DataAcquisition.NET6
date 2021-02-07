@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataAcquisition.Core.Models.Entities
 {
     public class Company
     {
-        public Company()
-        {
-          Users = new Collection<User>();
-        }
-
+        [Key]
         public Guid CompanyId { get; set; }
         public string CompanyName { get; set; }
         public virtual ICollection<User> Users { get; set; }

@@ -11,9 +11,7 @@ namespace DataAcquisition.Data.DataAccess
         {
         }
 
-        public DbSet<AppConfig> AppConfigurations { get; set; }
         public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
-        public DbSet<Device> Devices { get; set; }
         public DbSet<Experiment> Experiments { get; set; }
         public DbSet<Facility> Facilitys { get; set; }
         public DbSet<Company> Organizations { get; set; }
@@ -23,9 +21,7 @@ namespace DataAcquisition.Data.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Apply configurations
-            modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ApplicationInfoConfiguration());
-            modelBuilder.ApplyConfiguration(new DeviceConfiguration());
             modelBuilder.ApplyConfiguration(new ExperimentConfiguration());
             modelBuilder.ApplyConfiguration(new FacilityConfiguration());
             modelBuilder.ApplyConfiguration(new OrganizationConfiguration());
@@ -33,7 +29,7 @@ namespace DataAcquisition.Data.DataAccess
             modelBuilder.ApplyConfiguration(new WorkstationConfiguration());
 
             // Apply seed data
-            modelBuilder.ApplyConfiguration((new DeviceSeed()));
+            modelBuilder.ApplyConfiguration(new ApplicationInfoSeed());
         }
     }
 }
