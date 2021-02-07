@@ -9,12 +9,12 @@ namespace DataAcquisition.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        protected readonly DbContext Context;
         private readonly DbSet<T> _dbSet;
 
         public Repository(DbContext context)
         {
-            _context = context;
+            Context = context;
             _dbSet = context.Set<T>();
         }
 
@@ -55,7 +55,7 @@ namespace DataAcquisition.Data.Repositories
 
         public T Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
+            Context.Entry(entity).State = EntityState.Modified;
 
             return entity;
         }
