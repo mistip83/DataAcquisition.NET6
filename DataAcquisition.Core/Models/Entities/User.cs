@@ -10,7 +10,6 @@ namespace DataAcquisition.Core.Models.Entities
         public string Password { get; set; }
         public string Email { get; set; }
         public DateTime LastLogin { get; set; }
-        public virtual ICollection<Facility> Facilities { get; set; }
         public virtual Company Company { get; set; }
     }
 }

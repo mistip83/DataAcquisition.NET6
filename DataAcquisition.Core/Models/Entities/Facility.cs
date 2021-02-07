@@ -11,6 +11,5 @@ namespace DataAcquisition.Core.Models.Entities
         public string FacilityName { get; set; }
         public virtual Company Company { get; set; }
         public virtual ICollection<Workstation> WorkStations { get; set; }
-        public virtual User User { get; set; }
     }
 }

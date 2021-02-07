@@ -11,6 +11,5 @@ namespace DataAcquisition.Core.Models.Entities
         public DateTime EndDateTime { get; set; }
         public virtual ICollection<Device> Devices { get; set; }
         public virtual Workstation WorkStation { get; set; }
-        public virtual User User { get; set; }
     }
 }

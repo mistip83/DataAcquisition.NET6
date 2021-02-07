@@ -8,6 +8,5 @@ namespace DataAcquisition.Core.Models.Entities
         public string DeviceModel { get; set; }
         public string DeviceName { get; set; }
         public virtual Experiment Experiment { get; set; }
-        public virtual User User { get; set; }
     }
 }
