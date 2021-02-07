@@ -23,7 +23,7 @@ namespace DataAcquisition.Core.Interfaces.Repositories
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> Find(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> Where(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Get by any parameter
@@ -55,8 +55,8 @@ namespace DataAcquisition.Core.Interfaces.Repositories
         /// <summary>
         /// Remove row list from db
         /// </summary>
-        /// <param name="entity"></param>
-        void RemoveRange(T entity);
+        /// <param name="entities"></param>
+        void RemoveRange(IEnumerable<T> entities);
 
         /// <summary>
         /// Update a db row
