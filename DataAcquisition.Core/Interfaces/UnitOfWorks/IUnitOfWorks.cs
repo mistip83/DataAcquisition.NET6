@@ -5,9 +5,8 @@ namespace DataAcquisition.Core.Interfaces.UnitOfWorks
 {
     public interface IUnitOfWorks
     {
-        IExperimentRepository Experiments { get; }
-        IFacilityRepository Facilities { get; }
         ICompanyRepository Organization { get; }
+        IFacilityRepository Facilities { get; }
         IWorkstationRepository Workstations { get; }
         Task CommitAsync();
         void Commit();
