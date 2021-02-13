@@ -12,10 +12,10 @@ namespace DataAcquisition.Data.SeedData
             builder.HasData(
                 new ApplicationInfo()
                 {
-                    Name = "DataAcquisition",
+                    ApplicationName = "DataAcquisition",
                     Version = "1.0.0",
-                    FirstInstallDateTime = DateTime.Now,
-                    LastUpdateDateTime = DateTime.Now
+                    FirstInstallDate = DateTime.Now,
+                    LastUpdateDate = DateTime.Now
                 });
         }
     }
