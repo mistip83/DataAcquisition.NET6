@@ -2,7 +2,7 @@
 {
     public class Data
     {
-        public int ChannelNo { get; set; }
+        public string ChannelName { get; set; }
         public double ChannelData { get; set; }
     }
 }
