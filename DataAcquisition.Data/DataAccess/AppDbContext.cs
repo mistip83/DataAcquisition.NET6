@@ -24,7 +24,7 @@ namespace DataAcquisition.Data.DataAccess
             modelBuilder.ApplyConfiguration(new ApplicationInfoConfiguration());
             modelBuilder.ApplyConfiguration(new ExperimentConfiguration());
             modelBuilder.ApplyConfiguration(new FacilityConfiguration());
-            modelBuilder.ApplyConfiguration(new OrganizationConfiguration());
+            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new WorkstationConfiguration());
 
