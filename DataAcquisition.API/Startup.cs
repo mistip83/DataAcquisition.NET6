@@ -25,7 +25,10 @@ namespace DataAcquisition.API
             services.AddDbContext<AppDbContext>(
                 options =>
                 {
-                    options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"]);
+                    options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"], o =>
+                    {
+                        o.MigrationsAssembly("DataAcquisition.Data");
+                    });
                 });
 
             services.AddScoped<IUnitOfWorks, UnitOfWork>();
