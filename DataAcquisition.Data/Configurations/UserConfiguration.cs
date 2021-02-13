@@ -8,7 +8,17 @@ namespace DataAcquisition.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            //TODO: UserConfiguration
+            builder.HasKey(x => x.UserId);
+
+            // User has one company
+            //builder.HasOne(p => p.Company)
+            //    .WithMany(p => p.Users)
+            //    .HasForeignKey(p => p.UserId);
+
+            //// User has many experiments
+            //builder.HasMany(p => p.Experiments)
+            //    .WithOne(p => p.User)
+            //    .HasForeignKey(p => p.ExperimentId);
         }
     }
 }

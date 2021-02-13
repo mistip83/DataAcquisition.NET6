@@ -8,7 +8,16 @@ namespace DataAcquisition.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Experiment> builder)
         {
-            //TODO: ExperimentConfiguration
+            builder.HasKey(x => x.ExperimentId);
+
+            // Experiment has many devices
+            //builder.HasMany(p => p.Devices)
+            //    .WithMany(p=>p.Experiments);
+
+            //// Experiment has one workstation
+            //builder.HasOne(p => p.WorkStation)
+            //    .WithMany(p => p.Experiments)
+            //    .HasForeignKey(p => p.ExperimentId);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DataAcquisition.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<ApplicationInfo> builder)
         {
-            //TODO: ApplicationInfoConfiguration
+            builder.HasKey(x => x.ApplicationName);
         }
     }
 }
