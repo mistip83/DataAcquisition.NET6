@@ -16,14 +16,14 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(Guid id);
+        Task<T> GetByIdAsync(T id);
 
         /// <summary>
         /// Search something
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> Find(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Get by any parameter

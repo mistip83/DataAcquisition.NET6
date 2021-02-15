@@ -12,11 +12,17 @@ namespace DataAcquisition.Core.Interfaces.Repositories
     public interface IRepository<T> where T:class
     {
         /// <summary>
+        /// Get all rows for corresponding entity
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<T>> GetAllAsync();
+
+        /// <summary>
         /// Search something
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        IEnumerable<T> Where(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Get by any parameter

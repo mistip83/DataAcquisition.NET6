@@ -18,6 +18,11 @@ namespace DataAcquisition.Data.Repositories
             _dbSet = context.Set<T>();
         }
 
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await _dbSet.ToListAsync();
+        }
+
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
@@ -28,14 +33,9 @@ namespace DataAcquisition.Data.Repositories
             await _dbSet.AddRangeAsync(entities);
         }
 
-        public IEnumerable<T> Where(Expression<System.Func<T, bool>> predicate)
+        public async Task<IEnumerable<T>> WhereAsync(Expression<System.Func<T, bool>> predicate)
         {
-            return _dbSet.Where(predicate);
-        }
-
-        public async Task<IEnumerable<T>> GetAllUsersByOrganizationIdAsync(int id)
-        {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public void Remove(T entity)

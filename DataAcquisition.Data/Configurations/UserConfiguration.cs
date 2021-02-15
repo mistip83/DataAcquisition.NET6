@@ -8,7 +8,7 @@ namespace DataAcquisition.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.UserId);
+            builder.HasKey(x => x.Email);
 
             // User has one company
             //builder.HasOne(p => p.Company)

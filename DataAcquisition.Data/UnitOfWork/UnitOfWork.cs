@@ -9,14 +9,14 @@ namespace DataAcquisition.Data.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
+        private UserRepository _userRepository;
         private CompanyRepository _companyRepository;
         private FacilityReposity _facilityRepository;
         private WorkstationRepository _workstationRepository;
 
+        public IUserRepository Users => _userRepository ??= new UserRepository(_context);
         public ICompanyRepository Company => _companyRepository ??= new CompanyRepository(_context);
-
-        public IFacilityRepository Facilities => _facilityRepository ??= new FacilityReposity(_context);
-
+        public IFacilityRepository Facilities => _facilityRepository ??= new FacilityReposity(_context); 
         public IWorkstationRepository Workstations => _workstationRepository ??= new WorkstationRepository(_context);
 
         public UnitOfWork(AppDbContext appDbContext)
