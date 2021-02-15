@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "DataAcquisition.API\DataAcquisition.API.csproj", "{0EDE08D1-6815-416A-AC7A-B18974813AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Service", "DataAcquisition.Service\DataAcquisition.Service.csproj", "{B343F2EE-5028-46D2-8CB2-EE95C8211344}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.LicenseManager", "DataAcquisition.LicenseManager\DataAcquisition.LicenseManager.csproj", "{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
@@ -35,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Data", "Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "DataAcquisition.Core\DataAcquisition.Core.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.Service", "DataAcquisition.Service\DataAcquisition.Service.csproj", "{1EBA8671-98C6-4055-B6A0-63355AD0EE01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +45,6 @@ Global
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B343F2EE-5028-46D2-8CB2-EE95C8211344}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{EEBD5214-937D-410F-9FAD-8195183D4ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEBD5214-937D-410F-9FAD-8195183D4ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEBD5214-937D-410F-9FAD-8195183D4ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBA8671-98C6-4055-B6A0-63355AD0EE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBA8671-98C6-4055-B6A0-63355AD0EE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBA8671-98C6-4055-B6A0-63355AD0EE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBA8671-98C6-4055-B6A0-63355AD0EE01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

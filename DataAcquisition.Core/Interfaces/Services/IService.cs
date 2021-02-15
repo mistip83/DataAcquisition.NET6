@@ -12,11 +12,11 @@ namespace DataAcquisition.Core.Interfaces.Services
     public interface IService<T> where T:class
     {
         /// <summary>
-        /// Provide user list for login screen
+        /// Get data by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> GetAllUsersByOrganizationIdAsync(int id);
+        Task<T> GetByIdAsync(Guid id);
 
         /// <summary>
         /// Search something
@@ -37,14 +37,14 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        Task AddAsync(T entity);
+        Task<T> AddAsync(T entity);
 
         /// <summary>
         /// Add a row list to db
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        Task AddRangeAsync(IEnumerable<T> entities);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
 
         /// <summary>
         /// Remove row from db
@@ -55,8 +55,8 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// <summary>
         /// Remove row list from db
         /// </summary>
-        /// <param name="entity"></param>
-        void RemoveRange(T entity);
+        /// <param name="entities"></param>
+        void RemoveRange(IEnumerable<T> entities);
 
         /// <summary>
         /// Update a db row

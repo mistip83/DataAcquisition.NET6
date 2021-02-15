@@ -3,9 +3,9 @@ using DataAcquisition.Core.Interfaces.Repositories;
 
 namespace DataAcquisition.Core.Interfaces.UnitOfWorks
 {
-    public interface IUnitOfWorks
+    public interface IUnitOfWork
     {
-        ICompanyRepository Companies { get; }
+        ICompanyRepository Company { get; }
         IFacilityRepository Facilities { get; }
         IWorkstationRepository Workstations { get; }
         Task CommitAsync();

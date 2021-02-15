@@ -1,10 +1,10 @@
-﻿using DataAcquisition.Core.Models.Entities;
-using DataAcquisition.Core.Models.License;
+﻿using System.Threading.Tasks;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Core.Interfaces.Services
 {
-    public interface ICompanyService : IService<Company>
+    public interface ICompanyService
     {
-        bool CheckLicense(LicenseInfo license);
+        Task<Company> GetCompanyInfo();
     }
 }

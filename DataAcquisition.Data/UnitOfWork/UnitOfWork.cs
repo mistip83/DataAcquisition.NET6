@@ -6,14 +6,14 @@ using DataAcquisition.Data.Repositories;
 
 namespace DataAcquisition.Data.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWorks
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
         private CompanyRepository _companyRepository;
         private FacilityReposity _facilityRepository;
         private WorkstationRepository _workstationRepository;
 
-        public ICompanyRepository Companies => _companyRepository ??= new CompanyRepository(_context);
+        public ICompanyRepository Company => _companyRepository ??= new CompanyRepository(_context);
 
         public IFacilityRepository Facilities => _facilityRepository ??= new FacilityReposity(_context);
 

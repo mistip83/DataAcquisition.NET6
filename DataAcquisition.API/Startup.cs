@@ -31,7 +31,7 @@ namespace DataAcquisition.API
                     });
                 });
 
-            services.AddScoped<IUnitOfWorks, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
         }

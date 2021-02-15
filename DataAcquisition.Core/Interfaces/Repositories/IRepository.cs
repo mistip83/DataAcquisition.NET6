@@ -12,13 +12,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
     public interface IRepository<T> where T:class
     {
         /// <summary>
-        /// Provide user list for login screen
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<IEnumerable<T>> GetAllUsersByOrganizationIdAsync(int id);
-
-        /// <summary>
         /// Search something
         /// </summary>
         /// <param name="predicate"></param>
