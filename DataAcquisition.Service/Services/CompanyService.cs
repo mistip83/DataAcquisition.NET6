@@ -1,7 +1,6 @@
 ﻿using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Entities;
-using System;
 using System.Threading.Tasks;
 
 namespace DataAcquisition.Service.Services
