@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAcquisition.Data.Repositories
 {
+    /// <summary>
+    /// Encapsulate the logic required to access data sources
+    /// </summary>
     public class CompanyRepository : Repository<Company>, ICompanyRepository
     {
         private AppDbContext AppDbContext => Context;
@@ -15,6 +18,11 @@ namespace DataAcquisition.Data.Repositories
         {
         }
 
+        /// <summary>
+        /// Implementation detail
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<Company> GetCompanyWithFacilitiesAsync(Guid id)
         {
             return await AppDbContext.Company.Include(x => x.Facilities)

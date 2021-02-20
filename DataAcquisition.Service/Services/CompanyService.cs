@@ -1,4 +1,6 @@
-﻿using DataAcquisition.Core.Interfaces.Services;
+﻿using System;
+using System.Threading.Tasks;
+using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Entities;
 using DataAcquisition.Core.Interfaces.Repositories;
@@ -12,6 +14,16 @@ namespace DataAcquisition.Service.Services
     {
         public CompanyService(IUnitOfWork unitOfWork, IRepository<Company> repository) : base(unitOfWork, repository)
         {
+        }
+
+        /// <summary>
+        /// Returns company entity with its facilities
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Company> GetCompanyWithFacilitiesAsync(Guid id)
+        {
+            return await UnitOfWork.Company.GetCompanyWithFacilitiesAsync(id);
         }
     }
 }
