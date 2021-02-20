@@ -9,7 +9,7 @@ namespace DataAcquisition.Data.Repositories
 {
     public class CompanyRepository : Repository<Company>, ICompanyRepository
     {
-        private AppDbContext AppDbContext => Context as AppDbContext;
+        private AppDbContext AppDbContext => Context;
 
         public CompanyRepository(AppDbContext context) : base(context)
         {

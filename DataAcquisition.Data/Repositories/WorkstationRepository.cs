@@ -9,7 +9,7 @@ namespace DataAcquisition.Data.Repositories
 {
     public class WorkstationRepository : Repository<Workstation>, IWorkstationRepository
     {
-        private AppDbContext AppDbContext => Context as AppDbContext;
+        private AppDbContext AppDbContext => Context;
 
         public WorkstationRepository(AppDbContext context) : base(context)
         {

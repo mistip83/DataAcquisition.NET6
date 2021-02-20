@@ -9,7 +9,7 @@ namespace DataAcquisition.Data.Repositories
 {
     public class FacilityReposity : Repository<Facility>, IFacilityRepository
     {
-        private AppDbContext AppDbContext => Context as AppDbContext;
+        private AppDbContext AppDbContext => Context;
 
         public FacilityReposity(AppDbContext context) : base(context)
         {

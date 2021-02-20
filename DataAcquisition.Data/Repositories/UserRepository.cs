@@ -11,7 +11,7 @@ namespace DataAcquisition.Data.Repositories
     /// </summary>
     public class UserRepository : Repository<User>, IUserRepository
     {
-        private AppDbContext AppDbContext => Context as AppDbContext;
+        private AppDbContext AppDbContext => Context;
 
         public UserRepository(AppDbContext context) : base(context)
         {
