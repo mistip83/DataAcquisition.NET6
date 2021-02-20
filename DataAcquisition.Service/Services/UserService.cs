@@ -1,79 +1,38 @@
 ﻿using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
+using DataAcquisition.Core.Interfaces.Repositories;
 
 namespace DataAcquisition.Service.Services
 {
-    class UserService : IUserService
+    /// <summary>
+    /// Communicate with the API
+    /// </summary>
+    public class UserService : Service<User>, IUserService
     {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public UserService(IUnitOfWork unitOfWork)
+        public UserService(IUnitOfWork unitOfWork, IRepository<User> repository) : base(unitOfWork, repository)
         {
-            _unitOfWork = unitOfWork;
         }
 
-        public async Task<User> AddAsync(User user)
+        /// <summary>
+        /// Returns a user entity with its company
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public async Task<User> GetUserWithCompanyAsync(string email)
         {
-            await _unitOfWork.Users.AddAsync(user);
-            await _unitOfWork.CommitAsync();
-
-            return user;
+            return await UnitOfWork.Users.GetUserWithCompanyAsync(email);
         }
 
-        public async Task<IEnumerable<User>> AddRangeAsync(IEnumerable<User> users)
+        /// <summary>
+        /// Returns a user entity with its all experiments
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public async Task<User> GetUserWithExperimentsAsync(string email)
         {
-            await _unitOfWork.Users.AddRangeAsync(users);
-            await _unitOfWork.CommitAsync();
-
-            return users;
-        }
-
-        public async Task<IEnumerable<User>> WhereAsync(Expression<Func<User, bool>> predicate)
-        {
-            return await _unitOfWork.Users.WhereAsync(predicate);
-        }
-
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
-        {
-            return await _unitOfWork.Users.GetAllAsync();
-        }
-
-        public async Task<User> GetByIdAsync(User user)
-        {
-            return await _unitOfWork.Users.SingleOrDefaultAsync(u => u.Email == user.Email);
-        }
-
-        public void Remove(User user)
-        {
-            _unitOfWork.Users.Remove(user);
-
-            _unitOfWork.Commit();
-        }
-
-        public void RemoveRange(IEnumerable<User> users)
-        {
-            _unitOfWork.Users.RemoveRange(users);
-
-            _unitOfWork.Commit();
-        }
-
-        public async Task<User> SingleOrDefaultAsync(Expression<Func<User, bool>> predicate)
-        {
-            return await _unitOfWork.Users.SingleOrDefaultAsync(predicate);
-        }
-
-        public User Update(User user)
-        {
-            var updatedUser = _unitOfWork.Users.Update(user);
-
-            _unitOfWork.Commit();
-
-            return updatedUser;
+            return await UnitOfWork.Users.GetUserWithExperimentsAsync(email);
         }
     }
 }
