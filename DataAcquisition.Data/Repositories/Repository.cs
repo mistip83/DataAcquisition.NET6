@@ -5,15 +5,16 @@ using DataAcquisition.Core.Interfaces.Repositories;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
+using DataAcquisition.Data.DataAccess;
 
 namespace DataAcquisition.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly DbContext Context;
+        protected readonly AppDbContext Context;
         private readonly DbSet<T> _dbSet;
 
-        public Repository(DbContext context)
+        public Repository(AppDbContext context)
         {
             Context = context;
             _dbSet = context.Set<T>();

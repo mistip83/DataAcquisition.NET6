@@ -11,7 +11,7 @@ namespace DataAcquisition.Data.Repositories
     {
         private AppDbContext AppDbContext => Context as AppDbContext;
 
-        public WorkstationRepository(DbContext context) : base(context)
+        public WorkstationRepository(AppDbContext context) : base(context)
         {
         }
 

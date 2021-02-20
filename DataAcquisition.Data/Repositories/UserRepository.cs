@@ -13,7 +13,7 @@ namespace DataAcquisition.Data.Repositories
     {
         private AppDbContext AppDbContext => Context as AppDbContext;
 
-        public UserRepository(DbContext context) : base(context)
+        public UserRepository(AppDbContext context) : base(context)
         {
         }
 

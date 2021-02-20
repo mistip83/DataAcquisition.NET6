@@ -11,7 +11,7 @@ namespace DataAcquisition.Data.Repositories
     {
         private AppDbContext AppDbContext => Context as AppDbContext;
 
-        public FacilityReposity(DbContext context) : base(context)
+        public FacilityReposity(AppDbContext context) : base(context)
         {
         }
 
