@@ -12,11 +12,17 @@ namespace DataAcquisition.Core.Interfaces.Services
     public interface IService<T> where T:class
     {
         /// <summary>
+        /// Get all rows
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<T>> GetAllAsync();
+
+        /// <summary>
         /// Get data by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(T id);
+        Task<T> GetByIdAsync(Guid id);
 
         /// <summary>
         /// Search something
@@ -44,7 +50,7 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
+        Task<List<T>> AddRangeAsync(List<T> entities);
 
         /// <summary>
         /// Remove row from db
