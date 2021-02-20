@@ -12,26 +12,6 @@ namespace DataAcquisition.Core.Interfaces.Repositories
     public interface IRepository<T> where T:class
     {
         /// <summary>
-        /// Get all rows for corresponding entity
-        /// </summary>
-        /// <returns></returns>
-        Task<IEnumerable<T>> GetAllAsync();
-
-        /// <summary>
-        /// Search something
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate);
-
-        /// <summary>
-        /// Get by any parameter
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
-        Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate);
-
-        /// <summary>
         /// Add a row to db
         /// </summary>
         /// <param name="entity"></param>
@@ -46,6 +26,19 @@ namespace DataAcquisition.Core.Interfaces.Repositories
         Task AddRangeAsync(IEnumerable<T> entities);
 
         /// <summary>
+        /// Get all rows for corresponding entity
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<T>> GetAllAsync();
+
+        /// <summary>
+        /// Get entity by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(Guid id);
+
+        /// <summary>
         /// Remove row from db
         /// </summary>
         /// <param name="entity"></param>
@@ -58,10 +51,24 @@ namespace DataAcquisition.Core.Interfaces.Repositories
         void RemoveRange(IEnumerable<T> entities);
 
         /// <summary>
+        /// Get by any parameter
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate);
+
+        /// <summary>
         /// Update a db row
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
         T Update(T entity);
+
+        /// <summary>
+        /// Search something
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate);
     }
 }
