@@ -1,24 +1,17 @@
 ﻿using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Entities;
-using System.Threading.Tasks;
+using DataAcquisition.Core.Interfaces.Repositories;
 
 namespace DataAcquisition.Service.Services
 {
-    public class CompanyService : ICompanyService
+    /// <summary>
+    /// Communicate with the API
+    /// </summary>
+    public class CompanyService : Service<Company>, ICompanyService
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly User _user;
-
-        public CompanyService(IUnitOfWork unitOfWork, User user)
+        public CompanyService(IUnitOfWork unitOfWork, IRepository<Company> repository) : base(unitOfWork, repository)
         {
-            _unitOfWork = unitOfWork;
-            _user = user;
-        }
-
-        public async Task<Company> GetCompanyInfo()
-        {
-            return await _unitOfWork.Company.SingleOrDefaultAsync(c => c.CompanyId == _user.Company.CompanyId);
         }
     }
 }
