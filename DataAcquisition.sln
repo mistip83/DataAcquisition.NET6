@@ -27,13 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceSimul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Scanner", "DataAcquisition.Scanner\DataAcquisition.Scanner.csproj", "{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Data", "DataAcquisition.Data\DataAcquisition.Data.csproj", "{F45FCAAD-C920-420E-B44A-4A681058BFD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DataAccessEF", "DataAcquisition.DataAccessEF\DataAcquisition.DataAccessEF.csproj", "{F45FCAAD-C920-420E-B44A-4A681058BFD4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Interface", "DataAcquisition.Interface\DataAcquisition.Interface.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Service", "DataAcquisition.Service\DataAcquisition.Service.csproj", "{1EBA8671-98C6-4055-B6A0-63355AD0EE01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.Repository", "DataAcquisition.Repository\DataAcquisition.Repository.csproj", "{C9005940-0DBA-46B8-8541-CBABA58F0DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Repository", "DataAcquisition.Repository\DataAcquisition.Repository.csproj", "{C9005940-0DBA-46B8-8541-CBABA58F0DE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

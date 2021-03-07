@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataAcquisition.Data.Configurations
+namespace DataAcquisition.DataAccessEF.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

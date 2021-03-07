@@ -1,9 +1,9 @@
-﻿using DataAcquisition.Data.Configurations;
-using DataAcquisition.Data.SeedData;
+﻿using DataAcquisition.DataAccessEF.Configurations;
+using DataAcquisition.DataAccessEF.SeedData;
 using DataAcquisition.Interface.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAcquisition.Data.DataAccess
+namespace DataAcquisition.DataAccessEF.DataAccess
 {
     public class AppDbContext : DbContext
     {

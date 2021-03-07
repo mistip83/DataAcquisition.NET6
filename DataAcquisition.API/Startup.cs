@@ -1,7 +1,9 @@
-using DataAcquisition.Data.DataAccess;
+using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;
+using DataAcquisition.Repository.Repositories;
+using DataAcquisition.Repository.UnitOfWork;
 using DataAcquisition.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

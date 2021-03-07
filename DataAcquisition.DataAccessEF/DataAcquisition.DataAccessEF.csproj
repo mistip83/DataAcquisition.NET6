@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Interface.csproj" />
+    <ProjectReference Include="..\DataAcquisition.Interface\DataAcquisition.Interface.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using DataAcquisition.Interface.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataAcquisition.Data.SeedData
+namespace DataAcquisition.DataAccessEF.SeedData
 {
     public class ApplicationInfoSeed : IEntityTypeConfiguration<ApplicationInfo>
     {
