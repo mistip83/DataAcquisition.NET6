@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using DataAcquisition.Interface.Models.Entities;
+using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Services
 {

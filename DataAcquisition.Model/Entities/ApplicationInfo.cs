@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAcquisition.Interface.Models.Entities
+namespace DataAcquisition.Model.Entities
 {
     public class ApplicationInfo
     {

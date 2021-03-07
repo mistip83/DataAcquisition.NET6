@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Interface.Models.License
+﻿namespace DataAcquisition.Model.License
 {
     public class LicenseInfo
     {

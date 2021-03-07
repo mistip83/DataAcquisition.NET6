@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAcquisition.Interface.Models.Entities
+namespace DataAcquisition.Model.Entities
 {
     public class Company
     {

@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Interface.Models.Scanner
+﻿namespace DataAcquisition.Model.Scanner
 {
     public class Data
     {

@@ -47,6 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{7F977D96-318
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{7E90BB89-53C1-4481-B68A-2BA12F0AC5DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.Model", "DataAcquisition.Model\DataAcquisition.Model.csproj", "{3C096353-85E4-47B8-9568-0C95DE907252}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C096353-85E4-47B8-9568-0C95DE907252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C096353-85E4-47B8-9568-0C95DE907252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C096353-85E4-47B8-9568-0C95DE907252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C096353-85E4-47B8-9568-0C95DE907252}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{EEBD5214-937D-410F-9FAD-8195183D4ACC} = {D0FEF3AD-7800-4872-9725-EDBAE9F1292C}
 		{1EBA8671-98C6-4055-B6A0-63355AD0EE01} = {7E90BB89-53C1-4481-B68A-2BA12F0AC5DA}
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8} = {D0FEF3AD-7800-4872-9725-EDBAE9F1292C}
+		{3C096353-85E4-47B8-9568-0C95DE907252} = {D0FEF3AD-7800-4872-9725-EDBAE9F1292C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C46F81A3-47CA-4878-8A73-052BCEB673E7}
