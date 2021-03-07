@@ -8,11 +8,20 @@ using System.Threading.Tasks;
 
 namespace DataAcquisition.Service.Services
 {
+    /// <summary>
+    /// Base class for other service classes
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Service<T> : IService<T> where T : class
     {
         protected readonly IUnitOfWork UnitOfWork;
         private readonly IRepository<T> _repository;
 
+        /// <summary>
+        /// UnitOfWork is used by classes derived from this class
+        /// </summary>
+        /// <param name="unitOfWork"></param>
+        /// <param name="repository"></param>
         public Service(IUnitOfWork unitOfWork, IRepository<T> repository)
         {
             UnitOfWork = unitOfWork;

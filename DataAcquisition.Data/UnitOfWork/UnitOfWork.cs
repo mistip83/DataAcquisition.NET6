@@ -6,6 +6,9 @@ using DataAcquisition.Data.Repositories;
 
 namespace DataAcquisition.Data.UnitOfWork
 {
+    /// <summary>
+    /// Reach database to commit/apply/save changes to db
+    /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
@@ -24,11 +27,18 @@ namespace DataAcquisition.Data.UnitOfWork
             _context = appDbContext;
         }
 
+        /// <summary>
+        /// Save changes sync
+        /// </summary>
         public void Commit()
         {
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Save changes async
+        /// </summary>
+        /// <returns></returns>
         public async Task CommitAsync()
         {
             await _context.SaveChangesAsync();
