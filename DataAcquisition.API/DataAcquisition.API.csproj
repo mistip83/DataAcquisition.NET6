@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcquisition.Data\DataAcquisition.Data.csproj" />
+    <ProjectReference Include="..\DataAcquisition.Service\DataAcquisition.Service.csproj" />
   </ItemGroup>
 
 

@@ -1,6 +1,10 @@
+using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Data.DataAccess;
+using DataAcquisition.Data.Repositories;
 using DataAcquisition.Data.UnitOfWork;
+using DataAcquisition.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +26,14 @@ namespace DataAcquisition.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<>), typeof(Service<>));
+            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IFacilityService, FacilityService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWorkstationService, WorkstationService>();
+
             services.AddDbContext<AppDbContext>(
                 options =>
                 {
@@ -30,8 +42,6 @@ namespace DataAcquisition.API
                         o.MigrationsAssembly("DataAcquisition.Data");
                     });
                 });
-
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
         }
