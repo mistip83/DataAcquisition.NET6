@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAcquisition.Core.Models.Entities
+namespace DataAcquisition.Interface.Models.Entities
 {
     public class Workstation
     {

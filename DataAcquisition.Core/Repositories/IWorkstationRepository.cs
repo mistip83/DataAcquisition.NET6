@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DataAcquisition.Core.Models.Entities;
+using DataAcquisition.Interface.Models.Entities;
 
-namespace DataAcquisition.Core.Interfaces.Repositories
+namespace DataAcquisition.Interface.Repositories
 {
     public interface IWorkstationRepository : IRepository<Workstation>
     {

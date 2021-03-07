@@ -1,6 +1,6 @@
-﻿using DataAcquisition.Core.Models.Entities;
-using DataAcquisition.Data.Configurations;
+﻿using DataAcquisition.Data.Configurations;
 using DataAcquisition.Data.SeedData;
+using DataAcquisition.Interface.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAcquisition.Data.DataAccess

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.Repositories;
-using DataAcquisition.Core.Models.Entities;
 using DataAcquisition.Data.DataAccess;
+using DataAcquisition.Interface.Models.Entities;
+using DataAcquisition.Interface.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAcquisition.Data.Repositories

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace DataAcquisition.Core.Interfaces.Repositories
+namespace DataAcquisition.Interface.Repositories
 {
     /// <summary>
     /// Single point for data access

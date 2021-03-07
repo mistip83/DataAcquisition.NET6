@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DataAcquisition.Core.Models.Device
+namespace DataAcquisition.Interface.Models.Device
 {
     public class Configuration
     {

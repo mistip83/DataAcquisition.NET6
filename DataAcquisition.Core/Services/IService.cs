@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace DataAcquisition.Core.Interfaces.Services
+namespace DataAcquisition.Interface.Services
 {
     /// <summary>
     /// Communicate with repositories

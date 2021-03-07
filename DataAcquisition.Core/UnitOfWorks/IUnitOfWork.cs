@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Interface.Repositories;
 
-namespace DataAcquisition.Core.Interfaces.UnitOfWorks
+namespace DataAcquisition.Interface.UnitOfWorks
 {
     public interface IUnitOfWork
     {

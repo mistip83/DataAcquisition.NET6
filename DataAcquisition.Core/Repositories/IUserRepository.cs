@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using DataAcquisition.Core.Models.Entities;
+﻿using System.Threading.Tasks;
+using DataAcquisition.Interface.Models.Entities;
 
-namespace DataAcquisition.Core.Interfaces.Repositories
+namespace DataAcquisition.Interface.Repositories
 {
     public interface IUserRepository : IRepository<User>
     {

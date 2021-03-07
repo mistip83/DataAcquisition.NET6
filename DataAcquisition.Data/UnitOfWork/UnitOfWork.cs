@@ -1,8 +1,8 @@
-﻿using DataAcquisition.Core.Interfaces.Repositories;
-using DataAcquisition.Core.Interfaces.UnitOfWorks;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Data.DataAccess;
 using DataAcquisition.Data.Repositories;
+using DataAcquisition.Interface.Interfaces.UnitOfWorks;
+using DataAcquisition.Interface.Repositories;
 
 namespace DataAcquisition.Data.UnitOfWork
 {

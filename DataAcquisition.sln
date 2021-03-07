@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Scanner", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Data", "DataAcquisition.Data\DataAcquisition.Data.csproj", "{F45FCAAD-C920-420E-B44A-4A681058BFD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "DataAcquisition.Core\DataAcquisition.Core.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Interface", "DataAcquisition.Core\DataAcquisition.Interface.csproj", "{EEBD5214-937D-410F-9FAD-8195183D4ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.Service", "DataAcquisition.Service\DataAcquisition.Service.csproj", "{1EBA8671-98C6-4055-B6A0-63355AD0EE01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Service", "DataAcquisition.Service\DataAcquisition.Service.csproj", "{1EBA8671-98C6-4055-B6A0-63355AD0EE01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

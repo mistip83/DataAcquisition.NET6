@@ -1,4 +1,4 @@
-﻿using DataAcquisition.Core.Models.Entities;
+﻿using DataAcquisition.Interface.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

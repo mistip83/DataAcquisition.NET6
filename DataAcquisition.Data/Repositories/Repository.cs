@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using DataAcquisition.Core.Interfaces.Repositories;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
 using DataAcquisition.Data.DataAccess;
+using DataAcquisition.Interface.Repositories;
 
 namespace DataAcquisition.Data.Repositories
 {

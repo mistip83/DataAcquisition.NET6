@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using DataAcquisition.Core.Models.Entities;
+using DataAcquisition.Interface.Models.Entities;
 
-namespace DataAcquisition.Core.Interfaces.Services
+namespace DataAcquisition.Interface.Services
 {
     public interface IUserService :IService<User>
     {
