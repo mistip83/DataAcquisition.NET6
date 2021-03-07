@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "DataAcquisition.API\DataAcquisition.API.csproj", "{0EDE08D1-6815-416A-AC7A-B18974813AA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.LicenseManager", "DataAcquisition.LicenseManager\DataAcquisition.LicenseManager.csproj", "{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{0281E19F-CCCD-4270-8E62-3175E3635934}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceLibrary", "DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
@@ -47,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{7E90
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Model", "DataAcquisition.Model\DataAcquisition.Model.csproj", "{3C096353-85E4-47B8-9568-0C95DE907252}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.LicenseManager", "DataAcquisition.LicenseManager\DataAcquisition.LicenseManager.csproj", "{7F053B78-135F-42A6-A035-D59DFF360573}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,10 +57,6 @@ Global
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0281E19F-CCCD-4270-8E62-3175E3635934}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -117,13 +113,16 @@ Global
 		{3C096353-85E4-47B8-9568-0C95DE907252}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C096353-85E4-47B8-9568-0C95DE907252}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C096353-85E4-47B8-9568-0C95DE907252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F053B78-135F-42A6-A035-D59DFF360573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F053B78-135F-42A6-A035-D59DFF360573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F053B78-135F-42A6-A035-D59DFF360573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F053B78-135F-42A6-A035-D59DFF360573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0EDE08D1-6815-416A-AC7A-B18974813AA7} = {7F977D96-3187-4BF3-9D72-B853542F47B7}
-		{C6BF2787-3FE2-445F-B901-85F7D47A4AC8} = {7C572033-C45D-481B-B2F8-DA7D9F81A8E4}
 		{0281E19F-CCCD-4270-8E62-3175E3635934} = {F706CF49-2BA4-4C24-A9C4-23291812C021}
 		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F} = {F706CF49-2BA4-4C24-A9C4-23291812C021}
 		{F127C7CE-3B66-43F7-8C55-D6F055702402} = {7C572033-C45D-481B-B2F8-DA7D9F81A8E4}
@@ -138,6 +137,7 @@ Global
 		{1EBA8671-98C6-4055-B6A0-63355AD0EE01} = {7E90BB89-53C1-4481-B68A-2BA12F0AC5DA}
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8} = {D0FEF3AD-7800-4872-9725-EDBAE9F1292C}
 		{3C096353-85E4-47B8-9568-0C95DE907252} = {D0FEF3AD-7800-4872-9725-EDBAE9F1292C}
+		{7F053B78-135F-42A6-A035-D59DFF360573} = {7C572033-C45D-481B-B2F8-DA7D9F81A8E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C46F81A3-47CA-4878-8A73-052BCEB673E7}
