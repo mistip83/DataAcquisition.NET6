@@ -1,10 +1,6 @@
-﻿using DataAcquisition.Data.DataAccess;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using DataAcquisition.Interface.Models.Entities;
-using DataAcquisition.Interface.Repositories;
+﻿using System.Threading.Tasks;
 
-namespace DataAcquisition.Data.Repositories
+namespace DataAcquisition.Repository.Repositories
 {
     /// <summary>
     /// Encapsulate the logic required to access data sources

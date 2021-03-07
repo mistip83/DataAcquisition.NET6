@@ -1,6 +1,4 @@
 using DataAcquisition.Data.DataAccess;
-using DataAcquisition.Data.Repositories;
-using DataAcquisition.Data.UnitOfWork;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;

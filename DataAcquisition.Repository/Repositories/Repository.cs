@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using System;
-using DataAcquisition.Data.DataAccess;
-using DataAcquisition.Interface.Repositories;
 
-namespace DataAcquisition.Data.Repositories
+namespace DataAcquisition.Repository.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
