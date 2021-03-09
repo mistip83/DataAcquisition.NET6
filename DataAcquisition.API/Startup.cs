@@ -1,16 +1,15 @@
-using DataAcquisition.DataAccessEF.DataAccess;
-using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Interface.UnitOfWorks;
-using DataAcquisition.Repository.Repositories;
-using DataAcquisition.Repository.UnitOfWork;
-using DataAcquisition.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DataAcquisition.API
 {
@@ -26,23 +25,6 @@ namespace DataAcquisition.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<>), typeof(Service<>));
-            services.AddScoped<ICompanyService, CompanyService>();
-            services.AddScoped<IFacilityService, FacilityService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IWorkstationService, WorkstationService>();
-
-            services.AddDbContext<AppDbContext>(
-                options =>
-                {
-                    options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"], o =>
-                    {
-                        o.MigrationsAssembly("DataAcquisition.Data");
-                    });
-                });
-
             services.AddControllers();
         }
 
