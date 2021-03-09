@@ -16,15 +16,33 @@ namespace DataAcquisition.LicenseManager
             _fileWriter = fileWriter;
         }
 
-        public void Initialize()
+        public bool IsLicenseValid()
         {
-            var licenseFile = _fileReader.ReadFileData(GetLicenseFullPath());
-            licenseFile.OsDateTime = DateTime.Now;
+            var licenseFile = GetLicenseInfo();
+
+            return licenseFile.UserEmail != string.Empty && DateTime.Now < licenseFile.LicenseEndDate;
         }
 
-        private string GetLicenseFullPath()
+        private static string GetLicenseFullPath()
         {
             return Assembly.GetExecutingAssembly().ToString();
+        }
+
+        private LicenseFile GetLicenseInfo()
+        {
+            return _fileReader.ReadFileData(GetLicenseFullPath());
+        }
+
+        private static LicenseFile CreateNewLicenseInfo()
+        {
+            return new LicenseFile
+            {
+                OsDateTime = DateTime.Now,
+                UserEmail = "muratistipliler@gmail.com",
+                LicenseBeginDate = DateTime.Now,
+                LicenseEndDate = DateTime.Now.AddYears(1),
+                MachineId = "2CF05D21E09A"
+        };
         }
     }
 }
