@@ -18,6 +18,7 @@ using DataAcquisition.Repository.Repositories;
 using DataAcquisition.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using DataAcquisition.DataAccessEF.DataAccess;
+using DataAcquisition.Interface.LicenseManager;
 
 namespace DataAcquisition.API
 {
@@ -46,7 +47,7 @@ namespace DataAcquisition.API
                 {
                     options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"], o =>
                     {
-                        o.MigrationsAssembly("DataAcquisition.Data");
+                        o.MigrationsAssembly("DataAcquisition.DataAccessEF");
                     });
                 });
 

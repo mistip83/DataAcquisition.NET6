@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Model.Device
+﻿namespace DataAcquisition.Model.DeviceProperties
 {
     public class Channel
     {
