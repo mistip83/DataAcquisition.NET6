@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace DataAcquisition.Interface.FileManager
+﻿namespace DataAcquisition.Interface.FileManager
 {
     public interface IFileReader<T>
     {
