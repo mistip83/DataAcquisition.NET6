@@ -9,7 +9,7 @@ namespace DataAcquisition.Interface.Repositories
     /// Single point for data access
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IRepository<T> where T:class
+    public interface IRepository<T>
     {
         /// <summary>
         /// Add a row to db

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Reflection.Metadata.Ecma335;
 using DataAcquisition.Interface.FileManager;
 using Newtonsoft.Json;
 using Serilog;
 
 namespace DataAcquisition.FileManager
 {
-    public class FileWriter : IFileManager
+    public class FileWriter : IFileWriter
     {
         public FileWriter()
         {
@@ -39,7 +38,7 @@ namespace DataAcquisition.FileManager
             }
             catch (Exception e)
             {
-                Log.Logger.Information("Could not write to {path}\n{message}", filePath, e.Message);
+                Log.Logger.Information("File could not write to {path}\n{message}", filePath, e.Message);
                 throw;
             }
         }

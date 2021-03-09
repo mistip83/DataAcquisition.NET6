@@ -1,6 +1,6 @@
 ﻿namespace DataAcquisition.Interface.FileManager
 {
-    public interface IFileManager
+    public interface IFileWriter
     {
         void WriteFile(string filePath, object data);
     }
