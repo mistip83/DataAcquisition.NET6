@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAcquisition.DataAccessEF.Migrations
 {
-    public partial class initialDbCreation : Migration
+    public partial class InitialDbCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Companies",
+                name: "Company",
                 columns: table => new
                 {
                     CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -30,67 +30,67 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Companies", x => x.CompanyId);
+                    table.PrimaryKey("PK_Company", x => x.CompanyId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Facilities",
+                name: "Facility",
                 columns: table => new
                 {
                     FacilityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FacilityName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Facilities", x => x.FacilityId);
+                    table.PrimaryKey("PK_Facility", x => x.FacilityId);
                     table.ForeignKey(
-                        name: "FK_Facilities_Companies_CompanyId",
+                        name: "FK_Facility_Company_CompanyId",
                         column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        principalTable: "Company",
                         principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "User",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastLogin = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.UserId);
+                    table.PrimaryKey("PK_User", x => x.Email);
                     table.ForeignKey(
-                        name: "FK_Users_Companies_CompanyId",
+                        name: "FK_User_Company_CompanyId",
                         column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        principalTable: "Company",
                         principalColumn: "CompanyId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Workstations",
+                name: "Workstation",
                 columns: table => new
                 {
                     WorkstationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     WorkstationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FacilityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    FacilityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Workstations", x => x.WorkstationId);
+                    table.PrimaryKey("PK_Workstation", x => x.WorkstationId);
                     table.ForeignKey(
-                        name: "FK_Workstations_Facilities_FacilityId",
+                        name: "FK_Workstation_Facility_FacilityId",
                         column: x => x.FacilityId,
-                        principalTable: "Facilities",
+                        principalTable: "Facility",
                         principalColumn: "FacilityId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -100,21 +100,21 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     DeviceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DeviceName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConnectionProperties = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorkstationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    WorkstationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Device", x => x.DeviceId);
                     table.ForeignKey(
-                        name: "FK_Device_Workstations_WorkstationId",
+                        name: "FK_Device_Workstation_WorkstationId",
                         column: x => x.WorkstationId,
-                        principalTable: "Workstations",
+                        principalTable: "Workstation",
                         principalColumn: "WorkstationId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Experiments",
+                name: "Experiment",
                 columns: table => new
                 {
                     ExperimentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -122,54 +122,40 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     ExperimentDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    WorkstationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    WorkstationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserEmail = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Experiments", x => x.ExperimentId);
+                    table.PrimaryKey("PK_Experiment", x => x.ExperimentId);
                     table.ForeignKey(
-                        name: "FK_Experiments_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
+                        name: "FK_Experiment_User_UserEmail",
+                        column: x => x.UserEmail,
+                        principalTable: "User",
+                        principalColumn: "Email",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Experiments_Workstations_WorkstationId",
+                        name: "FK_Experiment_Workstation_WorkstationId",
                         column: x => x.WorkstationId,
-                        principalTable: "Workstations",
+                        principalTable: "Workstation",
                         principalColumn: "WorkstationId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DeviceExperiment",
-                columns: table => new
-                {
-                    DevicesDeviceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ExperimentsExperimentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DeviceExperiment", x => new { x.DevicesDeviceId, x.ExperimentsExperimentId });
-                    table.ForeignKey(
-                        name: "FK_DeviceExperiment_Device_DevicesDeviceId",
-                        column: x => x.DevicesDeviceId,
-                        principalTable: "Device",
-                        principalColumn: "DeviceId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DeviceExperiment_Experiments_ExperimentsExperimentId",
-                        column: x => x.ExperimentsExperimentId,
-                        principalTable: "Experiments",
-                        principalColumn: "ExperimentId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 2, 13, 16, 57, 42, 158, DateTimeKind.Local).AddTicks(8587), new DateTime(2021, 2, 13, 16, 57, 42, 160, DateTimeKind.Local).AddTicks(8951), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 3, 14, 11, 58, 48, 745, DateTimeKind.Local).AddTicks(1856), new DateTime(2021, 3, 14, 11, 58, 48, 747, DateTimeKind.Local).AddTicks(3006), "1.0.0" });
+
+            migrationBuilder.InsertData(
+                table: "Company",
+                columns: new[] { "CompanyId", "CompanyName" },
+                values: new object[] { new Guid("686e6ad5-3806-46dc-a598-3e553012c996"), "AcmeCompany" });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Email", "CompanyId", "LastLogin", "Name", "Password", "Surname" },
+                values: new object[] { "muratistipliler@gmail.com", new Guid("686e6ad5-3806-46dc-a598-3e553012c996"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Murat", "25d55ad283aa400af464c76d713c07ad", "Istipliler" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Device_WorkstationId",
@@ -177,33 +163,28 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 column: "WorkstationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DeviceExperiment_ExperimentsExperimentId",
-                table: "DeviceExperiment",
-                column: "ExperimentsExperimentId");
+                name: "IX_Experiment_UserEmail",
+                table: "Experiment",
+                column: "UserEmail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Experiments_UserId",
-                table: "Experiments",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Experiments_WorkstationId",
-                table: "Experiments",
+                name: "IX_Experiment_WorkstationId",
+                table: "Experiment",
                 column: "WorkstationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Facilities_CompanyId",
-                table: "Facilities",
+                name: "IX_Facility_CompanyId",
+                table: "Facility",
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_CompanyId",
-                table: "Users",
+                name: "IX_User_CompanyId",
+                table: "User",
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Workstations_FacilityId",
-                table: "Workstations",
+                name: "IX_Workstation_FacilityId",
+                table: "Workstation",
                 column: "FacilityId");
         }
 
@@ -213,25 +194,22 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 name: "ApplicationInfo");
 
             migrationBuilder.DropTable(
-                name: "DeviceExperiment");
-
-            migrationBuilder.DropTable(
                 name: "Device");
 
             migrationBuilder.DropTable(
-                name: "Experiments");
+                name: "Experiment");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "User");
 
             migrationBuilder.DropTable(
-                name: "Workstations");
+                name: "Workstation");
 
             migrationBuilder.DropTable(
-                name: "Facilities");
+                name: "Facility");
 
             migrationBuilder.DropTable(
-                name: "Companies");
+                name: "Company");
         }
     }
 }
