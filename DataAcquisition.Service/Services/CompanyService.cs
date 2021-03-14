@@ -25,5 +25,14 @@ namespace DataAcquisition.Service.Services
         {
             return await UnitOfWork.Company.GetCompanyWithFacilitiesAsync(id);
         }
+
+        /// <summary>
+        /// Returns company entity
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Company> GetCompanyInfoAsync()
+        {
+            return await UnitOfWork.Company.GetCompanyInfoAsync();
+        }
     }
 }

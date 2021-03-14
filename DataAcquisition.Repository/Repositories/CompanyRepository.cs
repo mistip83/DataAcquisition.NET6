@@ -28,5 +28,14 @@ namespace DataAcquisition.Repository.Repositories
             return await AppDbContext.Company.Include(x => x.Facilities)
                 .SingleOrDefaultAsync(x => x.CompanyId == id);
         }
+
+        /// <summary>
+        /// Implementation detail
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Company> GetCompanyInfoAsync()
+        {
+            return await AppDbContext.Company.SingleOrDefaultAsync();
+        }
     }
 }

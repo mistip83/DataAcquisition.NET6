@@ -12,5 +12,11 @@ namespace DataAcquisition.Interface.Services
         /// <param name="id"></param>
         /// <returns></returns>
         public Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
+
+        /// <summary>
+        /// Returns company entity
+        /// </summary>
+        /// <returns></returns>
+        Task<Company> GetCompanyInfoAsync();
     }
 }
