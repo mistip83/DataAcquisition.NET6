@@ -10,7 +10,7 @@ namespace DataAcquisition.Model.Entities
         public string ExperimentDescription { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public virtual IEnumerable<Device> Devices { get; set; }
+        public Guid WorkstationId { get; set; }
         public virtual Workstation WorkStation { get; set; }
         public virtual User User { get; set; }
     }

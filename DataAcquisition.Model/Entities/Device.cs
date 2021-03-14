@@ -8,7 +8,7 @@ namespace DataAcquisition.Model.Entities
         public Guid DeviceId { get; set; }
         public string DeviceName { get; set; }
         public string ConnectionProperties { get; set; }
+        public Guid WorkstationId { get; set; }
         public virtual Workstation Workstation { get; set; }
-        public virtual IEnumerable<Experiment> Experiments { get; set; }
     }
 }

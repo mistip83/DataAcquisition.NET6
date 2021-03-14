@@ -7,6 +7,7 @@ namespace DataAcquisition.Model.Entities
     {
         public Guid FacilityId { get; set; }
         public string FacilityName { get; set; }
+        public Guid CompanyId { get; set; }
         public virtual Company Company { get; set; }
         public virtual ICollection<Workstation> WorkStations { get; set; }
     }
