@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using DataAcquisition.Model.Entities;
+﻿using DataAcquisition.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
