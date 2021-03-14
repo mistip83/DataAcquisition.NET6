@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace DataAcquisition.Interface.LicenseManager
+﻿namespace DataAcquisition.Interface.LicenseManager
 {
     public interface ILicenseManager
     {

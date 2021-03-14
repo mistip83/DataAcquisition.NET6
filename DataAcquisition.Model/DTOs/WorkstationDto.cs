@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Model.Entities
+﻿namespace DataAcquisition.Model.DTOs
 {
     public class WorkstationDto
     {

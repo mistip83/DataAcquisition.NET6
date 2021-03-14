@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Model.DTOs
 {
