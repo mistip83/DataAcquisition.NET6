@@ -24,7 +24,7 @@ namespace DataAcquisition.Repository.Repositories
         /// <returns></returns>
         public async Task<User> GetUserWithExperimentsAsync(string email)
         {
-            return await AppDbContext.Users.Include(x => x.Experiments)
+            return await AppDbContext.User.Include(x => x.Experiments)
                 .SingleOrDefaultAsync(x => x.Email == email);
         }
 
@@ -35,7 +35,7 @@ namespace DataAcquisition.Repository.Repositories
         /// <returns></returns>
         public async Task<User> GetUserWithCompanyAsync(string email)
         {
-            return await AppDbContext.Users.Include(x => x.Company)
+            return await AppDbContext.User.Include(x => x.Company)
                 .SingleOrDefaultAsync(x => x.Email == email);
         }
     }

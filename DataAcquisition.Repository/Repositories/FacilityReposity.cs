@@ -25,7 +25,7 @@ namespace DataAcquisition.Repository.Repositories
         /// <returns></returns>
         public async Task<Facility> GetFacilityWithWorkStationsAsync(Guid id)
         {
-            return await AppDbContext.Facilities.Include(x => x.WorkStations)
+            return await AppDbContext.Facility.Include(x => x.WorkStations)
                 .SingleOrDefaultAsync(x => x.FacilityId == id);
         }
     }
