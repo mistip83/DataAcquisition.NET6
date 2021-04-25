@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Interface.Services;
+using DataAcquisition.Model.DTOs;
 
 namespace DataAcquisition.API.Controllers
 {
@@ -22,8 +23,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetCompanyInfo()
         {
             var company = await _companyService.GetCompanyInfoAsync();
-            return Ok(company);
-            //return Ok(_mapper.Map<CompanyDto>(company));
+            return Ok(_mapper.Map<CompanyDto>(company));
         }
     }
 }
