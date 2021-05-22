@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Model.DTOs;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataAcquisition.API.Controllers
 {
@@ -23,7 +26,7 @@ namespace DataAcquisition.API.Controllers
         /// Returns Company Name
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("company-info")]
         public async Task<IActionResult> GetCompanyInfo()
         {
             var company = await _companyService.GetCompanyInfoAsync();
@@ -35,9 +38,23 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetOrganizationLayoutAsync()
+        public async Task<IActionResult> GetOrganizationLayout()
         {
-            return Ok();
+            var organizationLayout = await _companyService.GetOrganizationLayoutAsync();
+            return Ok(organizationLayout);
+        }
+
+        [HttpGet]
+        public IEnumerable<WeatherForecast> Get()
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(index),
+                    TemperatureC = rng.Next(-20, 55),
+                    Summary = ""
+                })
+                .ToArray();
         }
     }
 }

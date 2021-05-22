@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Interface.Repositories;
+using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,5 +39,14 @@ namespace DataAcquisition.Repository.Repositories
         {
             return await AppDbContext.Company.SingleOrDefaultAsync();
         }
+
+        /// <summary>
+        /// Implementation detail
+        /// </summary>
+        /// <returns></returns>
+        //public async Task<OrganizationDto> GetOrganizationLayoutAsync()
+        //{
+            
+        //}
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Services
@@ -18,5 +19,7 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <returns></returns>
         Task<Company> GetCompanyInfoAsync();
+
+        Task<OrganizationDto> GetOrganizationLayoutAsync();
     }
 }

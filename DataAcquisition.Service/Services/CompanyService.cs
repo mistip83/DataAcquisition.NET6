@@ -36,9 +36,13 @@ namespace DataAcquisition.Service.Services
             return await UnitOfWork.Company.GetCompanyInfoAsync();
         }
 
-        //public async Task<OrganizationDto> GetOrganizationLayoutAsync()
-        //{
-        //    var company = await UnitOfWork.Company.
-        //}
+        /// <summary>
+        /// Returns Company, Facilities, Workstations, Experiments
+        /// </summary>
+        /// <returns></returns>
+        public async Task<OrganizationDto> GetOrganizationLayoutAsync()
+        {
+            return new OrganizationDto();
+        }
     }
 }
