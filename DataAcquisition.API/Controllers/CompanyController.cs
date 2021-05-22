@@ -19,11 +19,25 @@ namespace DataAcquisition.API.Controllers
             _companyService = companyService;
         }
 
+        /// <summary>
+        /// Returns Company Name
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetCompanyInfo()
         {
             var company = await _companyService.GetCompanyInfoAsync();
             return Ok(_mapper.Map<CompanyDto>(company));
+        }
+
+        /// <summary>
+        /// Returns Company, Facilities, Workstations, Experiments
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetOrganizationLayoutAsync()
+        {
+            return Ok();
         }
     }
 }
