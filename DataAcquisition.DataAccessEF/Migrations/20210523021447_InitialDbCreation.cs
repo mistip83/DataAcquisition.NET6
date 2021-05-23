@@ -145,17 +145,27 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 3, 14, 11, 58, 48, 745, DateTimeKind.Local).AddTicks(1856), new DateTime(2021, 3, 14, 11, 58, 48, 747, DateTimeKind.Local).AddTicks(3006), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 5, 23, 3, 14, 47, 282, DateTimeKind.Local).AddTicks(3267), new DateTime(2021, 5, 23, 3, 14, 47, 284, DateTimeKind.Local).AddTicks(5739), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",
                 columns: new[] { "CompanyId", "CompanyName" },
-                values: new object[] { new Guid("686e6ad5-3806-46dc-a598-3e553012c996"), "AcmeCompany" });
+                values: new object[] { new Guid("c32da8dc-7fa4-4030-860e-17476af61820"), "AcmeCompany" });
+
+            migrationBuilder.InsertData(
+                table: "Facility",
+                columns: new[] { "FacilityId", "CompanyId", "FacilityName" },
+                values: new object[] { new Guid("6d529ae9-8574-4099-a428-a31b8b61114f"), new Guid("c32da8dc-7fa4-4030-860e-17476af61820"), "FacilityA" });
+
+            migrationBuilder.InsertData(
+                table: "Facility",
+                columns: new[] { "FacilityId", "CompanyId", "FacilityName" },
+                values: new object[] { new Guid("626a363d-f786-4012-8357-c3d27d436264"), new Guid("c32da8dc-7fa4-4030-860e-17476af61820"), "FacilityB" });
 
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "Email", "CompanyId", "LastLogin", "Name", "Password", "Surname" },
-                values: new object[] { "muratistipliler@gmail.com", new Guid("686e6ad5-3806-46dc-a598-3e553012c996"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Murat", "25d55ad283aa400af464c76d713c07ad", "Istipliler" });
+                values: new object[] { "muratistipliler@gmail.com", new Guid("c32da8dc-7fa4-4030-860e-17476af61820"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Murat", "25d55ad283aa400af464c76d713c07ad", "Istipliler" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Device_WorkstationId",

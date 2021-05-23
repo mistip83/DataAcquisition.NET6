@@ -40,6 +40,7 @@ namespace DataAcquisition.DataAccessEF.DataAccess
             // Apply seed data
             modelBuilder.ApplyConfiguration(new ApplicationInfoSeed());
             modelBuilder.ApplyConfiguration(new CompanySeed(company));
+            modelBuilder.ApplyConfiguration(new FacilitySeed(company));
             modelBuilder.ApplyConfiguration(new UserSeed(company));
         }
     }

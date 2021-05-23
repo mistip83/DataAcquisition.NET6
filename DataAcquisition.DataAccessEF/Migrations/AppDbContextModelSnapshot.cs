@@ -4,6 +4,7 @@ using DataAcquisition.DataAccessEF.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAcquisition.DataAccessEF.Migrations
 {
@@ -40,8 +41,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 3, 14, 11, 58, 48, 745, DateTimeKind.Local).AddTicks(1856),
-                            LastUpdateDate = new DateTime(2021, 3, 14, 11, 58, 48, 747, DateTimeKind.Local).AddTicks(3006),
+                            FirstInstallDate = new DateTime(2021, 5, 23, 3, 14, 47, 282, DateTimeKind.Local).AddTicks(3267),
+                            LastUpdateDate = new DateTime(2021, 5, 23, 3, 14, 47, 284, DateTimeKind.Local).AddTicks(5739),
                             Version = "1.0.0"
                         });
                 });
@@ -62,7 +63,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.HasData(
                         new
                         {
-                            CompanyId = new Guid("686e6ad5-3806-46dc-a598-3e553012c996"),
+                            CompanyId = new Guid("c32da8dc-7fa4-4030-860e-17476af61820"),
                             CompanyName = "AcmeCompany"
                         });
                 });
@@ -139,6 +140,20 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.HasIndex("CompanyId");
 
                     b.ToTable("Facility");
+
+                    b.HasData(
+                        new
+                        {
+                            FacilityId = new Guid("6d529ae9-8574-4099-a428-a31b8b61114f"),
+                            CompanyId = new Guid("c32da8dc-7fa4-4030-860e-17476af61820"),
+                            FacilityName = "FacilityA"
+                        },
+                        new
+                        {
+                            FacilityId = new Guid("626a363d-f786-4012-8357-c3d27d436264"),
+                            CompanyId = new Guid("c32da8dc-7fa4-4030-860e-17476af61820"),
+                            FacilityName = "FacilityB"
+                        });
                 });
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.User", b =>
@@ -171,7 +186,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             Email = "muratistipliler@gmail.com",
-                            CompanyId = new Guid("686e6ad5-3806-46dc-a598-3e553012c996"),
+                            CompanyId = new Guid("c32da8dc-7fa4-4030-860e-17476af61820"),
                             LastLogin = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Murat",
                             Password = "25d55ad283aa400af464c76d713c07ad",
