@@ -42,6 +42,7 @@ namespace DataAcquisition.Service.Services
         /// <returns></returns>
         public async Task<OrganizationDto> GetOrganizationLayoutAsync()
         {
+            var orgLayout = await UnitOfWork.Company.GetOrganizationLayoutAsync();
             return new OrganizationDto();
         }
     }

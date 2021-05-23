@@ -44,9 +44,10 @@ namespace DataAcquisition.Repository.Repositories
         /// Implementation detail
         /// </summary>
         /// <returns></returns>
-        //public async Task<OrganizationDto> GetOrganizationLayoutAsync()
-        //{
-            
-        //}
+        public async Task<OrganizationDto> GetOrganizationLayoutAsync()
+        {
+            var orgLayout = await AppDbContext.Company.Include(x => x.Facilities).SingleOrDefaultAsync();
+            return new OrganizationDto();
+        }
     }
 }

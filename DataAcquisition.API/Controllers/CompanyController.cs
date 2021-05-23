@@ -37,24 +37,11 @@ namespace DataAcquisition.API.Controllers
         /// Returns Company, Facilities, Workstations, Experiments
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("organization-layout")]
         public async Task<IActionResult> GetOrganizationLayout()
         {
             var organizationLayout = await _companyService.GetOrganizationLayoutAsync();
             return Ok(organizationLayout);
-        }
-
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-                {
-                    Date = DateTime.Now.AddDays(index),
-                    TemperatureC = rng.Next(-20, 55),
-                    Summary = ""
-                })
-                .ToArray();
         }
     }
 }
