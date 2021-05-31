@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Repositories
@@ -10,6 +9,6 @@ namespace DataAcquisition.Interface.Repositories
     {
         Task<Company> GetCompanyInfoAsync();
         Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
-        Task<OrganizationDto> GetOrganizationLayoutAsync();
+        Task<Company> GetOrganizationLayoutAsync();
     }
 }

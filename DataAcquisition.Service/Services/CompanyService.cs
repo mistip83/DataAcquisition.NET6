@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
-using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Service.Services
@@ -40,10 +39,9 @@ namespace DataAcquisition.Service.Services
         /// Returns Company, Facilities, Workstations, Experiments
         /// </summary>
         /// <returns></returns>
-        public async Task<OrganizationDto> GetOrganizationLayoutAsync()
+        public async Task<Company> GetOrganizationLayoutAsync()
         {
-            var orgLayout = await UnitOfWork.Company.GetOrganizationLayoutAsync();
-            return new OrganizationDto();
+            return await UnitOfWork.Company.GetOrganizationLayoutAsync();
         }
     }
 }

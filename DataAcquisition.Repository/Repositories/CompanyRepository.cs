@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,10 +42,13 @@ namespace DataAcquisition.Repository.Repositories
         /// Implementation detail
         /// </summary>
         /// <returns></returns>
-        public async Task<OrganizationDto> GetOrganizationLayoutAsync()
+        public async Task<Company> GetOrganizationLayoutAsync()
         {
-            var orgLayout = await AppDbContext.Company.Include(x => x.Users).SingleOrDefaultAsync();
-            return new OrganizationDto();
+            return await AppDbContext.Company
+                .Include(x => x.Facilities)
+                .ThenInclude(x=>x.WorkStations)
+                .ThenInclude(x=>x.Experiments)
+                .SingleOrDefaultAsync();
         }
     }
 }
