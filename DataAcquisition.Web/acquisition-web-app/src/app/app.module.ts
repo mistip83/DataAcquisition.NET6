@@ -1,3 +1,4 @@
+import { OrganizationOverviewComponent } from './dashboard/organization-overview/organization-overview.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,7 +7,8 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrganizationOverviewComponent
   ],
   imports: [
     BrowserModule,
