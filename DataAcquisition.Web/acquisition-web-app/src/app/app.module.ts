@@ -1,4 +1,4 @@
-import { OrganizationOverviewComponent } from './dashboard/organization-overview/organization-overview.component';
+import { CompanyOverviewComponent } from './dashboard/company-overview/company-overview.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,10 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    OrganizationOverviewComponent
-  ],
+    CompanyOverviewComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule
