@@ -12,4 +12,6 @@ export class CompanyOverviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  title = 'Company Overview';
+
 }
