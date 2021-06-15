@@ -7,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyOverviewComponent implements OnInit {
 
-  
-
   constructor() { }
 
   ngOnInit() {
   }
 
   title = 'Company Overview';
+  panelOpenState = false;
 
 }
