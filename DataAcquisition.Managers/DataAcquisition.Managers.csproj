@@ -14,11 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FileManager\" />
-    <Folder Include="CalibrationManager\" />
-    <Folder Include="ConnectionManager\" />
+    <Folder Include="ExperimentManager\" />
     <Folder Include="ReportManager\" />
-    <Folder Include="AnalysisManager\" />
   </ItemGroup>
 
   <ItemGroup>

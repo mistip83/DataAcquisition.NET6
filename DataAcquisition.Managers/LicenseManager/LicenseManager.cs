@@ -4,7 +4,7 @@ using DataAcquisition.Interface.FileManager;
 using DataAcquisition.Interface.LicenseManager;
 using DataAcquisition.Model.License;
 
-namespace DataAcquisition.LicenseManager
+namespace DataAcquisition.Managers.LicenseManager
 {
     public class LicenseManager : ILicenseManager
     {
@@ -33,7 +33,7 @@ namespace DataAcquisition.LicenseManager
             return _fileReader.ReadFileData(GetLicenseFullPath());
         }
 
-        private static LicenseFile CreateNewLicenseInfo()
+        private static LicenseFile CreateNewLicense()
         {
             return new LicenseFile
             {
