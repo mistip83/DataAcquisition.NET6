@@ -7,7 +7,7 @@ namespace DataAcquisition.CalibrationManager.ConcreteDecorator
 {
     public class TemperatureCalibration : CalibrationDecorator
     {
-        private static System.Timers.Timer _timer;
+        private static Timer _timer;
         public TemperatureCalibration(ICalibrationManager calibrationManager) : base(calibrationManager)
         {
         }
@@ -21,7 +21,7 @@ namespace DataAcquisition.CalibrationManager.ConcreteDecorator
         private static void SetTimer()
         {
             // Create a timer with a two second interval.
-            _timer = new System.Timers.Timer(2000);
+            _timer = new Timer(2000);
             // Hook up the Elapsed event for the timer. 
             _timer.Elapsed += OnTimedEvent;
             _timer.AutoReset = true;
