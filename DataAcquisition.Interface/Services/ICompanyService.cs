@@ -11,7 +11,7 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
+        Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
 
         /// <summary>
         /// Returns company entity
