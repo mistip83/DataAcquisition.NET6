@@ -1,4 +1,5 @@
-﻿using System.IO.Ports;
+﻿using System;
+using System.IO.Ports;
 using DataAcquisition.Interface.ConnectionManager;
 
 namespace DataAcquisition.ConnectionManager
@@ -14,11 +15,13 @@ namespace DataAcquisition.ConnectionManager
             };
 
             _serialPort.Open();
+
+            Console.WriteLine("Connected to Device");
         }
 
         public void ConnectToSimulator()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Connected to Simulator");
         }
     }
 }
