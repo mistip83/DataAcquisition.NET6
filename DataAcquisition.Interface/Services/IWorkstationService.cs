@@ -4,7 +4,7 @@ using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Services
 {
-    public interface IWorkstationService
+    public interface IWorkstationService : IService<Workstation>
     {
         /// <summary>
         /// Returns workstation entity with its experiments
