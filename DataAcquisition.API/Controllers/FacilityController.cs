@@ -1,8 +1,6 @@
 ﻿using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Model.DTOs;
@@ -31,7 +29,7 @@ namespace DataAcquisition.API.Controllers
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetFacilityInfo(Guid id)
         {
-            var facility = await _facilityService.GetFacilityInfoAsync(id);
+            var facility = await _facilityService.GetByIdAsync(id);
             return Ok(_mapper.Map<FacilityDto>(facility));
         }
 
@@ -42,20 +40,20 @@ namespace DataAcquisition.API.Controllers
         [HttpGet("facility-list")]
         public async Task<IActionResult> GetFacilityList()
         {
-            var facility = await _facilityService.GetFacilityList();
+            var facility = await _facilityService.GetAllAsync();
             return Ok(_mapper.Map<FacilityDto>(facility));
         }
 
         /// <summary>
         /// Edits Facility Properties
         /// </summary>
-        /// <param name="facility"></param>
+        /// <param name="facilityDto"></param>
         /// <returns></returns>
         [HttpPut("edit-facility")]
-        public IActionResult EditFacility(FacilityDto facility)
+        public IActionResult EditFacility(FacilityDto facilityDto)
         {
-            var updatedFacility = _facilityService.EditFacility(_mapper.Map<Facility>(facility));
-            return Ok(_mapper.Map<FacilityDto>(updatedFacility));
+            _facilityService.Update(_mapper.Map<Facility>(facilityDto));
+            return NoContent();
         }
     }
 }
