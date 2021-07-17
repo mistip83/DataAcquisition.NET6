@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace DataAcquisition.Interface.CalibrationManager
+﻿namespace DataAcquisition.Interface.CalibrationManager
 {
     public interface ICalibrationManager
     {
