@@ -38,8 +38,8 @@ namespace DataAcquisition.API.Controllers
         [HttpGet("workstation-list")]
         public async Task<IActionResult> GetWorkstationList()
         {
-            var workstation = await _workstationService.GetAllAsync();
-            return Ok(_mapper.Map<WorkstationDto>(workstation));
+            var workstationList = await _workstationService.GetAllAsync();
+            return Ok(_mapper.Map<IEquatable<WorkstationDto>>(workstationList));
         }
 
         /// <summary>
@@ -60,10 +60,24 @@ namespace DataAcquisition.API.Controllers
         /// <param name="workstationDto"></param>
         /// <returns></returns>
         [HttpPost("add-workstation")]
-        public async Task<IActionResult> AddNewWorkstation(WorkstationDto workstationDto)
+        public async Task<IActionResult> AddWorkstation(WorkstationDto workstationDto)
         {
             var newWorkstation = await _workstationService.AddAsync(_mapper.Map<Workstation>(workstationDto));
             return Created(string.Empty, _mapper.Map<WorkstationDto>(newWorkstation));
+        }
+
+        /// <summary>
+        /// Delete Workstation
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteWorkstation(Guid id)
+        {
+            var workstation = await _workstationService.GetByIdAsync(id);
+            _workstationService.Remove(workstation);
+
+            return NoContent();
         }
     }
 }

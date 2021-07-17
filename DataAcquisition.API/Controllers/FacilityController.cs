@@ -22,7 +22,7 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Returns Facility Name by id
+        /// Returns Facility Dto by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
