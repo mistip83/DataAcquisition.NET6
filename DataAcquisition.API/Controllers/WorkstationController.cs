@@ -1,0 +1,69 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
+using AutoMapper;
+using DataAcquisition.Interface.Services;
+using DataAcquisition.Model.DTOs;
+using DataAcquisition.Model.Entities;
+
+namespace DataAcquisition.API.Controllers
+{
+    public class WorkstationController : Controller
+    {
+        private readonly IWorkstationService _workstationService;
+        private readonly IMapper _mapper;
+
+        public WorkstationController(IWorkstationService workstationService, IMapper mapper)
+        {
+            _workstationService = workstationService;
+            _mapper = mapper;
+        }
+
+        /// <summary>
+        /// Returns Workstation Dto by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetWorkstationInfo(Guid id)
+        {
+            var workstation = await _workstationService.GetByIdAsync(id);
+            return Ok(_mapper.Map<WorkstationDto>(workstation));
+        }
+
+        /// <summary>
+        /// Returns Workstation List
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("workstation-list")]
+        public async Task<IActionResult> GetWorkstationList()
+        {
+            var workstation = await _workstationService.GetAllAsync();
+            return Ok(_mapper.Map<WorkstationDto>(workstation));
+        }
+
+        /// <summary>
+        /// Edits Workstation properties
+        /// </summary>
+        /// <param name="workstationDto"></param>
+        /// <returns></returns>
+        [HttpPut("edit-workstation")]
+        public IActionResult EditWorkstation(WorkstationDto workstationDto)
+        {
+            _workstationService.Update(_mapper.Map<Workstation>(workstationDto));
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Add new workstation
+        /// </summary>
+        /// <param name="workstationDto"></param>
+        /// <returns></returns>
+        [HttpPost("add-workstation")]
+        public async Task<IActionResult> AddNewWorkstation(WorkstationDto workstationDto)
+        {
+            var newWorkstation = await _workstationService.AddAsync(_mapper.Map<Workstation>(workstationDto));
+            return Created(string.Empty, _mapper.Map<WorkstationDto>(newWorkstation));
+        }
+    }
+}
