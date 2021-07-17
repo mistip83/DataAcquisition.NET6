@@ -24,10 +24,11 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Returns Facility Name
+        /// Returns Facility Name by id
         /// </summary>
+        /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("facility-info")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetFacilityInfo(Guid id)
         {
             var facility = await _facilityService.GetFacilityInfoAsync(id);
@@ -35,7 +36,7 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Returns Facility Name
+        /// Returns Facility List
         /// </summary>
         /// <returns></returns>
         [HttpGet("facility-list")]
@@ -48,8 +49,9 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Edits Facility Properties
         /// </summary>
+        /// <param name="facility"></param>
         /// <returns></returns>
-        [HttpGet("edit-facility")]
+        [HttpPut("edit-facility")]
         public IActionResult EditFacility(FacilityDto facility)
         {
             var updatedFacility = _facilityService.EditFacility(_mapper.Map<Facility>(facility));
