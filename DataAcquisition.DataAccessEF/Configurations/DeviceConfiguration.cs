@@ -10,14 +10,20 @@ namespace DataAcquisition.DataAccessEF.Configurations
         {
             builder.HasKey(x => x.DeviceId);
 
-            // Device has many experiment
-            //builder.HasMany((p => p.Experiments))
-            //    .WithMany(p => p.Devices);
+            builder.Property(p=>p.DeviceId)
+                .ValueGeneratedOnAdd();
 
-            //// Device has one workstation
-            //builder.HasOne(p => p.Workstation)
-            //    .WithMany(p => p.Devices)
-            //    .HasForeignKey(p => p.DeviceId);
+            builder.Property(p => p.DeviceName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            builder.Property(p => p.ConnectionType)
+                .HasColumnType("int")
+                .IsRequired();
+
+            builder.Property(p => p.DeviceType)
+                .HasColumnType("int")
+                .IsRequired();
         }
     }
 }

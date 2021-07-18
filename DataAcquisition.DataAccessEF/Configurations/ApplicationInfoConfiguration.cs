@@ -8,7 +8,7 @@ namespace DataAcquisition.DataAccessEF.Configurations
     {
         public void Configure(EntityTypeBuilder<ApplicationInfo> builder)
         {
-            builder.HasKey(x => x.ApplicationName);
+            builder.HasKey(k => k.ApplicationName);
         }
     }
 }

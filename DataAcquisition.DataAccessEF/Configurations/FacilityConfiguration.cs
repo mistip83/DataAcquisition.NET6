@@ -10,6 +10,16 @@ namespace DataAcquisition.DataAccessEF.Configurations
         {
             builder.HasKey(x => x.FacilityId);
 
+            builder.Property(p => p.FacilityId)
+                .ValueGeneratedOnAdd();
+
+            builder.Property(p => p.Address)
+                .HasMaxLength(250);
+
+            builder.Property(p => p.FacilityName)
+                .HasMaxLength(100)
+                .IsRequired();
+
             // Facility has one company
             //builder.HasOne(p => p.Company)
             //    .WithMany(p => p.Facilities)

@@ -10,9 +10,12 @@ namespace DataAcquisition.DataAccessEF.Configurations
         {
             builder.HasKey(x => x.ExperimentId);
 
-            // Experiment has many devices
-            //builder.HasMany(p => p.Devices)
-            //    .WithMany(p=>p.Experiments);
+            builder.Property(p => p.ExperimentId)
+                .ValueGeneratedOnAdd();
+
+            builder.Property(p => p.ExperimentName)
+                .HasMaxLength(100)
+                .IsRequired();
 
             //// Experiment has one workstation
             //builder.HasOne(p => p.WorkStation)

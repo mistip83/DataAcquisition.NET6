@@ -10,6 +10,20 @@ namespace DataAcquisition.DataAccessEF.Configurations
         {
             builder.HasKey(x => x.Email);
 
+            builder.Property(p => p.Email)
+                .HasMaxLength(50);
+
+            builder.Property(p => p.Name)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            builder.Property(p => p.Surname)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            builder.Property(p=>p.DisplayName)
+                .HasComputedColumnSql("[Name] + ', ' + [FirstName]");
+
             // User has one company
             //builder.HasOne(p => p.Company)
             //    .WithMany(p => p.Users)

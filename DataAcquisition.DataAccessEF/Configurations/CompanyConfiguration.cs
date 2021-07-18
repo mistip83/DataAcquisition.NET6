@@ -8,17 +8,12 @@ namespace DataAcquisition.DataAccessEF.Configurations
     {
         public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.HasKey(x => x.CompanyId);
+            builder.HasKey(k => k.CompanyName);
 
-            // Company has many users
-            //builder.HasMany(p => p.Users)
-            //    .WithOne(p => p.Company)
-            //    .HasForeignKey(p => p.UserId);
+            builder.Property(p => p.CompanyName)
+                .HasMaxLength(100)
+                .IsRequired();
 
-            //// Company has many facilities
-            //builder.HasMany((p => p.Facilities))
-            //    .WithOne(p => p.Company)
-            //    .HasForeignKey(p => p.FacilityId);
         }
     }
 }
