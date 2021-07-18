@@ -1,5 +1,4 @@
-﻿using System;
-using DataAcquisition.DataAccessEF.Configurations;
+﻿using DataAcquisition.DataAccessEF.Configurations;
 using DataAcquisition.DataAccessEF.SeedData;
 using DataAcquisition.Model.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -30,18 +29,12 @@ namespace DataAcquisition.DataAccessEF.DataAccess
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new WorkstationConfiguration());
-
-            var company = new Company()
-            {
-                CompanyId = Guid.NewGuid(),
-                CompanyName = "AcmeCompany"
-            };
-
+            
             // Apply seed data
             modelBuilder.ApplyConfiguration(new ApplicationInfoSeed());
-            modelBuilder.ApplyConfiguration(new CompanySeed(company));
-            modelBuilder.ApplyConfiguration(new FacilitySeed(company));
-            modelBuilder.ApplyConfiguration(new UserSeed(company));
+            modelBuilder.ApplyConfiguration(new CompanySeed());
+            modelBuilder.ApplyConfiguration(new FacilitySeed());
+            modelBuilder.ApplyConfiguration(new UserSeed());
         }
     }
 }
