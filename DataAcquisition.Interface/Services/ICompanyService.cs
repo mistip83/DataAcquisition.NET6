@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Services
@@ -11,7 +10,7 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Company> GetCompanyWithFacilitiesAsync(Guid id);
+        Task<Company> GetCompanyWithFacilitiesAsync();
 
         /// <summary>
         /// Returns company entity

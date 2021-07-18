@@ -36,7 +36,7 @@ namespace DataAcquisition.Interface.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(Guid id);
+        Task<T> GetByIdAsync(int id);
 
         /// <summary>
         /// Remove row from db

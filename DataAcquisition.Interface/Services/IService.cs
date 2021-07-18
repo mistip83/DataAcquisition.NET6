@@ -22,7 +22,7 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(Guid id);
+        Task<T> GetByIdAsync(int id);
 
         /// <summary>
         /// Search something

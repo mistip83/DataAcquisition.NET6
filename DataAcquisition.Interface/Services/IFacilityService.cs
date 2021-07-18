@@ -11,6 +11,6 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<Facility> GetFacilityWithWorkStationsAsync(Guid id);
+        public Task<Facility> GetFacilityWithWorkStationsAsync(int id);
     }
 }

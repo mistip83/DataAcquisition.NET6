@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Repositories
@@ -11,6 +10,6 @@ namespace DataAcquisition.Interface.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Facility> GetFacilityWithWorkStationsAsync(Guid id);
+        Task<Facility> GetFacilityWithWorkStationsAsync(int id);
     }
 }
