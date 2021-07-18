@@ -11,6 +11,7 @@ namespace DataAcquisition.Model.Entities
         public string Surname { get; set; }
         public string DisplayName { get; set; }
         public DateTime LastLogin { get; set; }
+        public string CompanyName { get; set; }
         public virtual Company Company { get; set; }
         public virtual IEnumerable<Experiment> Experiments { get; set; }
     }

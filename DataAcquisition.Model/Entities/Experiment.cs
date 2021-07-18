@@ -10,7 +10,7 @@ namespace DataAcquisition.Model.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int WorkstationId { get; set; }
-        public int UserId { get; set; }
+        public string Email { get; set; }
         public virtual Workstation WorkStation { get; set; }
         public virtual User User { get; set; }
     }
