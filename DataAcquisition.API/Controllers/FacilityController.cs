@@ -1,6 +1,5 @@
 ﻿using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Model.DTOs;
@@ -26,8 +25,8 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetFacilityInfo(Guid id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetFacilityInfo(int id)
         {
             var facility = await _facilityService.GetByIdAsync(id);
             return Ok(_mapper.Map<FacilityDto>(facility));

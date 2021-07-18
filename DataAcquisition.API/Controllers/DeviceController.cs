@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Interface.Services;
@@ -28,8 +26,8 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GeDeviceInfo(Guid id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GeDeviceInfo(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
             return Ok(_mapper.Map<DeviceDto>(device));
@@ -75,8 +73,8 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id:guid}")]
-        public async Task<IActionResult> DeleteDevice(Guid id)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteDevice(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
             _deviceService.Remove(device);

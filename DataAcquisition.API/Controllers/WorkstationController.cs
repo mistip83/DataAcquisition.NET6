@@ -24,8 +24,8 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetWorkstationInfo(Guid id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetWorkstationInfo(int id)
         {
             var workstation = await _workstationService.GetByIdAsync(id);
             return Ok(_mapper.Map<WorkstationDto>(workstation));
@@ -71,8 +71,8 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id:guid}")]
-        public async Task<IActionResult> DeleteWorkstation(Guid id)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteWorkstation(int id)
         {
             var workstation = await _workstationService.GetByIdAsync(id);
             _workstationService.Remove(workstation);
