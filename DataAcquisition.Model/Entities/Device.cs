@@ -1,5 +1,4 @@
 ﻿using DataAcquisition.Model.Enums;
-using System;
 
 namespace DataAcquisition.Model.Entities
 {

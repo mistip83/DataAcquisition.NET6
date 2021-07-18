@@ -49,7 +49,7 @@ namespace DataAcquisition.Service.Services
             return await _repository.GetAllAsync();
         }
 
-        public async Task<T> GetByIdAsync(Guid id)
+        public async Task<T> GetByIdAsync(int id)
         {
             return await _repository.GetByIdAsync(id);
         }

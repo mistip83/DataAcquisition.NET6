@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
@@ -13,7 +12,7 @@ namespace DataAcquisition.Service.Services
         {
         }
 
-        public async Task<Facility> GetFacilityWithWorkStationsAsync(Guid id)
+        public async Task<Facility> GetFacilityWithWorkStationsAsync(int id)
         {
             return await UnitOfWork.Facilities.GetFacilityWithWorkStationsAsync(id);
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Model.Entities;
@@ -21,12 +20,11 @@ namespace DataAcquisition.Repository.Repositories
         /// <summary>
         /// Implementation detail
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Company> GetCompanyWithFacilitiesAsync(Guid id)
+        public async Task<Company> GetCompanyWithFacilitiesAsync()
         {
             return await AppDbContext.Company.Include(x => x.Facilities)
-                .SingleOrDefaultAsync(x => x.CompanyId == id);
+                .SingleOrDefaultAsync();
         }
 
         /// <summary>
