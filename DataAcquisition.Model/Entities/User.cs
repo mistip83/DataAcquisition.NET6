@@ -9,8 +9,8 @@ namespace DataAcquisition.Model.Entities
         public string Password { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string DisplayName { get; set; }
         public DateTime LastLogin { get; set; }
-        public Guid CompanyId { get; set; }
         public virtual Company Company { get; set; }
         public virtual IEnumerable<Experiment> Experiments { get; set; }
     }
