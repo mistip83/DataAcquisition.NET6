@@ -10,15 +10,10 @@ namespace DataAcquisition.DataAccessEF.Configurations
         {
             builder.HasKey(x => x.WorkstationId);
 
-            // Workstation has many experiments
-            //builder.HasMany(p => p.Experiments)
-            //    .WithOne(p => p.WorkStation)
-            //    .HasForeignKey(p => p.ExperimentId);
-
-            //// Workstation has one facility
-            //builder.HasOne(p => p.Facility)
-            //    .WithMany(p => p.WorkStations)
-            //    .HasForeignKey(p => p.WorkstationId);
+            // Workstation has one facility
+            builder.HasOne(p => p.Facility)
+                .WithMany(p => p.WorkStations)
+                .HasForeignKey(p => p.WorkstationId);
         }
     }
 }

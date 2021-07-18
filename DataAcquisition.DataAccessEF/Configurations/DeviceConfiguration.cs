@@ -24,6 +24,11 @@ namespace DataAcquisition.DataAccessEF.Configurations
             builder.Property(p => p.DeviceType)
                 .HasColumnType("int")
                 .IsRequired();
+
+            // Device has one workstation
+            builder.HasOne(f => f.Workstation)
+                .WithMany(f => f.Devices)
+                .HasForeignKey(f => f.WorkstationId);
         }
     }
 }

@@ -17,10 +17,15 @@ namespace DataAcquisition.DataAccessEF.Configurations
                 .HasMaxLength(100)
                 .IsRequired();
 
-            //// Experiment has one workstation
-            //builder.HasOne(p => p.WorkStation)
-            //    .WithMany(p => p.Experiments)
-            //    .HasForeignKey(p => p.ExperimentId);
+            // Experiment has one workstation
+            builder.HasOne(p => p.WorkStation)
+                .WithMany(p => p.Experiments)
+                .HasForeignKey(p => p.WorkstationId);
+
+            // Experiment has one user
+            builder.HasOne(p => p.User)
+                .WithMany(p => p.Experiments)
+                .HasForeignKey(p => p.UserId);
         }
     }
 }
