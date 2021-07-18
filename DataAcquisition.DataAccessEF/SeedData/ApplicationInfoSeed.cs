@@ -15,7 +15,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                     ApplicationName = "DataAcquisition",
                     Version = "1.0.0",
                     FirstInstallDate = DateTime.Now,
-                    LastUpdateDate = DateTime.Now
+                    LastUpdateDate = DateTime.Now.AddMonths(-3)
                 });
         }
     }
