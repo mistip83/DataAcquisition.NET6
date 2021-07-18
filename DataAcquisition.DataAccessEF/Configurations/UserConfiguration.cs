@@ -22,17 +22,13 @@ namespace DataAcquisition.DataAccessEF.Configurations
                 .IsRequired();
 
             builder.Property(p=>p.DisplayName)
-                .HasComputedColumnSql("[Name] + ', ' + [FirstName]");
+                .HasComputedColumnSql("[Name] + ', ' + [Surname]");
 
             // User has one company
-            //builder.HasOne(p => p.Company)
-            //    .WithMany(p => p.Users)
-            //    .HasForeignKey(p => p.UserId);
+            builder.HasOne(p => p.Company)
+                .WithMany(p => p.Users)
+                .HasForeignKey(p => p.CompanyName);
 
-            //// User has many experiments
-            //builder.HasMany(p => p.Experiments)
-            //    .WithOne(p => p.User)
-            //    .HasForeignKey(p => p.ExperimentId);
         }
     }
 }

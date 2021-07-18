@@ -25,7 +25,7 @@ namespace DataAcquisition.DataAccessEF.Configurations
             // Experiment has one user
             builder.HasOne(p => p.User)
                 .WithMany(p => p.Experiments)
-                .HasForeignKey(p => p.UserId);
+                .HasForeignKey(p => p.Email);
         }
     }
 }
