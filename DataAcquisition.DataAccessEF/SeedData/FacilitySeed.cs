@@ -11,6 +11,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             builder.HasData(
                 new Facility()
                 {
+                    FacilityId = 1,
                     FacilityName = "FacilityA",
                     Address = "V94 H9FF - Limerick",
                     Employees = 65
@@ -19,6 +20,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             builder.HasData(
                 new Facility()
                 {
+                    FacilityId = 2,
                     FacilityName = "FacilityB",
                     Address = "V35 S7BN - Cork",
                     Employees = 140
