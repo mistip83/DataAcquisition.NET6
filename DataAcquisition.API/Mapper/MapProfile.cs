@@ -1,11 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.API.Mapper
 {
     /// <summary>
-    /// Transform entity to dto
+    /// Transform entity to dto or dto to entity
     /// </summary>
     public class MapProfile : Profile
     {
@@ -13,7 +14,6 @@ namespace DataAcquisition.API.Mapper
         {
             CreateMap<Company, CompanyDto>();
             CreateMap<CompanyDto, Company>();
-
             CreateMap<Company, OrganizationDto>();
             CreateMap<OrganizationDto, Company>();
 
@@ -25,7 +25,7 @@ namespace DataAcquisition.API.Mapper
 
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();
-
+            CreateMap<IEnumerable<Facility>, FacilityListDto>();
             CreateMap<Facility, FacilityWithWorkstationsDto>();
             CreateMap<FacilityWithWorkstationsDto, Facility>();
 

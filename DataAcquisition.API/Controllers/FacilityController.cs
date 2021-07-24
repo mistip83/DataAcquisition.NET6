@@ -1,4 +1,7 @@
-﻿using DataAcquisition.Interface.Services;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -12,11 +15,13 @@ namespace DataAcquisition.API.Controllers
     public class FacilityController : ControllerBase
     {
         private readonly IFacilityService _facilityService;
+        private readonly ICompanyService _companyService;
         private readonly IMapper _mapper;
 
-        public FacilityController(IFacilityService facilityService, IMapper mapper)
+        public FacilityController(IFacilityService facilityService, ICompanyService companyService, IMapper mapper)
         {
             _facilityService = facilityService;
+            _companyService = companyService;
             _mapper = mapper;
         }
 
@@ -40,7 +45,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetFacilityList()
         {
             var facility = await _facilityService.GetAllAsync();
-            return Ok(_mapper.Map<FacilityDto>(facility));
+            return Ok(_mapper.Map<IEnumerable<Facility>, IEnumerable<FacilityDto>>(facility));
         }
 
         /// <summary>
@@ -61,9 +66,13 @@ namespace DataAcquisition.API.Controllers
         /// <param name="facilityDto"></param>
         /// <returns></returns>
         [HttpPut("edit-facility")]
-        public IActionResult EditFacility(FacilityDto facilityDto)
+        public async Task<IActionResult> EditFacility(FacilityDto facilityDto)
         {
-            _facilityService.Update(_mapper.Map<Facility>(facilityDto));
+            var facility = _mapper.Map<Facility>(facilityDto);
+            var company = await _companyService.GetCompanyInfoAsync();
+            facility.CompanyName = company.CompanyName;
+
+            _facilityService.Update(facility);
             return NoContent();
         }
     }
