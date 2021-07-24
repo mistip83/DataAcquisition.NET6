@@ -12,14 +12,20 @@ namespace DataAcquisition.API.Mapper
         public MapProfile()
         {
             CreateMap<Company, CompanyDto>();
+            CreateMap<CompanyDto, Company>();
+
             CreateMap<Device, DeviceDto>();
             CreateMap<DeviceDto, Device>();
+
             CreateMap<Experiment, ExperimentDto>();
             CreateMap<ExperimentDto, Experiment>();
+
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();
+
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+
             CreateMap<Workstation, WorkstationDto>();
             CreateMap<WorkstationDto, Workstation>();
         }

@@ -4,6 +4,7 @@ namespace DataAcquisition.Model.DTOs
 {
     public class ExperimentDto
     {
+        public int ExperimentId { get; set; }
         public string ExperimentName { get; set; }
         public string ExperimentDescription { get; set; }
         public DateTime StartDate { get; set; }

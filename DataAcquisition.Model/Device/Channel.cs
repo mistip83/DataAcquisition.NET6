@@ -1,6 +1,6 @@
 ﻿namespace DataAcquisition.Model.Device
 {
-    public class ChannelInfo
+    public class Channel
     {
         public int ChannelId { get; set; }
         public string ChannelName { get; set; }

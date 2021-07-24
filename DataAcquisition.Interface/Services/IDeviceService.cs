@@ -5,7 +5,7 @@ namespace DataAcquisition.Interface.Services
 {
     public interface IDeviceService : IService<Device>
     {
-        ChannelInfo GetDeviceChannelInfo();
+        Channel GetDeviceChannelInfo();
         void CalibrateDevice();
     }
 }

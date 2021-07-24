@@ -16,7 +16,7 @@ namespace DataAcquisition.Service.DatabaseServices
         {
         }
 
-        public ChannelInfo GetDeviceChannelInfo()
+        public Channel GetDeviceChannelInfo()
         {
             throw new NotImplementedException();
         }

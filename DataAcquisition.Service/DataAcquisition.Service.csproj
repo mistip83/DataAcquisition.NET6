@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj" />
     <ProjectReference Include="..\DataAcquisition.Interface\DataAcquisition.Interface.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="LicenseService\" />
   </ItemGroup>
 
 </Project>
