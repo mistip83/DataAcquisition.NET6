@@ -38,7 +38,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetOrganizationLayout()
         {
             var organizationLayout = await _companyService.GetOrganizationLayoutAsync();
-            return Ok(organizationLayout);
+            return Ok(_mapper.Map<OrganizationDto>(organizationLayout));
         }
     }
 }

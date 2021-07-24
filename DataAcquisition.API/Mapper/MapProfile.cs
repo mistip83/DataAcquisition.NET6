@@ -14,6 +14,9 @@ namespace DataAcquisition.API.Mapper
             CreateMap<Company, CompanyDto>();
             CreateMap<CompanyDto, Company>();
 
+            CreateMap<Company, OrganizationDto>();
+            CreateMap<OrganizationDto, Company>();
+
             CreateMap<Device, DeviceDto>();
             CreateMap<DeviceDto, Device>();
 
@@ -22,6 +25,9 @@ namespace DataAcquisition.API.Mapper
 
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();
+
+            CreateMap<Facility, FacilityWithWorkstationsDto>();
+            CreateMap<FacilityWithWorkstationsDto, Facility>();
 
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
