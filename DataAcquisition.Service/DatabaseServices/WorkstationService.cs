@@ -1,11 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using DataAcquisition.Interface.UnitOfWorks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
+using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Model.Entities;
 
-namespace DataAcquisition.Service.Services
+namespace DataAcquisition.Service.DatabaseServices
 {
     /// <summary>
     /// Communicate with the API

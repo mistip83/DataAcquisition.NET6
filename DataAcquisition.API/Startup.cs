@@ -8,9 +8,9 @@ using Microsoft.Extensions.Hosting;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Repository.Repositories;
-using DataAcquisition.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using DataAcquisition.DataAccessEF.DataAccess;
+using DataAcquisition.Service.DatabaseServices;
 
 namespace DataAcquisition.API
 {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
+using DataAcquisition.Interface.UnitOfWorks;
 
-namespace DataAcquisition.Service.Services
+namespace DataAcquisition.Service.DatabaseServices
 {
     /// <summary>
     /// Base class for other service classes

@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
+using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Model.Entities;
 
-namespace DataAcquisition.Service.Services
+namespace DataAcquisition.Service.DatabaseServices
 {
     public class FacilityService : Service<Facility>, IFacilityService
     {
