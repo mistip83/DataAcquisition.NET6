@@ -8,9 +8,4 @@
     <ProjectReference Include="..\DataAcquisition.Interface\DataAcquisition.Interface.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ConcreteDecorator\" />
-    <Folder Include="Decorator\" />
-  </ItemGroup>
-
 </Project>

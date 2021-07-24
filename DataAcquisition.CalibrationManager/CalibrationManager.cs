@@ -2,7 +2,7 @@
 using DataAcquisition.Interface.CalibrationManager;
 using DataAcquisition.Interface.DeviceManager;
 
-namespace DataAcquisition.CalibrationManager.ConcreteComponent
+namespace DataAcquisition.CalibrationManager
 {
     public class CalibrationManager : ICalibrationManager
     {

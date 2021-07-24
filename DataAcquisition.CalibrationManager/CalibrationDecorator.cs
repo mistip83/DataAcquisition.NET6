@@ -1,6 +1,6 @@
 ﻿using DataAcquisition.Interface.CalibrationManager;
 
-namespace DataAcquisition.CalibrationManager.Decorator
+namespace DataAcquisition.CalibrationManager
 {
     public abstract class CalibrationDecorator : ICalibrationManager
     {

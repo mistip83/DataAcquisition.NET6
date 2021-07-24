@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Timers;
-using DataAcquisition.CalibrationManager.Decorator;
 using DataAcquisition.Interface.CalibrationManager;
 
-namespace DataAcquisition.CalibrationManager.ConcreteDecorator
+namespace DataAcquisition.CalibrationManager
 {
     public class TemperatureCalibration : CalibrationDecorator
     {
