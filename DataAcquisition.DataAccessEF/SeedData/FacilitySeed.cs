@@ -14,7 +14,8 @@ namespace DataAcquisition.DataAccessEF.SeedData
                     FacilityId = 1,
                     FacilityName = "FacilityA",
                     Address = "V94 H9FF - Limerick",
-                    Employees = 65
+                    Employees = 65,
+                    CompanyName = "AcmeCompany"
                 });
 
             builder.HasData(
@@ -23,7 +24,8 @@ namespace DataAcquisition.DataAccessEF.SeedData
                     FacilityId = 2,
                     FacilityName = "FacilityB",
                     Address = "V35 S7BN - Cork",
-                    Employees = 140
+                    Employees = 140,
+                    CompanyName = "AcmeCompany"
                 });
         }
     }

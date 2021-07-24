@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAcquisition.DataAccessEF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210718121104_InitialDbCreation")]
+    [Migration("20210724101121_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 7, 18, 15, 11, 4, 94, DateTimeKind.Local).AddTicks(6414),
-                            LastUpdateDate = new DateTime(2021, 4, 18, 15, 11, 4, 95, DateTimeKind.Local).AddTicks(6422),
+                            FirstInstallDate = new DateTime(2021, 7, 24, 13, 11, 20, 760, DateTimeKind.Local).AddTicks(1644),
+                            LastUpdateDate = new DateTime(2021, 6, 24, 13, 11, 20, 761, DateTimeKind.Local).AddTicks(2115),
                             Version = "1.0.0"
                         });
                 });
@@ -84,6 +84,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Property<int>("DeviceType")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("WorkstationId")
                         .HasColumnType("int");
 
@@ -114,6 +117,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -163,6 +169,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         {
                             FacilityId = 1,
                             Address = "V94 H9FF - Limerick",
+                            CompanyName = "AcmeCompany",
                             Employees = 65,
                             FacilityName = "FacilityA"
                         },
@@ -170,6 +177,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         {
                             FacilityId = 2,
                             Address = "V35 S7BN - Cork",
+                            CompanyName = "AcmeCompany",
                             Employees = 140,
                             FacilityName = "FacilityB"
                         });
@@ -230,6 +238,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Property<int>("FacilityId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("WorkstationDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -271,9 +282,11 @@ namespace DataAcquisition.DataAccessEF.Migrations
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.Facility", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.Company", null)
+                    b.HasOne("DataAcquisition.Model.Entities.Company", "Company")
                         .WithMany("Facilities")
                         .HasForeignKey("CompanyName");
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.User", b =>
