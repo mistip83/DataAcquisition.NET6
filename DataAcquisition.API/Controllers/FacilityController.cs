@@ -44,6 +44,18 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
+        /// Returns Facility with workstations
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id:int}/workstations")]
+        public async Task<IActionResult> GetFacilityWithWorkStations(int id)
+        {
+            var facilityWithWorkstations = await _facilityService.GetFacilityWithWorkStationsAsync(id);
+            return Ok(_mapper.Map<FacilityWithWorkstationsDto>(facilityWithWorkstations));
+        }
+
+        /// <summary>
         /// Edits Facility Properties
         /// </summary>
         /// <param name="facilityDto"></param>
