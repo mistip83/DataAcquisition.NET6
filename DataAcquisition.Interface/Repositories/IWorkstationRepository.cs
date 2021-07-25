@@ -10,6 +10,6 @@ namespace DataAcquisition.Interface.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<Workstation> GetWorkstationWithExperimentsAsync(int id);
+        Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id);
     }
 }

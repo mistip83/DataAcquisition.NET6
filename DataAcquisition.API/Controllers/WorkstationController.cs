@@ -46,6 +46,18 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
+        /// Returns Workstation with devices and experiments
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id:int}/devices-experiments")]
+        public async Task<IActionResult> GetWorkstationWithDevicesAndExperiments(int id)
+        {
+            var workstationList = await _workstationService.GetWorkstationWithDevicesAndExperimentsAsync(id);
+            return Ok(_mapper.Map<WorkstationWithDevicesAndExps>(workstationList));
+        }
+
+        /// <summary>
         /// Edits Workstation properties
         /// </summary>
         /// <param name="workstationDto"></param>

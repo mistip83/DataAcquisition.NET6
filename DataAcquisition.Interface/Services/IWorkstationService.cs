@@ -10,6 +10,6 @@ namespace DataAcquisition.Interface.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Task<Workstation> GetWorkstationWithExperimentsAsync(int id);
+        public Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id);
     }
 }

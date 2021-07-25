@@ -18,9 +18,13 @@ namespace DataAcquisition.API.Mapper
 
             CreateMap<Device, DeviceDto>();
             CreateMap<DeviceDto, Device>();
+            CreateMap<Device, DeviceNameDto>();
+            CreateMap<DeviceNameDto, Device>();
 
             CreateMap<Experiment, ExperimentDto>();
             CreateMap<ExperimentDto, Experiment>();
+            CreateMap<Experiment, ExperimentNameDto>();
+            CreateMap<ExperimentNameDto, Experiment>();
 
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();
@@ -32,6 +36,8 @@ namespace DataAcquisition.API.Mapper
 
             CreateMap<Workstation, WorkstationDto>();
             CreateMap<WorkstationDto, Workstation>();
+            CreateMap<Workstation, WorkstationWithDevicesAndExps>();
+            CreateMap<WorkstationWithDevicesAndExps, Workstation>();
         }
     }
 }
