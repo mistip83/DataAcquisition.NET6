@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Interface.Services

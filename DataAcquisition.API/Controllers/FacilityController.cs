@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

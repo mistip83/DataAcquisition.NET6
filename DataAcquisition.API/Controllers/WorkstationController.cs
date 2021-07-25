@@ -8,7 +8,9 @@ using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.API.Controllers
 {
-    public class WorkstationController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class WorkstationController : ControllerBase
     {
         private readonly IWorkstationService _workstationService;
         private readonly IMapper _mapper;
