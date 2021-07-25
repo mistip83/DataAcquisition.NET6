@@ -108,7 +108,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     DeviceName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DeviceType = table.Column<int>(type: "int", nullable: false),
                     ConnectionType = table.Column<int>(type: "int", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     WorkstationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -132,7 +131,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     ExperimentDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     WorkstationId = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", nullable: true)
                 },
@@ -156,7 +154,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 5, 10, 8, 359, DateTimeKind.Local).AddTicks(6049), new DateTime(2021, 6, 25, 5, 10, 8, 360, DateTimeKind.Local).AddTicks(6430), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 17, 48, 23, 819, DateTimeKind.Local).AddTicks(8005), new DateTime(2021, 6, 25, 17, 48, 23, 820, DateTimeKind.Local).AddTicks(7665), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",
@@ -177,6 +175,40 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 table: "Facility",
                 columns: new[] { "FacilityId", "Address", "CompanyName", "Employees", "FacilityName" },
                 values: new object[] { 2, "V35 S7BN - Cork", "AcmeCompany", 140, "FacilityB" });
+
+            migrationBuilder.InsertData(
+                table: "Workstation",
+                columns: new[] { "WorkstationId", "FacilityId", "IsDeleted", "WorkstationDescription", "WorkstationName" },
+                values: new object[,]
+                {
+                    { 1, 1, false, "Lab4", "Workstation1" },
+                    { 2, 1, false, "Lab4", "Workstation2" },
+                    { 3, 1, false, "Lab7", "Workstation3" },
+                    { 4, 2, false, "ProductionLine", "Workstation4" },
+                    { 5, 2, false, "ProductionLine", "Workstation5" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Device",
+                columns: new[] { "DeviceId", "ConnectionType", "DeviceName", "DeviceType", "WorkstationId" },
+                values: new object[,]
+                {
+                    { 1, 1, "DAQ1", 1, 1 },
+                    { 2, 1, "NetworkAnalyzer1", 4, 1 },
+                    { 3, 2, "EnergyAnalyzer1", 2, 1 },
+                    { 4, 2, "EnergyAnalyzer2", 2, 1 },
+                    { 5, 3, "DigitalMultimeter1", 3, 1 },
+                    { 6, 3, "DigitalMultimeter2", 3, 1 },
+                    { 7, 3, "DigitalMultimeter3", 3, 1 },
+                    { 8, 1, "DAQ1", 1, 2 },
+                    { 9, 1, "DAQ2", 1, 2 },
+                    { 10, 2, "EnergyAnalyzer1", 2, 3 },
+                    { 11, 3, "DigitalMultimeter1", 3, 4 },
+                    { 12, 3, "DigitalMultimeter2", 3, 4 },
+                    { 14, 3, "DigitalMultimeter1", 3, 4 },
+                    { 15, 3, "DigitalMultimeter2", 3, 4 },
+                    { 13, 2, "EnergyAnalyzer1", 2, 5 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Device_WorkstationId",

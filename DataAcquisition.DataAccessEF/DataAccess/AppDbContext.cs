@@ -34,6 +34,8 @@ namespace DataAcquisition.DataAccessEF.DataAccess
             modelBuilder.ApplyConfiguration(new ApplicationInfoSeed());
             modelBuilder.ApplyConfiguration(new CompanySeed());
             modelBuilder.ApplyConfiguration(new FacilitySeed());
+            modelBuilder.ApplyConfiguration(new WorkstationSeed());
+            modelBuilder.ApplyConfiguration(new DeviceSeed());
             modelBuilder.ApplyConfiguration(new UserSeed());
         }
     }

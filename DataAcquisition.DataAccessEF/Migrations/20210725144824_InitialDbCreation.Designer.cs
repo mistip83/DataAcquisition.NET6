@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAcquisition.DataAccessEF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210725021008_InitialDbCreation")]
+    [Migration("20210725144824_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 7, 25, 5, 10, 8, 359, DateTimeKind.Local).AddTicks(6049),
-                            LastUpdateDate = new DateTime(2021, 6, 25, 5, 10, 8, 360, DateTimeKind.Local).AddTicks(6430),
+                            FirstInstallDate = new DateTime(2021, 7, 25, 17, 48, 23, 819, DateTimeKind.Local).AddTicks(8005),
+                            LastUpdateDate = new DateTime(2021, 6, 25, 17, 48, 23, 820, DateTimeKind.Local).AddTicks(7665),
                             Version = "1.0.0"
                         });
                 });
@@ -84,9 +84,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Property<int>("DeviceType")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<int>("WorkstationId")
                         .HasColumnType("int");
 
@@ -95,6 +92,128 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.HasIndex("WorkstationId");
 
                     b.ToTable("Device");
+
+                    b.HasData(
+                        new
+                        {
+                            DeviceId = 1,
+                            ConnectionType = 1,
+                            DeviceName = "DAQ1",
+                            DeviceType = 1,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 2,
+                            ConnectionType = 1,
+                            DeviceName = "NetworkAnalyzer1",
+                            DeviceType = 4,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 3,
+                            ConnectionType = 2,
+                            DeviceName = "EnergyAnalyzer1",
+                            DeviceType = 2,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 4,
+                            ConnectionType = 2,
+                            DeviceName = "EnergyAnalyzer2",
+                            DeviceType = 2,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 5,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter1",
+                            DeviceType = 3,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 6,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter2",
+                            DeviceType = 3,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 7,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter3",
+                            DeviceType = 3,
+                            WorkstationId = 1
+                        },
+                        new
+                        {
+                            DeviceId = 8,
+                            ConnectionType = 1,
+                            DeviceName = "DAQ1",
+                            DeviceType = 1,
+                            WorkstationId = 2
+                        },
+                        new
+                        {
+                            DeviceId = 9,
+                            ConnectionType = 1,
+                            DeviceName = "DAQ2",
+                            DeviceType = 1,
+                            WorkstationId = 2
+                        },
+                        new
+                        {
+                            DeviceId = 10,
+                            ConnectionType = 2,
+                            DeviceName = "EnergyAnalyzer1",
+                            DeviceType = 2,
+                            WorkstationId = 3
+                        },
+                        new
+                        {
+                            DeviceId = 11,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter1",
+                            DeviceType = 3,
+                            WorkstationId = 4
+                        },
+                        new
+                        {
+                            DeviceId = 12,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter2",
+                            DeviceType = 3,
+                            WorkstationId = 4
+                        },
+                        new
+                        {
+                            DeviceId = 13,
+                            ConnectionType = 2,
+                            DeviceName = "EnergyAnalyzer1",
+                            DeviceType = 2,
+                            WorkstationId = 5
+                        },
+                        new
+                        {
+                            DeviceId = 14,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter1",
+                            DeviceType = 3,
+                            WorkstationId = 4
+                        },
+                        new
+                        {
+                            DeviceId = 15,
+                            ConnectionType = 3,
+                            DeviceName = "DigitalMultimeter2",
+                            DeviceType = 3,
+                            WorkstationId = 4
+                        });
                 });
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.Experiment", b =>
@@ -117,9 +236,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -254,6 +370,48 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.HasIndex("FacilityId");
 
                     b.ToTable("Workstation");
+
+                    b.HasData(
+                        new
+                        {
+                            WorkstationId = 1,
+                            FacilityId = 1,
+                            IsDeleted = false,
+                            WorkstationDescription = "Lab4",
+                            WorkstationName = "Workstation1"
+                        },
+                        new
+                        {
+                            WorkstationId = 2,
+                            FacilityId = 1,
+                            IsDeleted = false,
+                            WorkstationDescription = "Lab4",
+                            WorkstationName = "Workstation2"
+                        },
+                        new
+                        {
+                            WorkstationId = 3,
+                            FacilityId = 1,
+                            IsDeleted = false,
+                            WorkstationDescription = "Lab7",
+                            WorkstationName = "Workstation3"
+                        },
+                        new
+                        {
+                            WorkstationId = 4,
+                            FacilityId = 2,
+                            IsDeleted = false,
+                            WorkstationDescription = "ProductionLine",
+                            WorkstationName = "Workstation4"
+                        },
+                        new
+                        {
+                            WorkstationId = 5,
+                            FacilityId = 2,
+                            IsDeleted = false,
+                            WorkstationDescription = "ProductionLine",
+                            WorkstationName = "Workstation5"
+                        });
                 });
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.Device", b =>
