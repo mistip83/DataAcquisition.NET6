@@ -2,9 +2,9 @@
 {
     public enum DeviceType
     {
-        DataAcquisition,
-        EnergyAnalyzer,
-        DigitalMultimeter,
-        NetworkAnalyzer
+        DataAcquisition = 1,
+        EnergyAnalyzer = 2,
+        DigitalMultimeter = 3,
+        NetworkAnalyzer = 4
     }
 }

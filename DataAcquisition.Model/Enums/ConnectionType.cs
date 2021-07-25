@@ -2,8 +2,8 @@
 {
     public enum ConnectionType
     {
-        TcpIp,
-        Usb,
-        Rs485
+        TcpIp = 1,
+        Usb = 2,
+        Rs485 = 3
     }
 }

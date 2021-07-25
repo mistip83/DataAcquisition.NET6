@@ -74,7 +74,7 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id:int}")]
+        [HttpDelete("delete-device/{id:int}")]
         public async Task<IActionResult> DeleteDevice(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
