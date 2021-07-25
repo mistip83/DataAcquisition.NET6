@@ -22,10 +22,9 @@ namespace DataAcquisition.Repository.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id)
+        public async Task<Workstation> GetWorkstationWithExperimentsAsync(int id)
         {
-            return await AppDbContext.Workstation.Include(x => x.Devices)
-                .Include(x=>x.Experiments)
+            return await AppDbContext.Workstation.Include(x => x.Experiments)
                 .SingleOrDefaultAsync(x => x.WorkstationId == id);
         }
     }
