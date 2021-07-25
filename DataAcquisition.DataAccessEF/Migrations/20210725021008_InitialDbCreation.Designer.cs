@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAcquisition.DataAccessEF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210724101121_InitialDbCreation")]
+    [Migration("20210725021008_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 7, 24, 13, 11, 20, 760, DateTimeKind.Local).AddTicks(1644),
-                            LastUpdateDate = new DateTime(2021, 6, 24, 13, 11, 20, 761, DateTimeKind.Local).AddTicks(2115),
+                            FirstInstallDate = new DateTime(2021, 7, 25, 5, 10, 8, 359, DateTimeKind.Local).AddTicks(6049),
+                            LastUpdateDate = new DateTime(2021, 6, 25, 5, 10, 8, 360, DateTimeKind.Local).AddTicks(6430),
                             Version = "1.0.0"
                         });
                 });
@@ -233,7 +233,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
             modelBuilder.Entity("DataAcquisition.Model.Entities.Workstation", b =>
                 {
                     b.Property<int>("WorkstationId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("FacilityId")
                         .HasColumnType("int");
@@ -248,6 +250,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("WorkstationId");
+
+                    b.HasIndex("FacilityId");
 
                     b.ToTable("Workstation");
                 });
@@ -302,7 +306,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 {
                     b.HasOne("DataAcquisition.Model.Entities.Facility", "Facility")
                         .WithMany("WorkStations")
-                        .HasForeignKey("WorkstationId")
+                        .HasForeignKey("FacilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

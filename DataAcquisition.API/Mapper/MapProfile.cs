@@ -25,7 +25,6 @@ namespace DataAcquisition.API.Mapper
 
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();
-            CreateMap<IEnumerable<Facility>, FacilityListDto>();
             CreateMap<Facility, FacilityWithWorkstationsDto>();
             CreateMap<FacilityWithWorkstationsDto, Facility>();
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Interface.Services;
@@ -41,7 +42,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetWorkstationList()
         {
             var workstationList = await _workstationService.GetAllAsync();
-            return Ok(_mapper.Map<IEquatable<WorkstationDto>>(workstationList));
+            return Ok(_mapper.Map<IEnumerable<Workstation>, IEnumerable<WorkstationDto>>(workstationList));
         }
 
         /// <summary>

@@ -81,7 +81,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 name: "Workstation",
                 columns: table => new
                 {
-                    WorkstationId = table.Column<int>(type: "int", nullable: false),
+                    WorkstationId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     WorkstationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WorkstationDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -91,8 +92,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 {
                     table.PrimaryKey("PK_Workstation", x => x.WorkstationId);
                     table.ForeignKey(
-                        name: "FK_Workstation_Facility_WorkstationId",
-                        column: x => x.WorkstationId,
+                        name: "FK_Workstation_Facility_FacilityId",
+                        column: x => x.FacilityId,
                         principalTable: "Facility",
                         principalColumn: "FacilityId",
                         onDelete: ReferentialAction.Cascade);
@@ -155,7 +156,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 24, 13, 11, 20, 760, DateTimeKind.Local).AddTicks(1644), new DateTime(2021, 6, 24, 13, 11, 20, 761, DateTimeKind.Local).AddTicks(2115), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 5, 10, 8, 359, DateTimeKind.Local).AddTicks(6049), new DateTime(2021, 6, 25, 5, 10, 8, 360, DateTimeKind.Local).AddTicks(6430), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",
@@ -201,6 +202,11 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 name: "IX_User_CompanyName",
                 table: "User",
                 column: "CompanyName");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Workstation_FacilityId",
+                table: "Workstation",
+                column: "FacilityId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
