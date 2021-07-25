@@ -129,6 +129,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExperimentName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ExperimentDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ExperimentDataId = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     WorkstationId = table.Column<int>(type: "int", nullable: false),
@@ -154,7 +155,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 17, 48, 23, 819, DateTimeKind.Local).AddTicks(8005), new DateTime(2021, 6, 25, 17, 48, 23, 820, DateTimeKind.Local).AddTicks(7665), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 20, 14, 51, 832, DateTimeKind.Local).AddTicks(3966), new DateTime(2021, 6, 25, 20, 14, 51, 833, DateTimeKind.Local).AddTicks(4030), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",

@@ -41,8 +41,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 7, 25, 17, 48, 23, 819, DateTimeKind.Local).AddTicks(8005),
-                            LastUpdateDate = new DateTime(2021, 6, 25, 17, 48, 23, 820, DateTimeKind.Local).AddTicks(7665),
+                            FirstInstallDate = new DateTime(2021, 7, 25, 20, 14, 51, 832, DateTimeKind.Local).AddTicks(3966),
+                            LastUpdateDate = new DateTime(2021, 6, 25, 20, 14, 51, 833, DateTimeKind.Local).AddTicks(4030),
                             Version = "1.0.0"
                         });
                 });
@@ -226,6 +226,10 @@ namespace DataAcquisition.DataAccessEF.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ExperimentDataId")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("ExperimentDescription")
                         .HasColumnType("nvarchar(max)");
