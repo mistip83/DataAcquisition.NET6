@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -18,8 +18,8 @@ namespace DataAcquisition.API.Controllers
 
         public WorkstationController(IWorkstationService workstationService, IMapper mapper)
         {
-            _workstationService = workstationService;
-            _mapper = mapper;
+            _workstationService = workstationService ?? throw new ArgumentNullException(nameof(workstationService));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id:int}")]
+        [HttpDelete("delete-workstation/{id:int}")]
         public async Task<IActionResult> DeleteWorkstation(int id)
         {
             var workstation = await _workstationService.GetByIdAsync(id);

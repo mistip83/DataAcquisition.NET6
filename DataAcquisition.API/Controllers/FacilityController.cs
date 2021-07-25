@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAcquisition.Interface;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
@@ -13,14 +15,14 @@ namespace DataAcquisition.API.Controllers
     public class FacilityController : ControllerBase
     {
         private readonly IFacilityService _facilityService;
-        private readonly ICompanyService _companyService;
+        private readonly IAppConfiguration _appConfiguration;
         private readonly IMapper _mapper;
 
-        public FacilityController(IFacilityService facilityService, ICompanyService companyService, IMapper mapper)
+        public FacilityController(IFacilityService facilityService, IAppConfiguration appConfiguration, IMapper mapper)
         {
-            _facilityService = facilityService;
-            _companyService = companyService;
-            _mapper = mapper;
+            _facilityService = facilityService ?? throw new ArgumentNullException(nameof(facilityService));
+            _appConfiguration = appConfiguration ?? throw new ArgumentNullException(nameof(appConfiguration));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
@@ -64,11 +66,10 @@ namespace DataAcquisition.API.Controllers
         /// <param name="facilityDto"></param>
         /// <returns></returns>
         [HttpPut("edit-facility")]
-        public async Task<IActionResult> EditFacility(FacilityDto facilityDto)
+        public IActionResult EditFacility(FacilityDto facilityDto)
         {
             var facility = _mapper.Map<Facility>(facilityDto);
-            var company = await _companyService.GetCompanyInfoAsync();
-            facility.CompanyName = company.CompanyName;
+            facility.CompanyName = _appConfiguration.GetCompanyName();
 
             _facilityService.Update(facility);
             return NoContent();

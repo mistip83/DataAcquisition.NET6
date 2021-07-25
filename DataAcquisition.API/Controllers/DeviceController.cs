@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -17,8 +18,8 @@ namespace DataAcquisition.API.Controllers
 
         public DeviceController(IDeviceService deviceService, IMapper mapper)
         {
-            _deviceService = deviceService;
-            _mapper = mapper;
+            _deviceService = deviceService ?? throw new ArgumentNullException(nameof(deviceService));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>

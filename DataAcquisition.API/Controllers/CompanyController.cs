@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Interface.Services;
@@ -15,8 +16,8 @@ namespace DataAcquisition.API.Controllers
 
         public CompanyController(ICompanyService companyService, IMapper mapper)
         {
-            _mapper = mapper;
-            _companyService = companyService;
+            _companyService = companyService ?? throw new ArgumentNullException(nameof(companyService));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>

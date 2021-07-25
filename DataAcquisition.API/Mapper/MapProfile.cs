@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
 
