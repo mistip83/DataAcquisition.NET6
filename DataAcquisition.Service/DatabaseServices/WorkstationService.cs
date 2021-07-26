@@ -20,9 +20,9 @@ namespace DataAcquisition.Service.DatabaseServices
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<Workstation> GetWorkstationWithExperimentsAsync(int id)
+        public async Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id)
         {
-            return await UnitOfWork.Workstations.GetWorkstationWithExperimentsAsync(id);
+            return await UnitOfWork.Workstations.GetWorkstationWithDevicesAndExperimentsAsync(id);
         }
     }
 }
