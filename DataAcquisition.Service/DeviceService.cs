@@ -5,7 +5,7 @@ using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Model.Device;
 using DataAcquisition.Model.Entities;
 
-namespace DataAcquisition.Service.DatabaseServices
+namespace DataAcquisition.Service
 {
     /// <summary>
     /// Communicate with the API

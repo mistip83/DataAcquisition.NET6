@@ -4,7 +4,7 @@ using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Repository.Repositories;
 using DataAcquisition.Repository.UnitOfWork;
-using DataAcquisition.Service.DatabaseServices;
+using DataAcquisition.Service;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAcquisition.API.Dependencies

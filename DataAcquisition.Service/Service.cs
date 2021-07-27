@@ -6,7 +6,7 @@ using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;
 
-namespace DataAcquisition.Service.DatabaseServices
+namespace DataAcquisition.Service
 {
     /// <summary>
     /// Base class for other service classes
