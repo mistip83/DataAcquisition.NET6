@@ -10,13 +10,19 @@ namespace DataAcquisition.CalibrationManager
 
         public CalibrationManager(IDeviceManager deviceManager)
         {
-            _deviceManager = deviceManager;
+            _deviceManager = deviceManager ?? throw new ArgumentNullException(nameof(deviceManager));
         }
 
-        public double GetCalibrationData(int channelAddress)
+        public ICalibration CreateEnergyCalibrator()
         {
-            var rawData = _deviceManager.ReadData(channelAddress);
-            return BitConverter.ToDouble(rawData);
+            ICalibration energyCalibrator = new BaseCalibration(_deviceManager);
+            return energyCalibrator;
+        }
+
+        public ICalibration CreateTemperatureCalibrator()
+        {
+            ICalibration energyCalibrator = new TemperatureCalibration(new BaseCalibration(_deviceManager));
+            return energyCalibrator;
         }
     }
 }

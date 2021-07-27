@@ -2,6 +2,7 @@
 {
     public interface ICalibrationManager
     {
-        double GetCalibrationData(int channelAddress);
+        public ICalibration CreateEnergyCalibrator();
+        public ICalibration CreateTemperatureCalibrator();
     }
 }

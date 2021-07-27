@@ -7,7 +7,7 @@ namespace DataAcquisition.CalibrationManager
     public class TemperatureCalibration : CalibrationDecorator
     {
         private static Timer _timer;
-        public TemperatureCalibration(ICalibrationManager calibrationManager) : base(calibrationManager)
+        public TemperatureCalibration(ICalibration calibration) : base(calibration)
         {
         }
 

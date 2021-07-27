@@ -2,18 +2,18 @@
 
 namespace DataAcquisition.CalibrationManager
 {
-    public abstract class CalibrationDecorator : ICalibrationManager
+    public abstract class CalibrationDecorator : ICalibration
     {
-        private readonly ICalibrationManager _calibrationManager;
+        private readonly ICalibration _calibrator;
 
-        protected CalibrationDecorator(ICalibrationManager calibrationManager)
+        protected CalibrationDecorator(ICalibration calibrator)
         {
-            _calibrationManager = calibrationManager;
+            _calibrator = calibrator;
         }
 
         public virtual double GetCalibrationData(int channelAddress)
         {
-            return _calibrationManager.GetCalibrationData(channelAddress);
+            return _calibrator.GetCalibrationData(channelAddress);
         }
     }
 }
