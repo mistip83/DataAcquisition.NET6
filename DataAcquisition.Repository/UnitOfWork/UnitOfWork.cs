@@ -16,11 +16,13 @@ namespace DataAcquisition.Repository.UnitOfWork
         private CompanyRepository _companyRepository;
         private FacilityReposity _facilityRepository;
         private WorkstationRepository _workstationRepository;
+        private Exper
 
         public IUserRepository Users => _userRepository ??= new UserRepository(_context);
         public ICompanyRepository Company => _companyRepository ??= new CompanyRepository(_context);
         public IFacilityRepository Facilities => _facilityRepository ??= new FacilityReposity(_context); 
         public IWorkstationRepository Workstations => _workstationRepository ??= new WorkstationRepository(_context);
+        public IExperimentRepository Experiments => throw new System.NotImplementedException();
 
         public UnitOfWork(AppDbContext appDbContext)
         {

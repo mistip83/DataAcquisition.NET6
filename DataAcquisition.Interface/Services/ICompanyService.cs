@@ -8,7 +8,6 @@ namespace DataAcquisition.Interface.Services
         /// <summary>
         /// Returns company entity with its facilities
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         Task<Company> GetCompanyWithFacilitiesAsync();
 

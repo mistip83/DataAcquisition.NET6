@@ -9,6 +9,7 @@ namespace DataAcquisition.Interface.UnitOfWorks
         ICompanyRepository Company { get; }
         IFacilityRepository Facilities { get; }
         IWorkstationRepository Workstations { get; }
+        IExperimentRepository Experiments { get; }
         Task CommitAsync();
         void Commit();
     }

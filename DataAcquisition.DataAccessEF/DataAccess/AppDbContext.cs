@@ -13,6 +13,7 @@ namespace DataAcquisition.DataAccessEF.DataAccess
 
         public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
         public DbSet<Experiment> Experiment { get; set; }
+        public DbSet<ExperimentData> ExperimentData { get; set; }
         public DbSet<Facility> Facility { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<User> User { get; set; }
