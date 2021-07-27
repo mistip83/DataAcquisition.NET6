@@ -28,7 +28,7 @@ namespace DataAcquisition.API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GeDeviceInfo(int id)
+        public async Task<IActionResult> GetDeviceInfo(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
             return Ok(_mapper.Map<DeviceDto>(device));
