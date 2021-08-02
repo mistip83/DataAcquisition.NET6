@@ -22,7 +22,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             {
                 DeviceId = 2,
                 DeviceName = "NetworkAnalyzer1",
-                DeviceType = DeviceType.NetworkAnalyzer,
+                DeviceType = DeviceType.SpectrumAnalyzer,
                 ConnectionType = ConnectionType.TcpIp,
                 WorkstationId = 1
             });

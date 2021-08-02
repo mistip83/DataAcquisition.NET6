@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAcquisition.DataAccessEF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210725171452_InitialDbCreation")]
+    [Migration("20210802044010_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 7, 25, 20, 14, 51, 832, DateTimeKind.Local).AddTicks(3966),
-                            LastUpdateDate = new DateTime(2021, 6, 25, 20, 14, 51, 833, DateTimeKind.Local).AddTicks(4030),
+                            FirstInstallDate = new DateTime(2021, 8, 2, 7, 40, 10, 72, DateTimeKind.Local).AddTicks(8015),
+                            LastUpdateDate = new DateTime(2021, 7, 2, 7, 40, 10, 73, DateTimeKind.Local).AddTicks(7475),
                             Version = "1.0.0"
                         });
                 });
@@ -254,6 +254,27 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.HasIndex("WorkstationId");
 
                     b.ToTable("Experiment");
+                });
+
+            modelBuilder.Entity("DataAcquisition.Model.Entities.ExperimentData", b =>
+                {
+                    b.Property<int>("ExperimentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ChannelNames")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChannelUnits")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ExperimentId");
+
+                    b.ToTable("ExperimentData");
                 });
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.Facility", b =>

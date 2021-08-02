@@ -33,6 +33,21 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ExperimentData",
+                columns: table => new
+                {
+                    ExperimentId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ChannelNames = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ChannelUnits = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Data = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExperimentData", x => x.ExperimentId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Facility",
                 columns: table => new
                 {
@@ -155,7 +170,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 7, 25, 20, 14, 51, 832, DateTimeKind.Local).AddTicks(3966), new DateTime(2021, 6, 25, 20, 14, 51, 833, DateTimeKind.Local).AddTicks(4030), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 8, 2, 7, 40, 10, 72, DateTimeKind.Local).AddTicks(8015), new DateTime(2021, 7, 2, 7, 40, 10, 73, DateTimeKind.Local).AddTicks(7475), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",
@@ -252,6 +267,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
 
             migrationBuilder.DropTable(
                 name: "Experiment");
+
+            migrationBuilder.DropTable(
+                name: "ExperimentData");
 
             migrationBuilder.DropTable(
                 name: "User");

@@ -25,6 +25,7 @@ namespace DataAcquisition.DataAccessEF.DataAccess
             // Apply configurations
             modelBuilder.ApplyConfiguration(new ApplicationInfoConfiguration());
             modelBuilder.ApplyConfiguration(new ExperimentConfiguration());
+            modelBuilder.ApplyConfiguration(new ExperimentDataConfiguration());
             modelBuilder.ApplyConfiguration(new DeviceConfiguration());
             modelBuilder.ApplyConfiguration(new FacilityConfiguration());
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
