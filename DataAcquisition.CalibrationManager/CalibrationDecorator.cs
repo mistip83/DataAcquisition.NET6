@@ -1,4 +1,5 @@
 ﻿using DataAcquisition.Interface.CalibrationManager;
+using DataAcquisition.Model.Enums;
 
 namespace DataAcquisition.CalibrationManager
 {

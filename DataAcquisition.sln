@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceLibrary", "DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj", "{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceSimulator", "DataAcquisition.DeviceSimulator\DataAcquisition.DeviceSimulator.csproj", "{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Scanner", "DataAcquisition.Scanner\DataAcquisition.Scanner.csproj", "{202AC8FC-8B47-4B4C-A549-87FE0B3EEAC4}"
@@ -23,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Managers", "DataAcquisition.Managers\DataAcquisition.Managers.csproj", "{D44AF1EA-F496-4F4F-B74F-CD0B737D0F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.CalibrationManager", "DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj", "{317D767A-F00E-424E-B5D9-CD754BD93C01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.CalibrationManager", "DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj", "{317D767A-F00E-424E-B5D9-CD754BD93C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.DeviceManager", "DataAcquisition.DeviceManager\DataAcquisition.DeviceManager.csproj", "{B4AE2208-4510-4280-ADEC-18263BC29FCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceManager", "DataAcquisition.DeviceManager\DataAcquisition.DeviceManager.csproj", "{B4AE2208-4510-4280-ADEC-18263BC29FCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{D09AE150-72A9-4EEB-843F-1B30C488FFE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{D09AE150-72A9-4EEB-843F-1B30C488FFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.DeviceLibrary", "DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj", "{0D9A38E8-09B3-484C-A07A-A0D54EDBD9F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33325E54-BBB3-41D2-B0F8-0D9B3067A13F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19BE14D0-21A9-49D8-BF9D-97EB9D1237AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9A38E8-09B3-484C-A07A-A0D54EDBD9F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9A38E8-09B3-484C-A07A-A0D54EDBD9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9A38E8-09B3-484C-A07A-A0D54EDBD9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9A38E8-09B3-484C-A07A-A0D54EDBD9F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

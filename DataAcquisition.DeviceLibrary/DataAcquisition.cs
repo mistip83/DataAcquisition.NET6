@@ -1,6 +1,9 @@
-﻿namespace DataAcquisition.DeviceLibrary
+﻿using DataAcquisition.Interface.DeviceManager;
+
+namespace DataAcquisition.DeviceLibrary
 {
-    public class DataAcquisition
+    public class DataAcquisition : IDevice
+
     {
         /// <summary>
         /// Contains all channels of the device
@@ -9,26 +12,26 @@
         {
             return new int[]
             {
-                100,
-                101,
-                102,
-                103,
-                104,
-                105,
-                106,
-                107,
-                108,
-                109,
-                200,
-                201,
-                202,
-                203,
-                204,
-                205,
-                206,
-                207,
-                208,
-                209
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
             };
         }
     }

@@ -1,6 +1,8 @@
-﻿namespace DataAcquisition.DeviceLibrary
+﻿using DataAcquisition.Interface.DeviceManager;
+
+namespace DataAcquisition.DeviceLibrary
 {
-    public class DigitalMultimeter
+    public class DigitalMultimeter : IDevice
     {
         /// <summary>
         /// Contains all channels of the device

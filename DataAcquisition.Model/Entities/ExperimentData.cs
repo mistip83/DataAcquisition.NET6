@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DataAcquisition.Model.Entities
+﻿namespace DataAcquisition.Model.Entities
 {
     public class ExperimentData
     {

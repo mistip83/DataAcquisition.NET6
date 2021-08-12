@@ -21,8 +21,8 @@ namespace DataAcquisition.CalibrationManager
 
         public ICalibration CreateTemperatureCalibrator()
         {
-            ICalibration energyCalibrator = new TemperatureCalibration(new BaseCalibration(_deviceManager));
-            return energyCalibrator;
+            ICalibration temperatureCalibrator = new TemperatureCalibration(new BaseCalibration(_deviceManager));
+            return temperatureCalibrator;
         }
     }
 }

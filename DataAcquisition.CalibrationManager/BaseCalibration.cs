@@ -13,8 +13,9 @@ namespace DataAcquisition.CalibrationManager
             _deviceManager = deviceManager ?? throw new ArgumentNullException(nameof(deviceManager));
         }
 
-        public double GetCalibrationData(int channelAddress)
+        public double[] GetCalibrationData()
         {
+            _deviceManager.
             var rawData = _deviceManager.ReadData(channelAddress);
             return BitConverter.ToDouble(rawData);
         }

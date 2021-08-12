@@ -1,7 +1,9 @@
-﻿namespace DataAcquisition.Interface.CalibrationManager
+﻿using DataAcquisition.Model.Enums;
+
+namespace DataAcquisition.Interface.CalibrationManager
 {
     public interface ICalibration
     {
-        double GetCalibrationData(int channelAddress);
+        double[] GetCalibrationData();
     }
 }

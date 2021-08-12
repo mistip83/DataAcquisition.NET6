@@ -1,8 +1,8 @@
 ﻿using System;
+using DataAcquisition.Interface.CalibrationManager;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;
-using DataAcquisition.Model.Device;
 using DataAcquisition.Model.Entities;
 
 namespace DataAcquisition.Service
@@ -12,16 +12,20 @@ namespace DataAcquisition.Service
     /// </summary>
     public class DeviceService : Service<Device>, IDeviceService
     {
-        public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> repository) : base(unitOfWork, repository)
+        private readonly ICalibrationManager _calibrationManager;
+        public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> repository,
+            ICalibrationManager calibrationManager) : base(unitOfWork, repository)
         {
+            _calibrationManager = calibrationManager;
         }
 
-        public Channel GetDeviceChannelInfo()
+        public void DoVoltageCalibration()
         {
-            throw new NotImplementedException();
+            var energyCalibrator = _calibrationManager.CreateEnergyCalibrator();
+            energyCalibrator.GetCalibrationData();
         }
 
-        public void CalibrateDevice()
+        public void DoTemperatureCalibration()
         {
             throw new NotImplementedException();
         }

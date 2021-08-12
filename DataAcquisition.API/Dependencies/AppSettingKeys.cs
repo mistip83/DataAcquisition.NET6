@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DataAcquisition.API.Dependencies
+﻿namespace DataAcquisition.API.Dependencies
 {
     public static class AppSettingKeys
     {

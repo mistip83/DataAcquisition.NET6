@@ -1,6 +1,8 @@
-﻿namespace DataAcquisition.DeviceLibrary
+﻿using DataAcquisition.Interface.DeviceManager;
+
+namespace DataAcquisition.DeviceLibrary
 {
-    public class EnergyAnalyzer
+    public class EnergyAnalyzer : IDevice
     {
         /// <summary>
         /// Contains all channels of the device

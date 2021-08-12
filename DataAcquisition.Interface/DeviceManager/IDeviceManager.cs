@@ -1,12 +1,15 @@
-﻿namespace DataAcquisition.Interface.DeviceManager
+﻿using System.Collections.Generic;
+
+namespace DataAcquisition.Interface.DeviceManager
 {
     public interface IDeviceManager
     {
+
         /// <summary>
         /// Gets byte array from a particular channel
         /// </summary>
-        /// <param name="channelAddress"></param>
+        /// <param name="channelAddressList"></param>
         /// <returns></returns>
-        byte[] ReadData(int channelAddress);
+        double[] ReadData(int[] channelAddressList);
     }
 }
