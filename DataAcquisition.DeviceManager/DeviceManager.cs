@@ -9,10 +9,10 @@ namespace DataAcquisition.DeviceManager
         private const int ReadBufferSize = 8;
         private readonly Random _random = new();
         
-        public IDevice CreateDevice(DeviceType deviceType)
-        {
-            var instance = Activator.CreateInstance<deviceType>();
-        }
+        //public IDevice CreateDevice(DeviceType deviceType)
+        //{
+        //    var instance = Activator.CreateInstance<deviceType>();
+        //}
 
         public double[] ReadData(int[] channelAddressList)
         {

@@ -12,9 +12,9 @@ namespace DataAcquisition.CalibrationManager
             _calibrator = calibrator;
         }
 
-        public virtual double GetCalibrationData(int channelAddress)
+        public virtual double[] GetCalibrationData()
         {
-            return _calibrator.GetCalibrationData(channelAddress);
+            return _calibrator.GetCalibrationData();
         }
     }
 }

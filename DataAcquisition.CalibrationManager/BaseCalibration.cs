@@ -15,9 +15,8 @@ namespace DataAcquisition.CalibrationManager
 
         public double[] GetCalibrationData()
         {
-            _deviceManager.
-            var rawData = _deviceManager.ReadData(channelAddress);
-            return BitConverter.ToDouble(rawData);
+            int[] channelAddressList = new int[5];
+            return _deviceManager.ReadData(channelAddressList);
         }
     }
 }
