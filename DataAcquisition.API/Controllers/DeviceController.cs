@@ -26,7 +26,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Device Dto by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetDeviceInfo(int id)
         {
@@ -37,7 +36,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Device List
         /// </summary>
-        /// <returns></returns>
         [HttpGet("device-list")]
         public async Task<IActionResult> GetDeviceList()
         {
@@ -49,7 +47,6 @@ namespace DataAcquisition.API.Controllers
         /// Edits Device properties
         /// </summary>
         /// <param name="deviceDto"></param>
-        /// <returns></returns>
         [HttpPut("edit-device")]
         public IActionResult EditDevice(DeviceDto deviceDto)
         {
@@ -61,7 +58,6 @@ namespace DataAcquisition.API.Controllers
         /// Add new Device
         /// </summary>
         /// <param name="deviceDto"></param>
-        /// <returns></returns>
         [HttpPost("add-device")]
         public async Task<IActionResult> AddDevice(DeviceDto deviceDto)
         {
@@ -73,7 +69,6 @@ namespace DataAcquisition.API.Controllers
         /// Delete Device
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpDelete("delete-device/{id:int}")]
         public async Task<IActionResult> DeleteDevice(int id)
         {
@@ -81,6 +76,18 @@ namespace DataAcquisition.API.Controllers
             _deviceService.Remove(device);
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// Calibrates Device
+        /// </summary>
+        [HttpGet("calibrate-device")]
+        public async Task<IActionResult> CalibrateDevice(int id)
+        {
+            var device = await _deviceService.GetByIdAsync(id);
+            device = _deviceService.CalibrateDevice(device);
+
+            return Ok(_mapper.Map<IEnumerable<DeviceDto>>(device));
         }
     }
 }

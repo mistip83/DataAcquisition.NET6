@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using DataAcquisition.DataAccessEF.DataAccess;
+using DataAcquisition.Service.Dependencies;
 
 namespace DataAcquisition.API
 {
@@ -22,6 +23,7 @@ namespace DataAcquisition.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterCommonDependencies();
+            services.RegisterServiceDependencies();
 
             services.AddDbContext<AppDbContext>(
                 options =>
