@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAcquisition.DataAccessEF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210802044010_InitialDbCreation")]
+    [Migration("20210817072358_InitialDbCreation")]
     partial class InitialDbCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DataAcquisition.Model.Entities.ApplicationInfo", b =>
@@ -43,8 +43,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 8, 2, 7, 40, 10, 72, DateTimeKind.Local).AddTicks(8015),
-                            LastUpdateDate = new DateTime(2021, 7, 2, 7, 40, 10, 73, DateTimeKind.Local).AddTicks(7475),
+                            FirstInstallDate = new DateTime(2021, 8, 17, 8, 23, 58, 529, DateTimeKind.Local).AddTicks(5716),
+                            LastUpdateDate = new DateTime(2021, 7, 17, 8, 23, 58, 532, DateTimeKind.Local).AddTicks(1121),
                             Version = "1.0.0"
                         });
                 });
@@ -84,6 +84,16 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Property<int>("DeviceType")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("InstallationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastCalibrationDate")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SerialNo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("WorkstationId")
                         .HasColumnType("int");
 
@@ -100,6 +110,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 1,
                             DeviceName = "DAQ1",
                             DeviceType = 1,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2021, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(5598),
                             WorkstationId = 1
                         },
                         new
@@ -108,6 +120,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 1,
                             DeviceName = "NetworkAnalyzer1",
                             DeviceType = 4,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6207),
                             WorkstationId = 1
                         },
                         new
@@ -116,6 +130,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 2,
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6230),
                             WorkstationId = 1
                         },
                         new
@@ -124,6 +140,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 2,
                             DeviceName = "EnergyAnalyzer2",
                             DeviceType = 2,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6234),
                             WorkstationId = 1
                         },
                         new
@@ -132,6 +150,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6237),
                             WorkstationId = 1
                         },
                         new
@@ -140,6 +160,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6243),
                             WorkstationId = 1
                         },
                         new
@@ -148,6 +170,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter3",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6246),
                             WorkstationId = 1
                         },
                         new
@@ -156,6 +180,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 1,
                             DeviceName = "DAQ1",
                             DeviceType = 1,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6249),
                             WorkstationId = 2
                         },
                         new
@@ -164,6 +190,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 1,
                             DeviceName = "DAQ2",
                             DeviceType = 1,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6252),
                             WorkstationId = 2
                         },
                         new
@@ -172,6 +200,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 2,
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6256),
                             WorkstationId = 3
                         },
                         new
@@ -180,6 +210,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6259),
                             WorkstationId = 4
                         },
                         new
@@ -188,6 +220,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6263),
                             WorkstationId = 4
                         },
                         new
@@ -196,6 +230,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 2,
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6266),
                             WorkstationId = 5
                         },
                         new
@@ -204,6 +240,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6317),
                             WorkstationId = 4
                         },
                         new
@@ -212,6 +250,8 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             ConnectionType = 3,
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
+                            InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6321),
                             WorkstationId = 4
                         });
                 });

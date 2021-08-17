@@ -1,4 +1,5 @@
-﻿using DataAcquisition.Model.Entities;
+﻿using System;
+using DataAcquisition.Model.Entities;
 using DataAcquisition.Model.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -15,6 +16,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DAQ1",
                 DeviceType = DeviceType.DataAcquisition,
                 ConnectionType = ConnectionType.TcpIp,
+                LastCalibrationDate = DateTime.UtcNow,
                 WorkstationId = 1
             });
 
@@ -24,6 +26,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "NetworkAnalyzer1",
                 DeviceType = DeviceType.SpectrumAnalyzer,
                 ConnectionType = ConnectionType.TcpIp,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -33,6 +36,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "EnergyAnalyzer1",
                 DeviceType = DeviceType.EnergyAnalyzer,
                 ConnectionType = ConnectionType.Usb,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -42,6 +46,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "EnergyAnalyzer2",
                 DeviceType = DeviceType.EnergyAnalyzer,
                 ConnectionType = ConnectionType.Usb,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -51,6 +56,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter1",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -60,6 +66,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter2",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -69,6 +76,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter3",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 1
             });
 
@@ -78,6 +86,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DAQ1",
                 DeviceType = DeviceType.DataAcquisition,
                 ConnectionType = ConnectionType.TcpIp,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 2
             });
 
@@ -87,6 +96,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DAQ2",
                 DeviceType = DeviceType.DataAcquisition,
                 ConnectionType = ConnectionType.TcpIp,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 2
             });
 
@@ -96,6 +106,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "EnergyAnalyzer1",
                 DeviceType = DeviceType.EnergyAnalyzer,
                 ConnectionType = ConnectionType.Usb,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 3
             });
 
@@ -105,6 +116,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter1",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 4
             });
 
@@ -114,6 +126,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter2",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 4
             });
 
@@ -123,6 +136,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "EnergyAnalyzer1",
                 DeviceType = DeviceType.EnergyAnalyzer,
                 ConnectionType = ConnectionType.Usb,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 5
             });
 
@@ -132,6 +146,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter1",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 4
             });
 
@@ -141,6 +156,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
                 DeviceName = "DigitalMultimeter2",
                 DeviceType = DeviceType.DigitalMultimeter,
                 ConnectionType = ConnectionType.Rs485,
+                LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 4
             });
         }

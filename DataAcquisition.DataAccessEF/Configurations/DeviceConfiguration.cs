@@ -17,6 +17,10 @@ namespace DataAcquisition.DataAccessEF.Configurations
                 .HasMaxLength(50)
                 .IsRequired();
 
+            builder.Property(p => p.LastCalibrationDate)
+                .HasMaxLength(50)
+                .IsRequired();
+
             builder.Property(p => p.ConnectionType)
                 .HasColumnType("int")
                 .IsRequired();
