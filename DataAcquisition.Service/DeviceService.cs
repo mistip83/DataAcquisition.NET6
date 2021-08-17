@@ -1,9 +1,11 @@
-﻿using System;
-using DataAcquisition.Interface.CalibrationManager;
+﻿using DataAcquisition.Interface.CalibrationManager;
+using DataAcquisition.Interface.ConnectionManager;
+using DataAcquisition.Interface.DeviceManager;
 using DataAcquisition.Interface.Repositories;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Interface.UnitOfWorks;
 using DataAcquisition.Model.Entities;
+using DataAcquisition.Model.Enums;
 
 namespace DataAcquisition.Service
 {
@@ -13,21 +15,36 @@ namespace DataAcquisition.Service
     public class DeviceService : Service<Device>, IDeviceService
     {
         private readonly ICalibrationManager _calibrationManager;
+        private readonly IConnectionManager _connectionManager;
+        private readonly IDeviceManager _deviceManager;
         public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> repository,
-            ICalibrationManager calibrationManager) : base(unitOfWork, repository)
+            ICalibrationManager calibrationManager, IConnectionManager connectionManager, 
+            IDeviceManager deviceManager) : base(unitOfWork, repository)
         {
             _calibrationManager = calibrationManager;
+            _connectionManager = connectionManager;
+            _deviceManager = deviceManager;
         }
 
-        public void DoVoltageCalibration()
+        public Device CalibrateDevice(Device device)
         {
-            var energyCalibrator = _calibrationManager.CreateEnergyCalibrator();
-            energyCalibrator.GetCalibrationData();
+            _connectionManager.ConnectToDevice(device.ConnectionType);
+
+            var calibrator = CreateCalibrator(device.DeviceType);
+
+            var channelAddressList = _deviceManager.GetDeviceChannelAddressList(device.DeviceType);
+
+            var calibrationData = calibrator.GetCalibrationData(channelAddressList);
+            device.LastCalibrationDate = calibrator.ApplyCalibrationResult(calibrationData);
+
+            return device;
         }
 
-        public void DoTemperatureCalibration()
+        private ICalibration CreateCalibrator(DeviceType deviceType)
         {
-            throw new NotImplementedException();
+            return deviceType == DeviceType.DataAcquisition
+                ? _calibrationManager.CreateTemperatureCalibrator()
+                : _calibrationManager.CreateEnergyCalibrator();
         }
     }
 }
