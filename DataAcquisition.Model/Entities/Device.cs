@@ -1,4 +1,5 @@
-﻿using DataAcquisition.Model.Enums;
+﻿using System;
+using DataAcquisition.Model.Enums;
 
 namespace DataAcquisition.Model.Entities
 {
@@ -8,6 +9,9 @@ namespace DataAcquisition.Model.Entities
         public string DeviceName { get; set; }
         public DeviceType DeviceType { get; set; }
         public ConnectionType ConnectionType { get; set; }
+        public string SerialNo { get; set; }
+        public DateTime InstallationDate { get; set; }
+        public DateTime LastCalibrationDate { get; set; }
         public int WorkstationId { get; set; }
         public virtual Workstation Workstation { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using DataAcquisition.Model.Enums;
+﻿using System;
+using DataAcquisition.Model.Enums;
 
 namespace DataAcquisition.Model.DTOs
 {
@@ -8,6 +9,7 @@ namespace DataAcquisition.Model.DTOs
         public string DeviceName { get; set; }
         public DeviceType DeviceType { get; set; }
         public ConnectionType ConnectionType { get; set; }
+        public DateTime LastCalibrationDate { get; set; }
         public int WorkstationId { get; set; }
     }
 }
