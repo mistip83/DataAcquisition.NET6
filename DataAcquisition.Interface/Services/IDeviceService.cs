@@ -4,7 +4,6 @@ namespace DataAcquisition.Interface.Services
 {
     public interface IDeviceService : IService<Device>
     {
-        void DoVoltageCalibration();
-        void DoTemperatureCalibration();
+        Device CalibrateDevice(Device device);
     }
 }

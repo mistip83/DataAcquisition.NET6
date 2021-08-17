@@ -1,9 +1,10 @@
-﻿using DataAcquisition.Model.Enums;
+﻿using System;
 
 namespace DataAcquisition.Interface.CalibrationManager
 {
     public interface ICalibration
     {
-        double[] GetCalibrationData();
+        double[] GetCalibrationData(int[] channelAddressList);
+        public DateTime ApplyCalibrationResult(double[] calibrationData);
     }
 }
