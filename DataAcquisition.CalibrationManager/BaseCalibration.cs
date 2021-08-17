@@ -1,22 +1,26 @@
 ﻿using System;
 using DataAcquisition.Interface.CalibrationManager;
-using DataAcquisition.Interface.DeviceManager;
+using DataAcquisition.Interface.ScannerManager;
 
 namespace DataAcquisition.CalibrationManager
 {
     public class BaseCalibration: ICalibration
     {
-        private readonly IDeviceManager _deviceManager;
+        private readonly IScannerManager _scannerManager;
 
-        public BaseCalibration(IDeviceManager deviceManager)
+        public BaseCalibration(IScannerManager scannerManager)
         {
-            _deviceManager = deviceManager ?? throw new ArgumentNullException(nameof(deviceManager));
+            _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
         }
 
-        public double[] GetCalibrationData()
+        public DateTime ApplyCalibrationResult(double[] calibrationData)
         {
-            int[] channelAddressList = new int[5];
-            return _deviceManager.ReadData(channelAddressList);
+            return DateTime.UtcNow;
+        }
+
+        public double[] GetCalibrationData(int[] channelAddressList)
+        {
+            return _scannerManager.ReadData(channelAddressList);
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using DataAcquisition.Interface.CalibrationManager;
-using DataAcquisition.Model.Enums;
+﻿using System;
+using DataAcquisition.Interface.CalibrationManager;
 
 namespace DataAcquisition.CalibrationManager
 {
@@ -12,9 +12,14 @@ namespace DataAcquisition.CalibrationManager
             _calibrator = calibrator;
         }
 
-        public virtual double[] GetCalibrationData()
+        public DateTime ApplyCalibrationResult(double[] calibrationData)
         {
-            return _calibrator.GetCalibrationData();
+            return DateTime.UtcNow;
+        }
+
+        public virtual double[] GetCalibrationData(int[] channelAddressList)
+        {
+            return _calibrator.GetCalibrationData(channelAddressList);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace DataAcquisition.CalibrationManager
         {
         }
 
-        public override double[] GetCalibrationData()
+        public override double[] GetCalibrationData(int[] channelAddressList)
         {
             SetTimer();
-            return base.GetCalibrationData();
+            return base.GetCalibrationData(channelAddressList);
         }
 
         private static void SetTimer()
