@@ -5,9 +5,10 @@ namespace DataAcquisition.Interface.DeviceManager
     public interface IDeviceManager
     {
         /// <summary>
-        /// Returns device channel addresses
+        /// Creates device instance to reach device's psychical properties
         /// </summary>
         /// <param name="deviceType"></param>
-        int[] GetDeviceChannelAddressList(DeviceType deviceType);
+        /// <returns></returns>
+        public IDevice ExecuteCreation(DeviceType deviceType);
     }
 }

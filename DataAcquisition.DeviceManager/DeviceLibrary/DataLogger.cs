@@ -2,7 +2,7 @@
 
 namespace DataAcquisition.DeviceManager.DeviceLibrary
 {
-    public class DataAcquisition : IDevice
+    public class DataLogger : IDevice
 
     {
         /// <summary>

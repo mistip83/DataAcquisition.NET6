@@ -32,7 +32,7 @@ namespace DataAcquisition.Service
 
             var calibrator = CreateCalibrator(device.DeviceType);
 
-            var channelAddressList = _deviceManager.GetDeviceChannelAddressList(device.DeviceType);
+            var channelAddressList = _deviceManager.ExecuteCreation(device.DeviceType).ChannelAddressList();
 
             var calibrationData = calibrator.GetCalibrationData(channelAddressList);
             device.LastCalibrationDate = calibrator.ApplyCalibrationResult(calibrationData);
@@ -42,7 +42,7 @@ namespace DataAcquisition.Service
 
         private ICalibration CreateCalibrator(DeviceType deviceType)
         {
-            return deviceType == DeviceType.DataAcquisition
+            return deviceType == DeviceType.DataLogger
                 ? _calibrationManager.CreateTemperatureCalibrator()
                 : _calibrationManager.CreateEnergyCalibrator();
         }

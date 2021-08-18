@@ -2,7 +2,7 @@
 {
     public enum DeviceType
     {
-        DataAcquisition = 1,
+        DataLogger = 1,
         EnergyAnalyzer = 2,
         DigitalMultimeter = 3,
         SpectrumAnalyzer = 4

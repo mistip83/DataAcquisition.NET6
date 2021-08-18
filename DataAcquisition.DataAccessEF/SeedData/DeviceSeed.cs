@@ -14,7 +14,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             {
                 DeviceId = 1,
                 DeviceName = "DAQ1",
-                DeviceType = DeviceType.DataAcquisition,
+                DeviceType = DeviceType.DataLogger,
                 ConnectionType = ConnectionType.TcpIp,
                 LastCalibrationDate = DateTime.UtcNow,
                 WorkstationId = 1
@@ -84,7 +84,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             {
                 DeviceId = 8,
                 DeviceName = "DAQ1",
-                DeviceType = DeviceType.DataAcquisition,
+                DeviceType = DeviceType.DataLogger,
                 ConnectionType = ConnectionType.TcpIp,
                 LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 2
@@ -94,7 +94,7 @@ namespace DataAcquisition.DataAccessEF.SeedData
             {
                 DeviceId = 9,
                 DeviceName = "DAQ2",
-                DeviceType = DeviceType.DataAcquisition,
+                DeviceType = DeviceType.DataLogger,
                 ConnectionType = ConnectionType.TcpIp,
                 LastCalibrationDate = DateTime.UtcNow.AddYears(-2),
                 WorkstationId = 2
