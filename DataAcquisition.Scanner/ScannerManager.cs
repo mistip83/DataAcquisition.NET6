@@ -10,7 +10,7 @@ namespace DataAcquisition.Scanner
 
         public double[] ReadData(int[] channelAddressList)
         {
-            var data = new double[channelAddressList.Length - 1];
+            var data = new double[channelAddressList.Length];
             for (var i = 0; i < channelAddressList.Length; i++)
             {
                 data[i] = ReadData(channelAddressList[i]);
