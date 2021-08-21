@@ -81,13 +81,13 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Calibrates Device
         /// </summary>
-        [HttpGet("calibrate-device")]
+        [HttpGet("calibrate-device/{id:int}")]
         public async Task<IActionResult> CalibrateDevice(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
             device = _deviceService.CalibrateDevice(device);
 
-            return Ok(_mapper.Map<IEnumerable<DeviceDto>>(device));
+            return Ok(_mapper.Map<DeviceDto>(device));
         }
     }
 }
