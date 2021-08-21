@@ -28,7 +28,7 @@ namespace DataAcquisition.Service
 
         public Device CalibrateDevice(Device device)
         {
-            _connectionManager.ConnectToDevice(device.ConnectionType);
+            _connectionManager.Connect(device.ConnectionType);
 
             var calibrator = CreateCalibrator(device.DeviceType);
 
@@ -36,6 +36,8 @@ namespace DataAcquisition.Service
 
             var calibrationData = calibrator.GetCalibrationData(channelAddressList);
             device.LastCalibrationDate = calibrator.ApplyCalibrationResult(calibrationData);
+
+            _connectionManager.Disconnect(device.ConnectionType);
 
             return device;
         }

@@ -1,12 +1,14 @@
 using DataAcquisition.API.Dependencies;
+using DataAcquisition.CalibrationManager.Dependencies;
+using DataAcquisition.DataAccessEF.DataAccess;
+using DataAcquisition.Service.Dependencies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using DataAcquisition.DataAccessEF.DataAccess;
-using DataAcquisition.Service.Dependencies;
+
 
 namespace DataAcquisition.API
 {
@@ -24,6 +26,7 @@ namespace DataAcquisition.API
         {
             services.RegisterCommonDependencies();
             services.RegisterServiceDependencies();
+            services.RegisterCalibrationDependencies();
 
             services.AddDbContext<AppDbContext>(
                 options =>
