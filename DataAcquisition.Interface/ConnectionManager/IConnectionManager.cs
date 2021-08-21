@@ -4,8 +4,8 @@ namespace DataAcquisition.Interface.ConnectionManager
 {
     public interface IConnectionManager
     {
-        public void ConnectToDevice(ConnectionType connectionType);
+        public void Connect(ConnectionType connectionType);
 
-        public void ConnectToSimulator();
+        public void Disconnect(ConnectionType connectionType);
     }
 }

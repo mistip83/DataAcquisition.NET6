@@ -8,7 +8,7 @@ namespace DataAcquisition.ConnectionManager
     public class ConnectionManager : IConnectionManager
     {
         private SerialPort _serialPort;
-        public void ConnectToDevice(ConnectionType connectionType)
+        public void Connect(ConnectionType connectionType)
         {
             _serialPort = new SerialPort("COM1", 19200, Parity.None, 8, StopBits.One)
             {
@@ -16,12 +16,12 @@ namespace DataAcquisition.ConnectionManager
             };
 
             _serialPort.Open();
-
             Console.WriteLine("Connected to Device");
         }
 
-        public void ConnectToSimulator()
+        public void Disconnect(ConnectionType connectionType)
         {
+            _serialPort.Close();
             Console.WriteLine("Connected to Simulator");
         }
     }
