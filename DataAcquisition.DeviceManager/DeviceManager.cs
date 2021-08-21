@@ -16,10 +16,10 @@ namespace DataAcquisition.DeviceManager
 
             foreach (DeviceType deviceType in Enum.GetValues(typeof(DeviceType)))
             {
-                var factory = (AbstractDeviceFactory) Activator
-                    .CreateInstance(Type.GetType(typeof(AbstractDeviceFactory).Namespace +
-                                                 Enum.GetName(typeof(DeviceType), deviceType) + "Factory") ??
-                                    throw new InvalidOperationException());
+                var factory = (AbstractDeviceFactory) Activator.CreateInstance(
+                    Type.GetType(typeof(AbstractDeviceFactory).Namespace + "." +
+                                 Enum.GetName(typeof(DeviceType), deviceType) + "Factory") ??
+                    throw new InvalidOperationException());
 
                 _factories.Add(deviceType, factory);
             }
