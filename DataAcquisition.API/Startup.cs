@@ -1,6 +1,7 @@
 using DataAcquisition.API.Dependencies;
 using DataAcquisition.CalibrationManager.Dependencies;
 using DataAcquisition.DataAccessEF.DataAccess;
+using DataAcquisition.DeviceManager.Dependencies;
 using DataAcquisition.Service.Dependencies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,7 @@ namespace DataAcquisition.API
             services.RegisterCommonDependencies();
             services.RegisterServiceDependencies();
             services.RegisterCalibrationDependencies();
+            services.RegisterDeviceManagerDependencies();
 
             services.AddDbContext<AppDbContext>(
                 options =>

@@ -1,8 +1,8 @@
 ﻿using DataAcquisition.Interface.DeviceManager;
 
-namespace DataAcquisition.DeviceManager.DeviceFactory
+namespace DataAcquisition.DeviceLibrary.DeviceFactory
 {
-    public abstract class AbstractDeviceFactory
+    public abstract class AbstractFactory
     {
         public abstract IDevice Create();
     }

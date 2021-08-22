@@ -1,6 +1,6 @@
 ﻿using DataAcquisition.Interface.DeviceManager;
 
-namespace DataAcquisition.DeviceManager.DeviceLibrary
+namespace DataAcquisition.DeviceLibrary.DeviceLibrary
 {
     public class SpectrumAnalyzer : IDevice
     {

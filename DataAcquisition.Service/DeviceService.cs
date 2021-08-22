@@ -32,7 +32,7 @@ namespace DataAcquisition.Service
 
             var calibrator = CreateCalibrator(device.DeviceType);
 
-            var channelAddressList = _deviceManager.ExecuteCreation(device.DeviceType).ChannelAddressList();
+            var channelAddressList = _deviceManager.GetChannelList(device.DeviceType);
 
             var calibrationData = calibrator.GetCalibrationData(channelAddressList);
             device.LastCalibrationDate = calibrator.ApplyCalibrationResult(calibrationData);
