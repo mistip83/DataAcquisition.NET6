@@ -22,15 +22,27 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Returns Experiment data by id
+        /// Returns Experiment details by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetExperiment(int id)
+        {
+            var experiment = await _experimentService.GetByIdAsync(id);
+            return Ok(_mapper.Map<ExperimentDto>(experiment));
+        }
+
+        /// <summary>
+        /// Returns Experiment data by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("experiment-data/{id:int}")]
         public async Task<IActionResult> GetExperimentData(int id)
         {
-            var device = await _experimentService.GetByIdAsync(id);
-            return Ok(_mapper.Map<ExperimentDataDto>(device));
+            var experimentData = await _experimentService.GetExperimentDataAsync(id);
+            return Ok(_mapper.Map<ExperimentDataDto>(experimentData));
         }
 
         /// <summary>
@@ -50,7 +62,7 @@ namespace DataAcquisition.API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("delete-experiment/{id:int}")]
-        public async Task<IActionResult> DeleteDevice(int id)
+        public async Task<IActionResult> DeleteExperiment(int id)
         {
             var experiment = await _experimentService.GetByIdAsync(id);
             _experimentService.Remove(experiment);
