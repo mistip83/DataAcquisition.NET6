@@ -1,25 +1,24 @@
+import { ExperimentComponent } from './experiment/experiment.component';
+import { DeviceComponent } from './device/device.component';
+import { WorkstationComponent } from './workstation/workstation.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-
-import { FullLayoutComponent } from "./layouts/full/full-layout.component";
-import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
-
-import { Full_ROUTES } from "./shared/routes/full-layout.routes";
-import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { FacilityComponent } from './facility/facility.component';
+import { OrganizationComponent } from './organization/organization.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'ui-elements/nav-tabs',
-    pathMatch: 'full',
-  },
-  { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES },
-  { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES },
-  { path: '**', redirectTo: 'ui-elements/nav-tabs' }
+  { path: '', redirectTo: 'organization', pathMatch: 'full'},
+  { path: 'organization', component: OrganizationComponent },
+  { path: 'facility', component: FacilityComponent },
+  { path: 'workstation', component: WorkstationComponent },
+  { path: 'device', component: DeviceComponent },
+  { path: 'experiment', component: ExperimentComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

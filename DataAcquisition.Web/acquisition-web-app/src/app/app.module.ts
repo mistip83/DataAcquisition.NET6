@@ -1,54 +1,44 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { BrowserModule } from '@angular/platform-browser';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from "./shared/shared.module";
-import { AgmCoreModule } from '@agm/core';
-
 import { AppComponent } from './app.component';
-import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
-import { FullLayoutComponent } from "./layouts/full/full-layout.component";
-
-import { ToastrModule } from 'ngx-toastr';
-import { UiSwitchModule } from 'ngx-ui-switch';
-
-
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true,
-  wheelPropagation: false
-};
-
-import * as $ from 'jquery';
-
+import { HttpClientModule } from '@angular/common/http';
+import { OrganizationComponent } from './organization/organization.component';
+import { FacilityComponent } from './facility/facility.component';
+import { WorkstationComponent } from './workstation/workstation.component';
+import { DeviceComponent } from './device/device.component';
+import { ExperimentComponent } from './experiment/experiment.component';
+import { AboutComponent } from './about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullLayoutComponent,
-    ContentLayoutComponent,
+    OrganizationComponent,
+    FacilityComponent,
+    WorkstationComponent,
+    DeviceComponent,
+    ExperimentComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
     HttpClientModule,
-    NgbModule,
-    ToastrModule.forRoot(),
-    UiSwitchModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyDKXKdHQdtqgPVl2HI2RnUa_1bjCxRCQo4'}),
-    PerfectScrollbarModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
-  providers: [
-    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
