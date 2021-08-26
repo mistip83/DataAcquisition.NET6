@@ -2,8 +2,9 @@
 
 namespace DataAcquisition.Model.DTOs
 {
-    public class FacilityWithWorkstationsDto : FacilityDto
+    public class FacilityWithWorkstationsDto
     {
-        public IEnumerable<WorkstationDto> Workstations { get; set; }
+        public string FacilityName { get; set; }
+        public IEnumerable<WorkstationNameDto> Workstations { get; set; }
     }
 }

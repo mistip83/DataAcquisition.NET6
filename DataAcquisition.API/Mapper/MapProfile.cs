@@ -38,6 +38,8 @@ namespace DataAcquisition.API.Mapper
             CreateMap<WorkstationDto, Workstation>();
             CreateMap<Workstation, WorkstationWithDevicesAndExps>();
             CreateMap<WorkstationWithDevicesAndExps, Workstation>();
+            CreateMap<Workstation, WorkstationNameDto>();
+            CreateMap<WorkstationNameDto, Workstation>();
         }
     }
 }
