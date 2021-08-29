@@ -17,4 +17,14 @@ export class OrganizationComponent implements OnInit {
       .getOrganizationLayout()
       .subscribe((data) => (this.organization = data));
   }
+
+  calculateWorkstationCount(): number {
+    let wsCount = 0;
+
+    this.organization.facilities.forEach((facility) => {
+      wsCount += facility.workstations.length;
+    });
+    
+    return wsCount;
+  }
 }

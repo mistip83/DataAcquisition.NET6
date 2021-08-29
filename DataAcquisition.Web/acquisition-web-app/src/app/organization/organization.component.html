@@ -1,1 +1,22 @@
-<p>organization works!</p>
+<mat-accordion>
+  <mat-expansion-panel company>
+    <mat-expansion-panel-header>
+      <mat-panel-title><h1>Company Overview</h1></mat-panel-title>
+    </mat-expansion-panel-header>
+    <h3>Company Name: {{ organization.companyName }}</h3>
+    <h3>Number of Facilities: {{ organization.facilities.length }}</h3>
+    <h3>Number of Workstations: {{ calculateWorkstationCount() }}</h3>
+  </mat-expansion-panel>
+  <mat-expansion-panel facility>
+    <mat-expansion-panel-header>
+      <mat-panel-title><h1>Facility Overview</h1></mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel workstation>
+    <mat-expansion-panel-header>
+      <mat-panel-title><h1>Workstation Overview</h1></mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
