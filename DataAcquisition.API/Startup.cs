@@ -1,10 +1,10 @@
 using DataAcquisition.API.Dependencies;
+using DataAcquisition.API.Extensions;
 using DataAcquisition.CalibrationManager.Dependencies;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.DeviceManager.Dependencies;
 using DataAcquisition.Service.Dependencies;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -65,6 +65,8 @@ namespace DataAcquisition.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCustomErrorHandler();
 
             app.UseHttpsRedirection();
 

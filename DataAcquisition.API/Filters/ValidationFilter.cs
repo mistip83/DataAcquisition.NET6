@@ -13,7 +13,7 @@ namespace DataAcquisition.API.Filters
             {
                 return;
             }
-            var errorDto = new ErrorDto() { Status = 400 };
+            var errorDto = new ErrorDto { Status = 400 };
             var modelErrors = context.ModelState.Values
                 .SelectMany(v => v.Errors);
 
