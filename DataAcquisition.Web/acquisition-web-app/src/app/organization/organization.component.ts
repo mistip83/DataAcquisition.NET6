@@ -1,5 +1,5 @@
-import { Organization } from './../models/organization.model';
 import { Component, OnInit } from '@angular/core';
+import { IOrganization } from '../interfaces/models/organization';
 import { OrganizationService } from '../services/organization.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { OrganizationService } from '../services/organization.service';
   styleUrls: ['./organization.component.css'],
 })
 export class OrganizationComponent implements OnInit {
-  organization: Organization;
+  organization: IOrganization;
 
   constructor(private _organizationService: OrganizationService) {}
 
