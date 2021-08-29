@@ -24,7 +24,19 @@ export class OrganizationComponent implements OnInit {
     this.organization.facilities.forEach((facility) => {
       wsCount += facility.workstations.length;
     });
-    
+
     return wsCount;
+  }
+
+  calculateExperimentCount(): number {
+    let expCount = 0;
+
+    this.organization.facilities.forEach((facility) => {
+      facility.workstations.forEach(workstation => {
+        expCount += workstation.experiments.length;
+      });
+    });
+    
+    return expCount;
   }
 }

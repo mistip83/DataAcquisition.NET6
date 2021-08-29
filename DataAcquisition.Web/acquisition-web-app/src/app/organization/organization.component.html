@@ -11,7 +11,11 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h1>Facility Overview</h1></mat-panel-title>
     </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <div *ngFor="let facility of organization.facilities">
+      <h2>{{ facility.facilityName }}</h2>
+      <h3>Number of Workstations: {{ facility.workstations.length }}</h3>
+      <h3>Number of Experiments: {{ calculateExperimentCount() }}</h3>
+    </div>
   </mat-expansion-panel>
   <mat-expansion-panel workstation>
     <mat-expansion-panel-header>
