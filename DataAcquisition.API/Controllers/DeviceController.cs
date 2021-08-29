@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAcquisition.API.Filters;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
@@ -47,6 +48,7 @@ namespace DataAcquisition.API.Controllers
         /// Edits Device properties
         /// </summary>
         /// <param name="deviceDto"></param>
+        [ValidationFilter]
         [HttpPut("edit-device")]
         public IActionResult EditDevice(DeviceDto deviceDto)
         {
@@ -58,6 +60,7 @@ namespace DataAcquisition.API.Controllers
         /// Add new Device
         /// </summary>
         /// <param name="deviceDto"></param>
+        [ValidationFilter]
         [HttpPost("add-device")]
         public async Task<IActionResult> AddDevice(DeviceDto deviceDto)
         {

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAcquisition.API.Filters;
 using DataAcquisition.Interface.Services;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
@@ -62,6 +63,7 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="workstationDto"></param>
         /// <returns></returns>
+        [ValidationFilter]
         [HttpPut("edit-workstation")]
         public IActionResult EditWorkstation(WorkstationDto workstationDto)
         {
@@ -74,6 +76,7 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="workstationDto"></param>
         /// <returns></returns>
+        [ValidationFilter]
         [HttpPost("add-workstation")]
         public async Task<IActionResult> AddWorkstation(WorkstationDto workstationDto)
         {

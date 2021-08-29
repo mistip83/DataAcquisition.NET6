@@ -4,6 +4,7 @@ using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
+using DataAcquisition.API.Filters;
 using DataAcquisition.Interface;
 using DataAcquisition.Model.DTOs;
 using DataAcquisition.Model.Entities;
@@ -65,6 +66,7 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="facilityDto"></param>
         /// <returns></returns>
+        [ValidationFilter]
         [HttpPut("edit-facility")]
         public IActionResult EditFacility(FacilityDto facilityDto)
         {
