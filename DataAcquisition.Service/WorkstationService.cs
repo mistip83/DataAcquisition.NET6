@@ -19,7 +19,6 @@ namespace DataAcquisition.Service
         /// Returns workstation entity with its experiments
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         public async Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id)
         {
             return await UnitOfWork.Workstations.GetWorkstationWithDevicesAndExperimentsAsync(id);

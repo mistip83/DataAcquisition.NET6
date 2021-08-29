@@ -9,7 +9,6 @@ namespace DataAcquisition.Interface.Repositories
         /// Returns experiment data
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         public Task<ExperimentData> GetExperimentDataAsync(int id);
     }
 }

@@ -27,7 +27,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Workstation Dto by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetWorkstationInfo(int id)
         {
@@ -38,7 +37,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Workstation List
         /// </summary>
-        /// <returns></returns>
         [HttpGet("workstation-list")]
         public async Task<IActionResult> GetWorkstationList()
         {
@@ -50,7 +48,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Workstation with devices and experiments
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}/devices-experiments")]
         public async Task<IActionResult> GetWorkstationWithDevicesAndExperiments(int id)
         {
@@ -62,8 +59,6 @@ namespace DataAcquisition.API.Controllers
         /// Edits Workstation properties
         /// </summary>
         /// <param name="workstationDto"></param>
-        /// <returns></returns>
-        [ValidationFilter]
         [HttpPut("edit-workstation")]
         public IActionResult EditWorkstation(WorkstationDto workstationDto)
         {
@@ -72,10 +67,9 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Add new workstation
+        /// Adds new workstation
         /// </summary>
         /// <param name="workstationDto"></param>
-        /// <returns></returns>
         [ValidationFilter]
         [HttpPost("add-workstation")]
         public async Task<IActionResult> AddWorkstation(WorkstationDto workstationDto)
@@ -85,10 +79,9 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Delete Workstation
+        /// Deletes Workstation
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpDelete("delete-workstation/{id:int}")]
         public async Task<IActionResult> DeleteWorkstation(int id)
         {

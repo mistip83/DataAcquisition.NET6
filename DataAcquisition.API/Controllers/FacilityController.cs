@@ -30,7 +30,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Facility Dto by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetFacilityInfo(int id)
         {
@@ -41,7 +40,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Facility List
         /// </summary>
-        /// <returns></returns>
         [HttpGet("facility-list")]
         public async Task<IActionResult> GetFacilityList()
         {
@@ -53,7 +51,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Facility with workstations
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}/workstations")]
         public async Task<IActionResult> GetFacilityWithWorkStations(int id)
         {
@@ -62,10 +59,21 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
+        /// Add new facility
+        /// </summary>
+        /// <param name="facilityDto"></param>
+        [ValidationFilter]
+        [HttpPost("add-facility")]
+        public async Task<IActionResult> AddFacility(FacilityDto facilityDto)
+        {
+            var newFacility = await _facilityService.AddAsync(_mapper.Map<Facility>(facilityDto));
+            return Created(string.Empty, _mapper.Map<FacilityDto>(newFacility));
+        }
+
+        /// <summary>
         /// Edits Facility Properties
         /// </summary>
         /// <param name="facilityDto"></param>
-        /// <returns></returns>
         [ValidationFilter]
         [HttpPut("edit-facility")]
         public IActionResult EditFacility(FacilityDto facilityDto)

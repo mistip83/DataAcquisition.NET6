@@ -18,7 +18,6 @@ namespace DataAcquisition.DeviceLibrary
         /// Creates corresponding device object
         /// </summary>
         /// <param name="deviceType"></param>
-        /// <returns></returns>
         public IDevice ExecuteCreation(DeviceType deviceType)
         {
             InitializeFactories();

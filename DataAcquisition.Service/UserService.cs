@@ -19,7 +19,6 @@ namespace DataAcquisition.Service
         /// Returns a user entity with its company
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
         public async Task<User> GetUserWithCompanyAsync(string email)
         {
             return await UnitOfWork.Users.GetUserWithCompanyAsync(email);
@@ -29,7 +28,6 @@ namespace DataAcquisition.Service
         /// Returns a user entity with its all experiments
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
         public async Task<User> GetUserWithExperimentsAsync(string email)
         {
             return await UnitOfWork.Users.GetUserWithExperimentsAsync(email);

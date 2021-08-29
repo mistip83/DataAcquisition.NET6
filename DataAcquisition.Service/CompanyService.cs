@@ -18,7 +18,6 @@ namespace DataAcquisition.Service
         /// <summary>
         /// Returns company entity with its facilities
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetCompanyWithFacilitiesAsync()
         {
             return await UnitOfWork.Company.GetCompanyWithFacilitiesAsync();
@@ -27,7 +26,6 @@ namespace DataAcquisition.Service
         /// <summary>
         /// Returns company entity
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetCompanyInfoAsync()
         {
             return await UnitOfWork.Company.GetCompanyInfoAsync();
@@ -36,7 +34,6 @@ namespace DataAcquisition.Service
         /// <summary>
         /// Returns Company, Facilities, Workstations, Experiments
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetOrganizationLayoutAsync()
         {
             return await UnitOfWork.Company.GetOrganizationLayoutAsync();

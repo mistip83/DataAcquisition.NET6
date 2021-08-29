@@ -40,7 +40,6 @@ namespace DataAcquisition.Repository.UnitOfWork
         /// <summary>
         /// Save changes async
         /// </summary>
-        /// <returns></returns>
         public async Task CommitAsync()
         {
             await _context.SaveChangesAsync();

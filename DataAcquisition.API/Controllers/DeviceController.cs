@@ -48,7 +48,6 @@ namespace DataAcquisition.API.Controllers
         /// Edits Device properties
         /// </summary>
         /// <param name="deviceDto"></param>
-        [ValidationFilter]
         [HttpPut("edit-device")]
         public IActionResult EditDevice(DeviceDto deviceDto)
         {

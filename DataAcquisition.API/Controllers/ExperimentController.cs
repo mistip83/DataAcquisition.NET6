@@ -25,7 +25,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Experiment details by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetExperiment(int id)
         {
@@ -37,7 +36,6 @@ namespace DataAcquisition.API.Controllers
         /// Returns Experiment data by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet("experiment-data/{id:int}")]
         public async Task<IActionResult> GetExperimentData(int id)
         {
@@ -48,7 +46,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Experiment List
         /// </summary>
-        /// <returns></returns>
         [HttpGet("experiment-list")]
         public async Task<IActionResult> GetExperimentList()
         {
@@ -60,7 +57,6 @@ namespace DataAcquisition.API.Controllers
         /// Delete Experiment
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         [HttpDelete("delete-experiment/{id:int}")]
         public async Task<IActionResult> DeleteExperiment(int id)
         {

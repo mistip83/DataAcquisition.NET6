@@ -9,7 +9,6 @@ namespace DataAcquisition.Interface.Repositories
         /// Returns workstation entity with its experiments
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id);
     }
 }

@@ -24,7 +24,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Add a row to db
         /// </summary>
         /// <param name="entity"></param>
-        /// <returns></returns>
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
@@ -34,7 +33,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Add a row list to db
         /// </summary>
         /// <param name="entities"></param>
-        /// <returns></returns>
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbSet.AddRangeAsync(entities);
@@ -43,7 +41,6 @@ namespace DataAcquisition.Repository.Repositories
         /// <summary>
         /// Get all rows for corresponding entity
         /// </summary>
-        /// <returns></returns>
         public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
@@ -53,7 +50,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Get entity by id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
@@ -81,7 +77,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Get by any parameter
         /// </summary>
         /// <param name="predicate"></param>
-        /// <returns></returns>
         public async Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.SingleOrDefaultAsync(predicate);
@@ -91,7 +86,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Update a db row
         /// </summary>
         /// <param name="entity"></param>
-        /// <returns></returns>
         public T Update(T entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
@@ -103,7 +97,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Search something
         /// </summary>
         /// <param name="predicate"></param>
-        /// <returns></returns>
         public async Task<IEnumerable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
         {
             return await _dbSet.Where(predicate).ToListAsync();

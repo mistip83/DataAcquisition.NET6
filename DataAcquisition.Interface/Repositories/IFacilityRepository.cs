@@ -9,7 +9,6 @@ namespace DataAcquisition.Interface.Repositories
         /// Returns facility entity with its workstations
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
         Task<Facility> GetFacilityWithWorkStationsAsync(int id);
     }
 }

@@ -9,7 +9,6 @@ namespace DataAcquisition.Interface.DeviceLibrary
         /// Creates device instance to reach device's psychical properties
         /// </summary>
         /// <param name="deviceType"></param>
-        /// <returns></returns>
         public IDevice ExecuteCreation(DeviceType deviceType);
     }
 }

@@ -20,7 +20,6 @@ namespace DataAcquisition.Repository.Repositories
         /// <summary>
         /// Implementation detail
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetCompanyWithFacilitiesAsync()
         {
             return await AppDbContext.Company.Include(x => x.Facilities)
@@ -30,7 +29,6 @@ namespace DataAcquisition.Repository.Repositories
         /// <summary>
         /// Implementation detail
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetCompanyInfoAsync()
         {
             return await AppDbContext.Company.SingleOrDefaultAsync();
@@ -39,7 +37,6 @@ namespace DataAcquisition.Repository.Repositories
         /// <summary>
         /// Implementation detail
         /// </summary>
-        /// <returns></returns>
         public async Task<Company> GetOrganizationLayoutAsync()
         {
             return await AppDbContext.Company

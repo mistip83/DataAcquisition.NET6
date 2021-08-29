@@ -23,7 +23,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Company Name
         /// </summary>
-        /// <returns></returns>
         [HttpGet("company-info")]
         public async Task<IActionResult> GetCompanyInfo()
         {
@@ -34,7 +33,6 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Returns Company, Facilities, Workstations, Experiments
         /// </summary>
-        /// <returns></returns>
         [HttpGet("organization-layout")]
         public async Task<IActionResult> GetOrganizationLayout()
         {

@@ -21,7 +21,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Implementation detail
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
         public async Task<User> GetUserWithExperimentsAsync(string email)
         {
             return await AppDbContext.User.Include(x => x.Experiments)
@@ -32,7 +31,6 @@ namespace DataAcquisition.Repository.Repositories
         /// Implementation detail
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
         public async Task<User> GetUserWithCompanyAsync(string email)
         {
             return await AppDbContext.User.Include(x => x.Company)
