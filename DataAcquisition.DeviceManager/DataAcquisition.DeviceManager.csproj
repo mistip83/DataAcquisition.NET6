@@ -9,6 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj" />
+    <ProjectReference Include="..\DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj" />
     <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj" />
   </ItemGroup>

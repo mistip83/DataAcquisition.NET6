@@ -81,8 +81,9 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Calibrates Device
+        /// Calibrate Device
         /// </summary>
+        /// <param name="id"></param>
         [HttpGet("calibrate-device/{id:int}")]
         public async Task<IActionResult> CalibrateDevice(int id)
         {

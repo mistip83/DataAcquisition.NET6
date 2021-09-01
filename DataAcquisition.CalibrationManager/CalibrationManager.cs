@@ -1,4 +1,5 @@
 ﻿using System;
+using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.ScannerManager;
 
@@ -13,13 +14,20 @@ namespace DataAcquisition.CalibrationManager
             _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
         }
 
-        public ICalibration CreateEnergyCalibrator()
+        public ICalibration CreateCalibrator(DeviceType deviceType)
+        {
+            return deviceType == DeviceType.DataLogger
+                ? CreateTemperatureCalibrator()
+                : CreateEnergyCalibrator();
+        }
+
+        private ICalibration CreateEnergyCalibrator()
         {
             ICalibration energyCalibrator = new BaseCalibration(_scannerManager);
             return energyCalibrator;
         }
 
-        public ICalibration CreateTemperatureCalibrator()
+        private ICalibration CreateTemperatureCalibrator()
         {
             ICalibration temperatureCalibrator = new TemperatureCalibration(new BaseCalibration(_scannerManager));
             return temperatureCalibrator;

@@ -1,8 +1,9 @@
-﻿namespace DataAcquisition.Core.Interfaces.CalibrationManager
+﻿using DataAcquisition.Core.Enums;
+
+namespace DataAcquisition.Core.Interfaces.CalibrationManager
 {
     public interface ICalibrationManager
     {
-        public ICalibration CreateEnergyCalibrator();
-        public ICalibration CreateTemperatureCalibrator();
+        public ICalibration CreateCalibrator(DeviceType deviceType);
     }
 }
