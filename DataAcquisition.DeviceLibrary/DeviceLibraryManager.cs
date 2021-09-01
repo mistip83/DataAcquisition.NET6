@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAcquisition.Core.Enums;
+using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.Core.Interfaces.DeviceManager;
 using DataAcquisition.DeviceLibrary.DeviceFactory;
-using DataAcquisition.Interface.DeviceLibrary;
-using DataAcquisition.Interface.DeviceManager;
-using DataAcquisition.Model.Enums;
 
 namespace DataAcquisition.DeviceLibrary
 {

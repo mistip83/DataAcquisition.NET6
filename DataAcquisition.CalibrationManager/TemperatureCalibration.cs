@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Timers;
-using DataAcquisition.Interface.CalibrationManager;
+using DataAcquisition.Core.Interfaces.CalibrationManager;
 
 namespace DataAcquisition.CalibrationManager
 {

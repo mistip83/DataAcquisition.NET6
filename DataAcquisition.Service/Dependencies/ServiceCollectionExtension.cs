@@ -1,6 +1,6 @@
-﻿using DataAcquisition.Interface.CalibrationManager;
-using DataAcquisition.Interface.ConnectionManager;
-using DataAcquisition.Interface.DeviceManager;
+﻿using DataAcquisition.Core.Interfaces.CalibrationManager;
+using DataAcquisition.Core.Interfaces.ConnectionManager;
+using DataAcquisition.Core.Interfaces.DeviceManager;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAcquisition.Service.Dependencies

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Interface.UnitOfWorks;
-using DataAcquisition.Model.Entities;
+using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Interfaces.UnitOfWorks;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Service
 {

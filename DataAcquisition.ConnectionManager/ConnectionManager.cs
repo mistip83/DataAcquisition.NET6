@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO.Ports;
-using DataAcquisition.Interface.ConnectionManager;
-using DataAcquisition.Model.Enums;
+using DataAcquisition.Core.Enums;
+using DataAcquisition.Core.Interfaces.ConnectionManager;
 
 namespace DataAcquisition.ConnectionManager
 {

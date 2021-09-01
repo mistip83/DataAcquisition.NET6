@@ -1,7 +1,7 @@
-﻿using DataAcquisition.Interface;
-using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Interface.UnitOfWorks;
+﻿using DataAcquisition.Core.Interfaces;
+using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Repository.Repositories;
 using DataAcquisition.Repository.UnitOfWork;
 using DataAcquisition.Service;

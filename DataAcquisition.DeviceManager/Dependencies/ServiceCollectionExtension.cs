@@ -1,5 +1,5 @@
-﻿using DataAcquisition.DeviceLibrary;
-using DataAcquisition.Interface.DeviceLibrary;
+﻿using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.DeviceLibrary;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAcquisition.DeviceManager.Dependencies

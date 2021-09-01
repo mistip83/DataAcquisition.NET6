@@ -1,5 +1,5 @@
 ﻿using System;
-using DataAcquisition.Interface.CalibrationManager;
+using DataAcquisition.Core.Interfaces.CalibrationManager;
 
 namespace DataAcquisition.CalibrationManager
 {

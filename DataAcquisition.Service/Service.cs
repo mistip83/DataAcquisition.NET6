@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Interface.UnitOfWorks;
+using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Interfaces.UnitOfWorks;
 
 namespace DataAcquisition.Service
 {

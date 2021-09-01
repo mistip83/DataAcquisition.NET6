@@ -1,6 +1,6 @@
 ﻿using System;
-using DataAcquisition.Interface.CalibrationManager;
-using DataAcquisition.Interface.ScannerManager;
+using DataAcquisition.Core.Interfaces.CalibrationManager;
+using DataAcquisition.Core.Interfaces.ScannerManager;
 
 namespace DataAcquisition.CalibrationManager
 {

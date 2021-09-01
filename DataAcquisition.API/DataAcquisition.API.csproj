@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\DataAcquisition.DataAccessEF\DataAcquisition.DataAccessEF.csproj" />
-    <ProjectReference Include="..\DataAcquisition.Interface\DataAcquisition.Interface.csproj" />
     <ProjectReference Include="..\DataAcquisition.Repository\DataAcquisition.Repository.csproj" />
     <ProjectReference Include="..\DataAcquisition.Service\DataAcquisition.Service.csproj" />
   </ItemGroup>

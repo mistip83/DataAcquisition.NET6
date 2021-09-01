@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAcquisition.Interface\DataAcquisition.Interface.csproj" />
+    <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
   </ItemGroup>
 
 </Project>

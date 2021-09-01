@@ -1,4 +1,4 @@
-﻿using DataAcquisition.Interface.ScannerManager;
+﻿using DataAcquisition.Core.Interfaces.ScannerManager;
 using DataAcquisition.Scanner;
 using Microsoft.Extensions.DependencyInjection;
 

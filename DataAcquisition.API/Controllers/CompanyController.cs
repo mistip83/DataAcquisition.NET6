@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Model.DTOs;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Models.DTOs;
 
 namespace DataAcquisition.API.Controllers
 {

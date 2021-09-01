@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.API.Filters;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Model.DTOs;
-using DataAcquisition.Model.Entities;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
 {

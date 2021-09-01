@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using DataAcquisition.Interface.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.API.Filters;
-using DataAcquisition.Interface;
-using DataAcquisition.Model.DTOs;
-using DataAcquisition.Model.Entities;
+using DataAcquisition.Core.Interfaces;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
 {

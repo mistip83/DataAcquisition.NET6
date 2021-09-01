@@ -1,11 +1,11 @@
-﻿using DataAcquisition.Interface.CalibrationManager;
-using DataAcquisition.Interface.ConnectionManager;
-using DataAcquisition.Interface.DeviceManager;
-using DataAcquisition.Interface.Repositories;
-using DataAcquisition.Interface.Services;
-using DataAcquisition.Interface.UnitOfWorks;
-using DataAcquisition.Model.Entities;
-using DataAcquisition.Model.Enums;
+﻿using DataAcquisition.Core.Enums;
+using DataAcquisition.Core.Interfaces.CalibrationManager;
+using DataAcquisition.Core.Interfaces.ConnectionManager;
+using DataAcquisition.Core.Interfaces.DeviceManager;
+using DataAcquisition.Core.Interfaces.Repositories;
+using DataAcquisition.Core.Interfaces.Services;
+using DataAcquisition.Core.Interfaces.UnitOfWorks;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Service
 {

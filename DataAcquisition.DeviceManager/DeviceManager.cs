@@ -1,6 +1,6 @@
-﻿using DataAcquisition.Interface.DeviceLibrary;
-using DataAcquisition.Interface.DeviceManager;
-using DataAcquisition.Model.Enums;
+﻿using DataAcquisition.Core.Enums;
+using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.Core.Interfaces.DeviceManager;
 
 namespace DataAcquisition.DeviceManager
 {

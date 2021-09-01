@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using DataAcquisition.Model.DTOs;
-using DataAcquisition.Model.Entities;
+using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Mapper
 {

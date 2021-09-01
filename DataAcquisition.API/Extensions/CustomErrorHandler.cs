@@ -1,4 +1,4 @@
-﻿using DataAcquisition.Model.DTOs;
+﻿using DataAcquisition.Core.Models.DTOs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;

@@ -1,5 +1,5 @@
 ﻿using System;
-using DataAcquisition.Interface;
+using DataAcquisition.Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace DataAcquisition.API.Dependencies

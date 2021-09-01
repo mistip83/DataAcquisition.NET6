@@ -1,5 +1,5 @@
 ﻿using System;
-using DataAcquisition.Interface.ScannerManager;
+using DataAcquisition.Core.Interfaces.ScannerManager;
 
 namespace DataAcquisition.Scanner
 {

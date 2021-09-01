@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using DataAcquisition.Model.DTOs;
+using DataAcquisition.Core.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
