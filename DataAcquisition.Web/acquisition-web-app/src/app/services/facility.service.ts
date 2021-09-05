@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
-import { IFacility } from '../interfaces/models/facility';
+import { Facility } from '../models/facility';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class FacilityService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getFacilityList(): Observable<IFacility>{
-    return this.httpClient.get<IFacility>(this.REST_API_SERVER + 'facility/facility-list');
+  getFacilityList(): Observable<Facility[]>{
+    return this.httpClient.get<Facility[]>(this.REST_API_SERVER + 'facility/facility-list');
   }
 }
