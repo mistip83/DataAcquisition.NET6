@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { DeviceComponent } from './device/device.component';
 import { WorkstationComponent } from './workstation/workstation.component';
@@ -8,7 +9,8 @@ import { FacilityComponent } from './facility/facility.component';
 import { OrganizationComponent } from './organization/organization.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'organization', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   { path: 'organization', component: OrganizationComponent },
   { path: 'facility', component: FacilityComponent },
   { path: 'workstation', component: WorkstationComponent },

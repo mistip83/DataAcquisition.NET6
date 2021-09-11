@@ -18,19 +18,21 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FacilityComponent } from './facility/facility.component';
 import { FacilityFormComponent } from './facility/facility-form/facility-form.component';
 import { ExperimentComponent } from './experiment/experiment.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     OrganizationComponent,
     FacilityComponent,
     WorkstationComponent,
     DeviceComponent,
     AboutComponent,
-      FacilityComponent,
-      FacilityFormComponent,
-      ExperimentComponent
-   ],
+    FacilityComponent,
+    FacilityFormComponent,
+    ExperimentComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,9 +43,9 @@ import { ExperimentComponent } from './experiment/experiment.component';
     MatCardModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
