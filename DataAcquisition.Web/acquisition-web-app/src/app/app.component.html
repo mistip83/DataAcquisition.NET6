@@ -1,4 +1,12 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+          menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+          close
+      </mat-icon>
+  </button>
   <h1>
     Data Acquisition 
   </h1>
@@ -9,7 +17,34 @@
   <button mat-button routerLink="/device">Devices</button>
   <button mat-button routerLink="/experiment">Experiments</button>
   <button mat-button routerLink="/about">About</button>
-
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <h4>Quick Menu</h4>
+      <hr>
+      <button mat-button class="menu-button">
+          <div>Add Facility</div>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button">
+          <div>Add Workstation</div>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button">
+          <span>Add Device</span>
+      </button>
+      <mat-divider></mat-divider>
+      <hr>
+      <button mat-button class="menu-button">
+          <span>+ Start new experiment</span>
+      </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

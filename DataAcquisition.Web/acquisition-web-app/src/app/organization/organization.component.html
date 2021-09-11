@@ -1,7 +1,7 @@
 <mat-accordion>
   <mat-expansion-panel company>
     <mat-expansion-panel-header>
-      <mat-panel-title><h1>Company Overview</h1></mat-panel-title>
+      <mat-panel-title><h2>Company Overview</h2></mat-panel-title>
     </mat-expansion-panel-header>
     <h3>Company Name: {{ organization.companyName }}</h3>
     <h3>Number of Facilities: {{ organization.facilities.length }}</h3>
@@ -9,7 +9,7 @@
   </mat-expansion-panel>
   <mat-expansion-panel facility>
     <mat-expansion-panel-header>
-      <mat-panel-title><h1>Facility Overview</h1></mat-panel-title>
+      <mat-panel-title><h2>Facility Overview</h2></mat-panel-title>
     </mat-expansion-panel-header>
     <div *ngFor="let facility of organization.facilities">
       <h2>{{ facility.facilityName }}</h2>
@@ -19,7 +19,7 @@
   </mat-expansion-panel>
   <mat-expansion-panel workstation>
     <mat-expansion-panel-header>
-      <mat-panel-title><h1>Workstation Overview</h1></mat-panel-title>
+      <mat-panel-title><h2>Workstation Overview</h2></mat-panel-title>
     </mat-expansion-panel-header>
     <div *ngFor="let facility of organization.facilities">
       <div *ngFor="let workstation of facility.workstations">
