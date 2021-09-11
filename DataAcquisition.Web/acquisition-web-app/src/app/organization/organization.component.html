@@ -24,6 +24,7 @@
     <div *ngFor="let facility of organization.facilities">
       <div *ngFor="let workstation of facility.workstations">
         <h2>{{ workstation.workstationName }} ({{ facility.facilityName }})</h2>
+        <h3>Number of Devices: {{ workstation.devices.length }}</h3>
         <h3>Number of Experiments: {{ workstation.experiments.length }}</h3>
       </div>
     </div>

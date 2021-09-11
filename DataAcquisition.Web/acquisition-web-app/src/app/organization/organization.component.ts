@@ -39,4 +39,16 @@ export class OrganizationComponent implements OnInit {
     
     return expCount;
   }
+
+  calculateDeviceCount(): number {
+    let deviceCount = 0;
+
+    this.organization.facilities.forEach((facility) => {
+      facility.workstations.forEach(workstation => {
+        deviceCount += workstation.devices.length;
+      });
+    });
+    
+    return deviceCount;
+  }
 }

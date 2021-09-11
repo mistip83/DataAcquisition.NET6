@@ -42,7 +42,10 @@ namespace DataAcquisition.Repository.Repositories
             return await AppDbContext.Company
                 .Include(x => x.Facilities)
                 .ThenInclude(x=>x.WorkStations)
-                .ThenInclude(x=>x.Experiments)
+                .ThenInclude(x=>x.Devices)
+                .Include(x => x.Facilities)
+                .ThenInclude(x => x.WorkStations)
+                .ThenInclude(x => x.Experiments)
                 .SingleOrDefaultAsync();
         }
     }
