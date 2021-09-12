@@ -8,11 +8,21 @@ import { FacilityService } from '../services/facility.service';
   styleUrls: ['./facility.component.css'],
 })
 export class FacilityComponent implements OnInit {
-  facility: Facility[] = [];
+  facilityList: Facility[] = [];
 
   constructor(private _facilityService: FacilityService) {}
 
   ngOnInit(): void {
-    this._facilityService.getFacilityList().subscribe((data) =>(this.facility = data))
+    this._facilityService
+      .getFacilityList()
+      .subscribe((data) => (this.facilityList = data));
+  }
+
+  GetWorkstationNames(): void {
+    this.facilityList.forEach((facility) => {
+      facility.workstations.forEach(workstation => {
+        let deviceCount = workstation.workstationName;
+      });
+    });
   }
 }
