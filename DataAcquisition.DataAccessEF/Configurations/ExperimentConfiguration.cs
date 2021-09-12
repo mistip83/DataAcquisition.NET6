@@ -16,10 +16,7 @@ namespace DataAcquisition.DataAccessEF.Configurations
             builder.Property(p => p.ExperimentName)
                 .HasMaxLength(100)
                 .IsRequired();
-
-            builder.Property(p => p.ExperimentDataId)
-                .HasMaxLength(250);
-
+            
             // Experiment has one workstation
             builder.HasOne(p => p.WorkStation)
                 .WithMany(p => p.Experiments)

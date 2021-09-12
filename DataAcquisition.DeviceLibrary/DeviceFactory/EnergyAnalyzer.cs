@@ -1,5 +1,4 @@
 ﻿using DataAcquisition.Core.Interfaces.DeviceManager;
-using DataAcquisition.DeviceLibrary.DeviceLibrary;
 
 namespace DataAcquisition.DeviceLibrary.DeviceFactory
 {

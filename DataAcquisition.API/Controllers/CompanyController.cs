@@ -31,7 +31,7 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Returns Company, Facilities, Workstations, Experiments
+        /// Returns Company, Facilities, Workstations, Devices and Experiments
         /// </summary>
         [HttpGet("organization-layout")]
         public async Task<IActionResult> GetOrganizationLayout()

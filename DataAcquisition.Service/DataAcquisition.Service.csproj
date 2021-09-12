@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\DataAcquisition.DeviceManager\DataAcquisition.DeviceManager.csproj" />
+    <ProjectReference Include="..\DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj" />
   </ItemGroup>
 
 </Project>

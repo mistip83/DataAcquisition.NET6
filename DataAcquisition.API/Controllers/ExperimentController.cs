@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.API.Filters;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
 {
@@ -64,6 +66,18 @@ namespace DataAcquisition.API.Controllers
             _experimentService.Remove(experiment);
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// Create new experiment
+        /// </summary>
+        /// <param name="experimentDto"></param>
+        [ValidationFilter]
+        [HttpPost("create-experiment")]
+        public async Task<IActionResult> CreateExperiment(ExperimentDto experimentDto)
+        {
+            var newExperiment = await _experimentService.AddAsync(_mapper.Map<Experiment>(experimentDto));
+            return Created(string.Empty, _mapper.Map<ExperimentDto>(newExperiment));
         }
     }
 }
