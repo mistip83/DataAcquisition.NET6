@@ -79,5 +79,17 @@ namespace DataAcquisition.API.Controllers
             var newExperiment = await _experimentService.AddAsync(_mapper.Map<Experiment>(experimentDto));
             return Created(string.Empty, _mapper.Map<ExperimentDto>(newExperiment));
         }
+
+        /// <summary>
+        /// Start data acquisition
+        /// </summary>
+        /// <param name="measurementInfo"></param>
+        [ValidationFilter]
+        [HttpPost("start-experiment")]
+        public async Task<IActionResult> StartExperiment(MeasurementDto measurementInfo)
+        {
+            await _experimentService.StartNewExperiment(measurementInfo);
+            return NoContent();
+        }
     }
 }

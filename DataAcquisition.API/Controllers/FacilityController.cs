@@ -43,7 +43,7 @@ namespace DataAcquisition.API.Controllers
         [HttpGet("facility-list")]
         public async Task<IActionResult> GetFacilityList()
         {
-            var facility = await _facilityService.GetAllAsync();
+            var facility = await _facilityService.GetFacilitiesWithWorkStationsAsync();
             return Ok(_mapper.Map<IEnumerable<Facility>, IEnumerable<FacilityDto>>(facility));
         }
 
