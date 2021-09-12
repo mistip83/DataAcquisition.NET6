@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Core.Interfaces.Services
@@ -10,5 +11,11 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// </summary>
         /// <param name="id"></param>
         public Task<Facility> GetFacilityWithWorkStationsAsync(int id);
+
+        /// <summary>
+        /// Returns all facilities entity with their workstations
+        /// </summary>
+        /// <returns></returns>
+        public Task<IEnumerable<Facility>> GetFacilitiesWithWorkStationsAsync();
     }
 }

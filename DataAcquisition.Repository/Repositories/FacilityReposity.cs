@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Models.Entities;
 using DataAcquisition.DataAccessEF.DataAccess;
@@ -25,6 +26,15 @@ namespace DataAcquisition.Repository.Repositories
         {
             return await AppDbContext.Facility.Include(x => x.WorkStations)
                 .SingleOrDefaultAsync(x => x.FacilityId == id);
+        }
+
+        /// <summary>
+        /// Implementation detail
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Facility>> GetFacilitiesWithWorkStationsAsync()
+        {
+            return await AppDbContext.Facility.Include(x => x.WorkStations).ToListAsync();
         }
     }
 }
