@@ -23,13 +23,13 @@ namespace DataAcquisition.CalibrationManager
 
         private ICalibration CreateEnergyCalibrator()
         {
-            ICalibration energyCalibrator = new BaseCalibration(_scannerManager);
+            var energyCalibrator = new BaseCalibration(_scannerManager);
             return energyCalibrator;
         }
 
         private ICalibration CreateTemperatureCalibrator()
         {
-            ICalibration temperatureCalibrator = new TemperatureCalibration(new BaseCalibration(_scannerManager));
+            var temperatureCalibrator = new TemperatureCalibration(new BaseCalibration(_scannerManager));
             return temperatureCalibrator;
         }
     }
