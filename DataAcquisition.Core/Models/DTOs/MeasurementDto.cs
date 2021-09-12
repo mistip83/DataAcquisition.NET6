@@ -6,6 +6,11 @@ namespace DataAcquisition.Core.Models.DTOs
     public class MeasurementDto
     {
         /// <summary>
+        /// Experiment id
+        /// </summary>
+        public int ExperimentId { get; set; }
+
+        /// <summary>
         /// Time difference between 2 measurements
         /// </summary>
         public TimeSpan TimeInterval { get; set; }
@@ -18,6 +23,6 @@ namespace DataAcquisition.Core.Models.DTOs
         /// <summary>
         /// Contain channel properties for each device
         /// </summary>
-        public IEnumerable<ChannelConfiguration> ChannelConfigList { get; set; }
+        public List<ChannelConfiguration> ChannelConfigList { get; set; }
     }
 }

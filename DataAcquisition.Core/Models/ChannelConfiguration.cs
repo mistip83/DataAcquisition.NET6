@@ -9,8 +9,8 @@ namespace DataAcquisition.Core.Models
     public class ChannelConfiguration
     {
         public DeviceType DeviceType { get; set; }
-        public IEnumerable<int> ChannelIdList { get; set; }
-        public IEnumerable<string> ChannelNameList { get; set; }
-        public IEnumerable<string> ChannelUnitList { get; set; }
+        public List<int> ChannelIdList { get; set; }
+        public List<string> ChannelNameList { get; set; }
+        public List<string> ChannelUnitList { get; set; }
     }
 }
