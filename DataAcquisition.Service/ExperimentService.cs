@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
-using DataAcquisition.Core.Models;
+using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Service
@@ -26,9 +25,9 @@ namespace DataAcquisition.Service
             return await UnitOfWork.Experiments.GetExperimentDataAsync(id);
         }
 
-        public async Task StartNewExperiment(IEnumerable<ChannelConfiguration> channelConfigList)
+        public async Task StartNewExperiment(MeasurementDto measurementInfo)
         {
-            await _experimentManager.StartNewExperiment(channelConfigList);
+            await _experimentManager.GetExperimentData(measurementInfo);
         }
     }
 }

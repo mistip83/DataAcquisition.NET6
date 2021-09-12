@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
@@ -15,6 +16,11 @@ namespace DataAcquisition.Service
         public async Task<Facility> GetFacilityWithWorkStationsAsync(int id)
         {
             return await UnitOfWork.Facilities.GetFacilityWithWorkStationsAsync(id);
+        }
+
+        public async Task<IEnumerable<Facility>> GetFacilitiesWithWorkStationsAsync()
+        {
+            return await UnitOfWork.Facilities.GetFacilitiesWithWorkStationsAsync();
         }
     }
 }
