@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { FacilityComponent } from './facility/facility.component';
+import { FacilityFormComponent } from './facility/facility-form/facility-form.component';
 import { OrganizationComponent } from './organization/organization.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'organization', component: OrganizationComponent },
   { path: 'facility', component: FacilityComponent },
+  { path: 'facility-form', component: FacilityFormComponent },
   { path: 'workstation', component: WorkstationComponent },
   { path: 'device', component: DeviceComponent },
   { path: 'experiment', component: ExperimentComponent },

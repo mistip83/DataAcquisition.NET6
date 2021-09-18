@@ -23,7 +23,7 @@
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
       <h4>Quick Menu</h4>
       <hr>
-      <button mat-button class="menu-button">
+      <button mat-button class="menu-button" routerLink="/facility-form">
           <div>Add Facility</div>
       </button>
       <mat-divider></mat-divider>
@@ -42,9 +42,8 @@
 
   </mat-sidenav>
   <mat-sidenav-content>
-      <div class="content mat-elevation-z8">
-        <router-outlet></router-outlet>
-      </div>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 

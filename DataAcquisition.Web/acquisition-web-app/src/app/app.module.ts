@@ -13,6 +13,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { WorkstationComponent } from './workstation/workstation.component';
@@ -21,7 +22,6 @@ import { AboutComponent } from './about/about.component';
 import { FacilityComponent } from './facility/facility.component';
 import { FacilityFormComponent } from './facility/facility-form/facility-form.component';
 import { ExperimentComponent } from './experiment/experiment.component';
-
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { ExperimentComponent } from './experiment/experiment.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
@@ -48,7 +49,7 @@ import { ExperimentComponent } from './experiment/experiment.component';
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
