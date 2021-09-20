@@ -4,6 +4,5 @@ namespace DataAcquisition.Core.Interfaces.Services
 {
     public interface IDeviceService : IService<Device>
     {
-        Device CalibrateDevice(Device device);
     }
 }

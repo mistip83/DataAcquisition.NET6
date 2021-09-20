@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;
-using DataAcquisition.Core.Interfaces.DeviceManager;
 using DataAcquisition.DeviceLibrary.DeviceFactory;
 
 namespace DataAcquisition.DeviceLibrary
@@ -15,10 +14,18 @@ namespace DataAcquisition.DeviceLibrary
         private Dictionary<DeviceType, AbstractFactory> _factories;
 
         /// <summary>
+        /// Returns address list regarding the device type 
+        /// </summary>
+        /// <param name="deviceType"></param>
+        /// <returns></returns>
+        public int[] GetChannelList(DeviceType deviceType) => 
+            ExecuteCreation(deviceType).ChannelAddressList();
+
+        /// <summary>
         /// Creates corresponding device object
         /// </summary>
         /// <param name="deviceType"></param>
-        public IDevice ExecuteCreation(DeviceType deviceType)
+        private IDevice ExecuteCreation(DeviceType deviceType)
         {
             InitializeFactories();
             return _factories[deviceType].Create();
