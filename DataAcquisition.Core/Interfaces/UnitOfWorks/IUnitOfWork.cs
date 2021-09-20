@@ -5,11 +5,11 @@ namespace DataAcquisition.Core.Interfaces.UnitOfWorks
 {
     public interface IUnitOfWork
     {
-        IUserRepository Users { get; }
+        IUserRepository User { get; }
         ICompanyRepository Company { get; }
-        IFacilityRepository Facilities { get; }
-        IWorkstationRepository Workstations { get; }
-        IExperimentRepository Experiments { get; }
+        IFacilityRepository Facility { get; }
+        IWorkstationRepository Workstation { get; }
+        IExperimentRepository Experiment { get; }
         Task CommitAsync();
         void Commit();
     }

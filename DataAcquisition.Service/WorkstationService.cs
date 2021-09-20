@@ -21,7 +21,7 @@ namespace DataAcquisition.Service
         /// <param name="id"></param>
         public async Task<Workstation> GetWorkstationWithDevicesAndExperimentsAsync(int id)
         {
-            return await UnitOfWork.Workstations.GetWorkstationWithDevicesAndExperimentsAsync(id);
+            return await UnitOfWork.Workstation.GetWorkstationWithDevicesAndExperimentsAsync(id);
         }
     }
 }

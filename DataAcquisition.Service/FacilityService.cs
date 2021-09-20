@@ -15,12 +15,12 @@ namespace DataAcquisition.Service
 
         public async Task<Facility> GetFacilityWithWorkStationsAsync(int id)
         {
-            return await UnitOfWork.Facilities.GetFacilityWithWorkStationsAsync(id);
+            return await UnitOfWork.Facility.GetFacilityWithWorkStationsAsync(id);
         }
 
         public async Task<IEnumerable<Facility>> GetFacilitiesWithWorkStationsAsync()
         {
-            return await UnitOfWork.Facilities.GetFacilitiesWithWorkStationsAsync();
+            return await UnitOfWork.Facility.GetFacilitiesWithWorkStationsAsync();
         }
     }
 }

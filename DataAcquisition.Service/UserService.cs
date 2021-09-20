@@ -21,7 +21,7 @@ namespace DataAcquisition.Service
         /// <param name="email"></param>
         public async Task<User> GetUserWithCompanyAsync(string email)
         {
-            return await UnitOfWork.Users.GetUserWithCompanyAsync(email);
+            return await UnitOfWork.User.GetUserWithCompanyAsync(email);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace DataAcquisition.Service
         /// <param name="email"></param>
         public async Task<User> GetUserWithExperimentsAsync(string email)
         {
-            return await UnitOfWork.Users.GetUserWithExperimentsAsync(email);
+            return await UnitOfWork.User.GetUserWithExperimentsAsync(email);
         }
     }
 }

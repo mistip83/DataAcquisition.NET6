@@ -18,11 +18,11 @@ namespace DataAcquisition.Repository.UnitOfWork
         private WorkstationRepository _workstationRepository;
         private ExperimentRepository _experimentRepository;
 
-        public IUserRepository Users => _userRepository ??= new UserRepository(_context);
+        public IUserRepository User => _userRepository ??= new UserRepository(_context);
         public ICompanyRepository Company => _companyRepository ??= new CompanyRepository(_context);
-        public IFacilityRepository Facilities => _facilityRepository ??= new FacilityReposity(_context); 
-        public IWorkstationRepository Workstations => _workstationRepository ??= new WorkstationRepository(_context);
-        public IExperimentRepository Experiments => _experimentRepository ??= new ExperimentRepository(_context);
+        public IFacilityRepository Facility => _facilityRepository ??= new FacilityReposity(_context); 
+        public IWorkstationRepository Workstation => _workstationRepository ??= new WorkstationRepository(_context);
+        public IExperimentRepository Experiment => _experimentRepository ??= new ExperimentRepository(_context);
 
         public UnitOfWork(AppDbContext appDbContext)
         {

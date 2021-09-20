@@ -22,7 +22,7 @@ namespace DataAcquisition.Service
 
         public async Task<ExperimentData> GetExperimentDataAsync(int id)
         {
-            return await UnitOfWork.Experiments.GetExperimentDataAsync(id);
+            return await UnitOfWork.Experiment.GetExperimentDataAsync(id);
         }
 
         public async Task StartNewExperiment(MeasurementDto measurementInfo)
