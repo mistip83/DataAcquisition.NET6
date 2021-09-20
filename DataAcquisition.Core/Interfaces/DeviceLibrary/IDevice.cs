@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Core.Interfaces.DeviceManager
+﻿namespace DataAcquisition.Core.Interfaces.DeviceLibrary
 {
     public interface IDevice
     {
