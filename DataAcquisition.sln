@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.CalibrationManager", "DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj", "{317D767A-F00E-424E-B5D9-CD754BD93C01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceManager", "DataAcquisition.DeviceManager\DataAcquisition.DeviceManager.csproj", "{B4AE2208-4510-4280-ADEC-18263BC29FCD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{D09AE150-72A9-4EEB-843F-1B30C488FFE7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Scanner", "DataAcquisition.Scanner\DataAcquisition.Scanner.csproj", "{E2912B84-01F4-4D32-9B3A-B6F5343AA76C}"
@@ -51,10 +49,6 @@ Global
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4AE2208-4510-4280-ADEC-18263BC29FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4AE2208-4510-4280-ADEC-18263BC29FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4AE2208-4510-4280-ADEC-18263BC29FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4AE2208-4510-4280-ADEC-18263BC29FCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09AE150-72A9-4EEB-843F-1B30C488FFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
