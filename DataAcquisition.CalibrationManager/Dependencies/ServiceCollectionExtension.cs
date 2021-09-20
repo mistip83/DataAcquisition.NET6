@@ -9,12 +9,13 @@ namespace DataAcquisition.CalibrationManager.Dependencies
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection RegisterCalibrationDependencies(this IServiceCollection services)
+        public static IServiceCollection RegisterCalibrationDependencies(this IServiceCollection container)
         {
-            services.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
-            services.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
-            services.AddScoped<IScannerManager, ScannerManager>();
-            return services;
+            container.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
+            container.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
+            container.AddScoped<IScannerManager, ScannerManager>();
+
+            return container;
         }
     }
 }

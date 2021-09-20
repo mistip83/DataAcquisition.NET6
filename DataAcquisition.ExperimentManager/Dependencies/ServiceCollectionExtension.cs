@@ -7,11 +7,12 @@ namespace DataAcquisition.ExperimentManager.Dependencies
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection RegisterExperimentManagerDependencies(this IServiceCollection services)
+        public static IServiceCollection RegisterExperimentManagerDependencies(this IServiceCollection container)
         {
-            services.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
-            services.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
-            return services;
+            container.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
+            container.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
+
+            return container;
         }
     }
 }

@@ -12,6 +12,7 @@
     <ProjectReference Include="..\DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj" />
     <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj" />
+    <ProjectReference Include="..\DataAcquisition.Repository\DataAcquisition.Repository.csproj" />
   </ItemGroup>
 
 </Project>
