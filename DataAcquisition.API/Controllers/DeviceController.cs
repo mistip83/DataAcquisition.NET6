@@ -79,18 +79,5 @@ namespace DataAcquisition.API.Controllers
 
             return NoContent();
         }
-
-        /// <summary>
-        /// Calibrate Device
-        /// </summary>
-        /// <param name="id"></param>
-        [HttpGet("calibrate-device/{id:int}")]
-        public async Task<IActionResult> CalibrateDevice(int id)
-        {
-            var device = await _deviceService.GetByIdAsync(id);
-            device = _deviceService.CalibrateDevice(device);
-
-            return Ok(_mapper.Map<DeviceDto>(device));
-        }
     }
 }
