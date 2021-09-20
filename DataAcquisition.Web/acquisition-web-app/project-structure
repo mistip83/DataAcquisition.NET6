@@ -1,0 +1,54 @@
+@startuml "Data Acquisition Project Structure Diagram"
+!include <c4/C4_Container.puml>
+
+LAYOUT_LEFT_RIGHT()
+HIDE_STEREOTYPE()
+
+title Data Acquisition Project Dependecy Diagram
+
+Person(user, User, "A tech person")
+
+
+Container_Boundary(dataAcquisition, "DataAcquisition Projects") {
+    Container(web_app, "Web UI", "Angular 12, Typescript", "Provides the user interface for DataAcquisiton.")
+    Container(web_api, "Web API", ".NET 5 Web API", "Provides a web service for accessing data stored in the database.")
+    Container(calibration_manager, "Calibration Manager", ".NET 5 Class Library", "Contains calibration business logic. Uses Decorator design pattern.")
+    Container(connection_manager, "Connection Manager", ".NET 5 Class Library", "Contains device communication business logic.")
+    Container(ef, "DataAccessEF", ".NET 5 Class Library", "Entity Framework, crates DB schema and applies seed data and migrations.")
+    Container(device_library, "Device Library", ".NET 5 Class Library", "Responsible for creating corresponding device object. Uses Factory design pattern.")
+    Container(device_manager, "Device Manager", ".NET 5 Class Library", "Orchestrator for all device related operations.")
+    Container(experiment_manager, "Experiment Manager", ".NET 5 Class Library", "Contains experiment business logic.")
+    Container(repository, "Repository", ".NET 5 Class Library", "Contains DB operations. Uses Repository and UnityOfWork design patterns.")
+    Container(scanner, "Scanner", ".NET 5 Class Library", "Collects data from devices.")
+    Container(service, "Service", ".NET 5 Class Library", "An architectural pattern to communicate with Web services.")
+    Container(core, "Core", ".NET 5 Class Library", "Contains models, interfaces and enums. It is used by all other .NET projects.")
+}
+
+System_Ext(db, "Database", "MSSQLLocalDB")
+
+Rel(user, web_app, "JSON/HTTP")
+
+Rel(web_app, web_api, " ")
+
+Rel(web_api, ef, " ")
+Rel(web_api, repository, " ")
+Rel(web_api, service, " ")
+
+Rel(calibration_manager, scanner, " ")
+
+Rel(ef, db, " ")
+
+Rel(device_manager, calibration_manager, " ")
+Rel(device_manager, connection_manager, " ")
+Rel(device_manager, device_library, " ")
+
+Rel(experiment_manager, connection_manager, " ")
+Rel(experiment_manager, device_library, " ")
+Rel(experiment_manager, scanner, " ")
+
+Rel(repository, ef, " ")
+
+Rel(service, device_manager, " ")
+Rel(service, experiment_manager, " ")
+
+@enduml

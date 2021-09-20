@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.DeviceLibra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "DataAcquisition.Core\DataAcquisition.Core.csproj", "{8C0CFE64-AA34-4FB4-8534-DBB1F1194F6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.ExperimentManager", "DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj", "{9680F62F-A632-46DE-B364-3188DFEE10CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ExperimentManager", "DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj", "{9680F62F-A632-46DE-B364-3188DFEE10CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
