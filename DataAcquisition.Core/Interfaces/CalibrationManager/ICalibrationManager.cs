@@ -1,9 +1,13 @@
-﻿using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Core.Interfaces.CalibrationManager
 {
+    /// <summary>
+    /// Orchestrate calibration procedure
+    /// </summary>
+    /// <param name="device"></param>
     public interface ICalibrationManager
     {
-        public ICalibration CreateCalibrator(DeviceType deviceType);
+        Device DoCalibration(Device device);
     }
 }

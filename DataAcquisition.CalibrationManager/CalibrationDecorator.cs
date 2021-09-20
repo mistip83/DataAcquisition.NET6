@@ -12,7 +12,7 @@ namespace DataAcquisition.CalibrationManager
             _calibrator = calibrator;
         }
 
-        public DateTime ApplyCalibrationResult(double[] calibrationData)
+        public DateTime ApplyCalibrationData(double[] calibrationData)
         {
             return DateTime.UtcNow;
         }

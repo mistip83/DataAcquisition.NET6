@@ -13,7 +13,7 @@ namespace DataAcquisition.CalibrationManager
             _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
         }
 
-        public DateTime ApplyCalibrationResult(double[] calibrationData)
+        public DateTime ApplyCalibrationData(double[] calibrationData)
         {
             return DateTime.UtcNow;
         }

@@ -2,7 +2,6 @@ using DataAcquisition.API.Dependencies;
 using DataAcquisition.API.Extensions;
 using DataAcquisition.CalibrationManager.Dependencies;
 using DataAcquisition.DataAccessEF.DataAccess;
-using DataAcquisition.DeviceManager.Dependencies;
 using DataAcquisition.Service.Dependencies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-
+using DataAcquisition.ExperimentManager.Dependencies;
 
 namespace DataAcquisition.API
 {
@@ -30,7 +29,7 @@ namespace DataAcquisition.API
             services.RegisterCommonDependencies();
             services.RegisterServiceDependencies();
             services.RegisterCalibrationDependencies();
-            services.RegisterDeviceManagerDependencies();
+            services.RegisterExperimentManagerDependencies();
 
             services.AddDbContext<AppDbContext>(
                 options =>
