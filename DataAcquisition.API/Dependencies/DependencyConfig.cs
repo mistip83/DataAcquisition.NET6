@@ -23,6 +23,7 @@ namespace DataAcquisition.API.Dependencies
             container.AddScoped<IWorkstationService, WorkstationService>();
             container.AddScoped<IDeviceService, DeviceService>();
             container.AddScoped<IAppConfiguration, AppConfiguration>();
+            container.AddScoped<ICalibrationService, CalibrationService>();
 
             return container;
         }

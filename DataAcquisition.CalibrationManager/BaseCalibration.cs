@@ -4,7 +4,7 @@ using DataAcquisition.Core.Interfaces.ScannerManager;
 
 namespace DataAcquisition.CalibrationManager
 {
-    public class BaseCalibration: ICalibration
+    public class BaseCalibration : ICalibration
     {
         private readonly IScannerManager _scannerManager;
 
@@ -13,14 +13,9 @@ namespace DataAcquisition.CalibrationManager
             _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
         }
 
-        public DateTime ApplyCalibrationData(double[] calibrationData)
-        {
-            return DateTime.UtcNow;
-        }
+        public DateTime ApplyCalibrationData(double[] calibrationData) => DateTime.UtcNow;
 
-        public double[] GetCalibrationData(int[] channelAddressList)
-        {
-            return _scannerManager.ReadData(channelAddressList);
-        }
+        public double[] GetCalibrationData(int[] channelAddressList) =>
+         _scannerManager.ReadData(channelAddressList);
     }
 }

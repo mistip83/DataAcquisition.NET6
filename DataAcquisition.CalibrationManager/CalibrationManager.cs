@@ -60,8 +60,7 @@ namespace DataAcquisition.CalibrationManager
         /// </summary>
         private ICalibration CreateEnergyCalibrator()
         {
-            var energyCalibrator = new BaseCalibration(_scannerManager);
-            return energyCalibrator;
+            return new BaseCalibration(_scannerManager);
         }
 
         /// <summary>
@@ -69,8 +68,7 @@ namespace DataAcquisition.CalibrationManager
         /// </summary>
         private ICalibration CreateTemperatureCalibrator()
         {
-            var temperatureCalibrator = new TemperatureCalibration(new BaseCalibration(_scannerManager));
-            return temperatureCalibrator;
+            return new TemperatureCalibration(new BaseCalibration(_scannerManager));
         }
     }
 }

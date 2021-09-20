@@ -11,10 +11,13 @@ namespace DataAcquisition.Service
     public class CalibrationService : ICalibrationService
     {
         private readonly ICalibrationManager _calibrationManager;
+        private readonly IDeviceService _deviceService;
 
-        public CalibrationService(ICalibrationManager calibrationManager)
+        public CalibrationService(ICalibrationManager calibrationManager,
+            IDeviceService deviceService)
         {
             _calibrationManager = calibrationManager;
+            _deviceService = deviceService;
         }
 
         /// <summary>
@@ -23,7 +26,10 @@ namespace DataAcquisition.Service
         /// <param name="device"></param>
         public Device CalibrateDevice(Device device)
         {
-            return _calibrationManager.DoCalibration(device);
+            var updatedDevice = _calibrationManager.DoCalibration(device);
+            _deviceService.Update(updatedDevice);
+
+            return updatedDevice;
         }
     }
 }
