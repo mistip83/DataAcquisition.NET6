@@ -30,7 +30,6 @@ Rel(user, web_app, "JSON/HTTP")
 Rel(web_app, web_api, " ")
 
 Rel(web_api, ef, " ")
-Rel(web_api, repository, " ")
 Rel(web_api, service, " ")
 
 Rel(calibration_manager, connection_manager, " ")
@@ -47,5 +46,6 @@ Rel(repository, ef, " ")
 
 Rel(service, calibration_manager, " ")
 Rel(service, experiment_manager, " ")
+Rel(service, repository, " ")
 
 @enduml
