@@ -3,6 +3,7 @@ using DataAcquisition.API.Extensions;
 using DataAcquisition.CalibrationManager.Dependencies;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Service.Dependencies;
+using DataAcquisition.ExperimentManager.Dependencies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using DataAcquisition.ExperimentManager.Dependencies;
+using Microsoft.OpenApi.Models;
 
 namespace DataAcquisition.API
 {
@@ -40,8 +41,9 @@ namespace DataAcquisition.API
                     });
                 });
 
-            services.AddControllers().AddNewtonsoftJson(options =>
-                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddControllers();
+                //.AddNewtonsoftJson(options =>
+                //options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddCors(options =>
             {
@@ -55,6 +57,11 @@ namespace DataAcquisition.API
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DataAcquisition.API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +70,8 @@ namespace DataAcquisition.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DataAcquisition.API v1"));
             }
 
             app.UseCustomErrorHandler();

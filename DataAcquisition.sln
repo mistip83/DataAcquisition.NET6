@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Service", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Repository", "DataAcquisition.Repository\DataAcquisition.Repository.csproj", "{C9005940-0DBA-46B8-8541-CBABA58F0DE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.API", "DataAcquisition.API\DataAcquisition.API.csproj", "{FB4CA95F-603D-4440-980C-E80BEE40F36F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.CalibrationManager", "DataAcquisition.CalibrationManager\DataAcquisition.CalibrationManager.csproj", "{317D767A-F00E-424E-B5D9-CD754BD93C01}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ConnectionManager", "DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj", "{D09AE150-72A9-4EEB-843F-1B30C488FFE7}"
@@ -22,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "DataAcquisition.Core\DataAcquisition.Core.csproj", "{8C0CFE64-AA34-4FB4-8534-DBB1F1194F6A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ExperimentManager", "DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj", "{9680F62F-A632-46DE-B364-3188DFEE10CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.API", "DataAcquisition.API\DataAcquisition.API.csproj", "{DC77D064-4795-4182-BC0F-40F3537A0943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,6 @@ Global
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9005940-0DBA-46B8-8541-CBABA58F0DE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB4CA95F-603D-4440-980C-E80BEE40F36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB4CA95F-603D-4440-980C-E80BEE40F36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB4CA95F-603D-4440-980C-E80BEE40F36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB4CA95F-603D-4440-980C-E80BEE40F36F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317D767A-F00E-424E-B5D9-CD754BD93C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,6 +65,10 @@ Global
 		{9680F62F-A632-46DE-B364-3188DFEE10CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9680F62F-A632-46DE-B364-3188DFEE10CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9680F62F-A632-46DE-B364-3188DFEE10CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC77D064-4795-4182-BC0F-40F3537A0943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC77D064-4795-4182-BC0F-40F3537A0943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC77D064-4795-4182-BC0F-40F3537A0943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC77D064-4795-4182-BC0F-40F3537A0943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
