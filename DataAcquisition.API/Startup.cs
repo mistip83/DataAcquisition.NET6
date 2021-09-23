@@ -41,9 +41,9 @@ namespace DataAcquisition.API
                     });
                 });
 
-            services.AddControllers();
-                //.AddNewtonsoftJson(options =>
-                //options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
             services.AddCors(options =>
             {
