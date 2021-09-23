@@ -22,6 +22,7 @@ import { AboutComponent } from './about/about.component';
 import { FacilityComponent } from './facility/facility.component';
 import { FacilityFormComponent } from './facility/facility-form/facility-form.component';
 import { ExperimentComponent } from './experiment/experiment.component';
+import { ServerConfig } from './services/serverConfig';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { ExperimentComponent } from './experiment/experiment.component';
     MatSidenavModule,
     MatDividerModule,
   ],
-  providers: [],
+  providers: [ServerConfig],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
