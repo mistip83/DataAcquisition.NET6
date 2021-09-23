@@ -1,18 +1,36 @@
+import { ServerConfig } from './serverConfig';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
-import { Facility } from '../models/facility';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FacilityDto } from '../models/facilityDto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FacilityService {
+  constructor(
+    private httpClient: HttpClient,
+    private serverConfig: ServerConfig
+  ) {}
 
-  private REST_API_SERVER = "https://localhost:44339/api/";
+  // Http Options
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
-  constructor(private httpClient: HttpClient) { }
+  getFacilityList(): Observable<FacilityDto[]> {
+    return this.httpClient.get<FacilityDto[]>(
+      this.serverConfig.REST_API_SERVER_URL + 'facility/facility-list'
+    );
+  }
 
-  getFacilityList(): Observable<Facility[]>{
-    return this.httpClient.get<Facility[]>(this.REST_API_SERVER + 'facility/facility-list');
+  addFacility(facility: FacilityDto): Observable<FacilityDto> {
+    return this.httpClient.post<FacilityDto>(
+      this.serverConfig.REST_API_SERVER_URL + 'facility/add-facility',
+      JSON.stringify(facility),
+      this.httpOptions
+    );
   }
 }

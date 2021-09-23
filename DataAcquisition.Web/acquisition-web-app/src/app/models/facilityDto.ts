@@ -1,6 +1,6 @@
-import { IWorkstationName } from './../interfaces/workstation-name';
+import { IWorkstationName } from '../interfaces/workstation-name';
 
-export class Facility {
+export class FacilityDto {
 
     constructor(
       public facilityId = 0,

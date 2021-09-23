@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Facility } from '../models/facility';
+import { FacilityDto } from '../models/facilityDto';
 import { FacilityService } from '../services/facility.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { FacilityService } from '../services/facility.service';
   styleUrls: ['./facility.component.css'],
 })
 export class FacilityComponent implements OnInit {
-  facilityList: Facility[] = [];
+  facilityList: FacilityDto[] = [];
 
-  constructor(private _facilityService: FacilityService) {}
+  constructor(private facilityService: FacilityService) {}
 
   ngOnInit(): void {
-    this._facilityService
+    this.facilityService
       .getFacilityList()
       .subscribe((data) => (this.facilityList = data));
   }

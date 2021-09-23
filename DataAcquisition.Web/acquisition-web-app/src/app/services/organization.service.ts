@@ -1,18 +1,21 @@
+import { ServerConfig } from './serverConfig';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 import { IOrganization } from '../interfaces/organization';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrganizationService {
+  constructor(
+    private httpClient: HttpClient,
+    private serverConfig: ServerConfig
+  ) {}
 
-  private REST_API_SERVER = "https://localhost:44339/api/";
-
-  constructor(private httpClient: HttpClient) { }
-
-  getOrganizationLayout(): Observable<IOrganization>{
-    return this.httpClient.get<IOrganization>(this.REST_API_SERVER + 'company/organization-layout');
+  getOrganizationLayout(): Observable<IOrganization> {
+    return this.httpClient.get<IOrganization>(
+      this.serverConfig.REST_API_SERVER_URL + 'company/organization-layout'
+    );
   }
 }

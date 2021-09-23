@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Facility } from 'src/app/models/facility';
+import { FacilityDto } from 'src/app/models/facilityDto';
+import { FacilityService } from 'src/app/services/facility.service';
 
 @Component({
   selector: 'app-facility-form',
@@ -9,9 +10,9 @@ import { Facility } from 'src/app/models/facility';
 })
 export class FacilityFormComponent implements OnInit {
   facilityForm: FormGroup;
-  facility = new Facility();
+  facility = new FacilityDto();
 
-  constructor() {}
+  constructor(private facilityService: FacilityService) {}
 
   ngOnInit(): void {
     this.facilityForm = new FormGroup({
@@ -31,6 +32,7 @@ export class FacilityFormComponent implements OnInit {
 
   save() {
     console.log(this.facilityForm);
-    console.log('Saved: ' + JSON.stringify(this.facilityForm.value));
+    this.facilityService.addFacility(this.facilityForm.value)
+    // console.log('Saved: ' + JSON.stringify(this.facilityForm.value));
   }
 }
