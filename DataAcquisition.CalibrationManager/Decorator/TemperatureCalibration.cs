@@ -2,7 +2,7 @@
 using System.Timers;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 
-namespace DataAcquisition.CalibrationManager
+namespace DataAcquisition.CalibrationManager.Decorator
 {
     public class TemperatureCalibration : CalibrationDecorator
     {

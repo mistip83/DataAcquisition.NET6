@@ -1,4 +1,4 @@
-﻿using DataAcquisition.Core.Models.DTOs;
+﻿using DataAcquisition.Core.Models.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +20,7 @@ namespace DataAcquisition.API.Extensions
                     if (error != null)
                     {
                         var ex = error.Error;
-                        var errorDto = new ErrorDto { Status = 500 };
+                        var errorDto = new ErrorMessage { Status = 500 };
                         errorDto.Errors.Add(ex.Message);
 
                         await context.Response.WriteAsync(JsonConvert.SerializeObject(errorDto));

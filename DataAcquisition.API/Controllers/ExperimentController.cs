@@ -85,12 +85,12 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Start data acquisition
         /// </summary>
-        /// <param name="measurementInfo"></param>
+        /// <param name="config"></param>
         [ValidationFilter]
         [HttpPost("start-experiment")]
-        public async Task<IActionResult> StartExperiment(AcquisitionConfig measurementInfo)
+        public async Task<IActionResult> StartExperiment(AcquisitionConfig config)
         {
-            await _experimentService.StartNewExperiment(measurementInfo);
+            await _experimentService.StartNewExperiment(config);
             return NoContent();
         }
     }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace DataAcquisition.Core.Models.DTOs
+namespace DataAcquisition.Core.Models.Utilities
 {
-    public class ErrorDto
+    public class ErrorMessage
     {
-        public ErrorDto()
+        public ErrorMessage()
         {
             Errors = new List<string>();
         }

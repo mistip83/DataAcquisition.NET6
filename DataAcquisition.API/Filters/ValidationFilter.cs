@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.Core.Models.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
@@ -13,7 +13,7 @@ namespace DataAcquisition.API.Filters
             {
                 return;
             }
-            var errorDto = new ErrorDto { Status = 400 };
+            var errorDto = new ErrorMessage { Status = 400 };
             var modelErrors = context.ModelState.Values
                 .SelectMany(v => v.Errors);
 

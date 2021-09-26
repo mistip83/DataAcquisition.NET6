@@ -2,7 +2,7 @@
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.ScannerManager;
 
-namespace DataAcquisition.CalibrationManager
+namespace DataAcquisition.CalibrationManager.Decorator
 {
     public class BaseCalibration : ICalibration
     {
