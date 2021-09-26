@@ -17,12 +17,4 @@ export class FacilityComponent implements OnInit {
       .getFacilityList()
       .subscribe((data) => (this.facilityList = data));
   }
-
-  GetWorkstationNames(): void {
-    this.facilityList.forEach((facility) => {
-      facility.workstations.forEach(workstation => {
-        let deviceCount = workstation.workstationName;
-      });
-    });
-  }
 }
