@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.Core.Models.Entities;
 
@@ -16,6 +17,6 @@ namespace DataAcquisition.Core.Interfaces.Services
         /// Create a new experiment and start data acquisition
         /// </summary>
         /// <param name="measurementInfo"></param>
-        public Task StartNewExperiment(MeasurementDto measurementInfo);
+        public Task StartNewExperiment(AcquisitionConfig measurementInfo);
     }
 }

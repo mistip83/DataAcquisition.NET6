@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAcquisition.Core.Models.DTOs
+namespace DataAcquisition.Core.Models.Acquisition
 {
-    public class MeasurementDto
+    public class AcquisitionConfig
     {
         /// <summary>
         /// Experiment id

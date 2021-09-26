@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DataAcquisition.Core.Enums;
 
-namespace DataAcquisition.Core.Models
+namespace DataAcquisition.Core.Models.Acquisition
 {
     /// <summary>
     /// Contain channel properties for each device

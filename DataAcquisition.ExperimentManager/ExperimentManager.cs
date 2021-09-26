@@ -3,6 +3,7 @@ using System;
 using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.DTOs;
 
 namespace DataAcquisition.ExperimentManager
@@ -19,12 +20,12 @@ namespace DataAcquisition.ExperimentManager
             _deviceLibraryManager = deviceLibraryManager;
         }
 
-        public async Task GetExperimentData(MeasurementDto measurementInfo)
+        public async Task GetExperimentData(AcquisitionConfig measurementInfo)
         {
             await DoMeasurement(measurementInfo);
         }
 
-        private async Task DoMeasurement(MeasurementDto measurementInfo)
+        private async Task DoMeasurement(AcquisitionConfig measurementInfo)
         {
             throw new NotImplementedException();
         }
