@@ -11,7 +11,8 @@ namespace DataAcquisition.Service
     /// </summary>
     public class WorkstationService : Service<Workstation>, IWorkstationService
     {
-        public WorkstationService(IUnitOfWork unitOfWork, IRepository<Workstation> repository) : base(unitOfWork, repository)
+        public WorkstationService(IUnitOfWork unitOfWork, IRepository<Workstation> repository) 
+            : base(unitOfWork, repository)
         {
         }
 

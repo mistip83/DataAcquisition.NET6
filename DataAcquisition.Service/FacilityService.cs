@@ -9,7 +9,8 @@ namespace DataAcquisition.Service
 {
     public class FacilityService : Service<Facility>, IFacilityService
     {
-        public FacilityService(IUnitOfWork unitOfWork, IRepository<Facility> repository) : base(unitOfWork, repository)
+        public FacilityService(IUnitOfWork unitOfWork, IRepository<Facility> repository) 
+            : base(unitOfWork, repository)
         {
         }
 

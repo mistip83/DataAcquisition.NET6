@@ -10,7 +10,8 @@ namespace DataAcquisition.Service
     /// </summary>
     public class DeviceService : Service<Device>, IDeviceService
     {
-        public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> repository) : base(unitOfWork, repository)
+        public DeviceService(IUnitOfWork unitOfWork, IRepository<Device> repository) 
+            : base(unitOfWork, repository)
         {
         }
     }

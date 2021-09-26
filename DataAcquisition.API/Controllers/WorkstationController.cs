@@ -75,7 +75,8 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> AddWorkstation(WorkstationDto workstationDto)
         {
             var newWorkstation = await _workstationService.AddAsync(_mapper.Map<Workstation>(workstationDto));
-            return Created(string.Empty, _mapper.Map<WorkstationDto>(newWorkstation));
+            return CreatedAtAction(nameof(GetWorkstationInfo), new { id = newWorkstation.WorkstationId }, 
+                _mapper.Map<WorkstationDto>(newWorkstation));
         }
 
         /// <summary>

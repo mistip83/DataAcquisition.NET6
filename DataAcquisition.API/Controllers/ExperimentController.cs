@@ -77,7 +77,8 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> CreateExperiment(ExperimentDto experimentDto)
         {
             var newExperiment = await _experimentService.AddAsync(_mapper.Map<Experiment>(experimentDto));
-            return Created(string.Empty, _mapper.Map<ExperimentDto>(newExperiment));
+            return CreatedAtAction(nameof(GetExperiment), new { id = newExperiment.ExperimentId }, 
+                _mapper.Map<ExperimentDto>(newExperiment));
         }
 
         /// <summary>

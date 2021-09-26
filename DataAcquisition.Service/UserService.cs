@@ -11,7 +11,8 @@ namespace DataAcquisition.Service
     /// </summary>
     public class UserService : Service<User>, IUserService
     {
-        public UserService(IUnitOfWork unitOfWork, IRepository<User> repository) : base(unitOfWork, repository)
+        public UserService(IUnitOfWork unitOfWork, IRepository<User> repository) 
+            : base(unitOfWork, repository)
         {
         }
 

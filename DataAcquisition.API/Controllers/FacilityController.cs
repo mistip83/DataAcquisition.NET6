@@ -67,7 +67,8 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> AddFacility(FacilityDto facilityDto)
         {
             var newFacility = await _facilityService.AddAsync(_mapper.Map<Facility>(facilityDto));
-            return Created(string.Empty, _mapper.Map<FacilityDto>(newFacility));
+            return CreatedAtAction(nameof(GetFacilityInfo), new { id = newFacility.FacilityId }, 
+                _mapper.Map<FacilityDto>(newFacility));
         }
 
         /// <summary>
