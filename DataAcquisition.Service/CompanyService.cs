@@ -11,7 +11,8 @@ namespace DataAcquisition.Service
     /// </summary>
     public class CompanyService : Service<Company>, ICompanyService
     {
-        public CompanyService(IUnitOfWork unitOfWork, IRepository<Company> repository) : base(unitOfWork, repository)
+        public CompanyService(IUnitOfWork unitOfWork, IRepository<Company> repository) 
+            : base(unitOfWork, repository)
         {
         }
 

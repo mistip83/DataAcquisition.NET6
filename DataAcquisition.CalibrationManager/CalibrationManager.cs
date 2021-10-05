@@ -1,4 +1,5 @@
 ﻿using System;
+using DataAcquisition.CalibrationManager.Decorator;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.ConnectionManager;

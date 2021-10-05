@@ -1,4 +1,4 @@
-﻿namespace DataAcquisition.Core.Interfaces
+﻿namespace DataAcquisition.Core.Interfaces.Configuration
 {
     public interface IAppConfiguration
     {

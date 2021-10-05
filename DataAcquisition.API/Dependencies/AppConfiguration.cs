@@ -1,5 +1,6 @@
 ﻿using System;
 using DataAcquisition.Core.Interfaces;
+using DataAcquisition.Core.Interfaces.Configuration;
 using Microsoft.Extensions.Configuration;
 
 namespace DataAcquisition.API.Dependencies

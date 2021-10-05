@@ -7,7 +7,7 @@ using DataAcquisition.Repository.Repositories;
 namespace DataAcquisition.Repository.UnitOfWork
 {
     /// <summary>
-    /// Reach database to commit/apply/save changes to db
+    /// Reach database to commit changes to db
     /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
@@ -30,7 +30,7 @@ namespace DataAcquisition.Repository.UnitOfWork
         }
 
         /// <summary>
-        /// Save changes sync
+        /// Save changes
         /// </summary>
         public void Commit()
         {

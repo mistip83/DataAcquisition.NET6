@@ -6,6 +6,7 @@ using AutoMapper;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.API.Filters;
+using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
@@ -42,7 +43,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetExperimentData(int id)
         {
             var experimentData = await _experimentService.GetExperimentDataAsync(id);
-            return Ok(_mapper.Map<ExperimentDataDto>(experimentData));
+            return Ok(_mapper.Map<AcquisitionData>(experimentData));
         }
 
         /// <summary>
@@ -77,18 +78,19 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> CreateExperiment(ExperimentDto experimentDto)
         {
             var newExperiment = await _experimentService.AddAsync(_mapper.Map<Experiment>(experimentDto));
-            return Created(string.Empty, _mapper.Map<ExperimentDto>(newExperiment));
+            return CreatedAtAction(nameof(GetExperiment), new { id = newExperiment.ExperimentId }, 
+                _mapper.Map<ExperimentDto>(newExperiment));
         }
 
         /// <summary>
         /// Start data acquisition
         /// </summary>
-        /// <param name="measurementInfo"></param>
+        /// <param name="config"></param>
         [ValidationFilter]
         [HttpPost("start-experiment")]
-        public async Task<IActionResult> StartExperiment(MeasurementDto measurementInfo)
+        public async Task<IActionResult> StartExperiment(AcquisitionConfig config)
         {
-            await _experimentService.StartNewExperiment(measurementInfo);
+            await _experimentService.StartNewExperiment(config);
             return NoContent();
         }
     }
