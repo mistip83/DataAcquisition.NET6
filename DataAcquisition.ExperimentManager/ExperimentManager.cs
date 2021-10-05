@@ -6,6 +6,7 @@ using DataAcquisition.Core.Interfaces.ConnectionManager;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;
 using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.ExperimentManager.Subscribers;
 
 namespace DataAcquisition.ExperimentManager
 {
@@ -13,25 +14,49 @@ namespace DataAcquisition.ExperimentManager
     {
         private readonly IDeviceLibraryManager _deviceLibraryManager;
         private readonly IConnectionManager _connectionManager;
-        private readonly ISubject _subject;
+        private readonly IPublisher _publisher;
+
+        private FrontEndSubscriber FrontEndSubscriber;
+        private MailSubscriber MailSubscriber;
+        private SmsSubscriber SmsSubscriber;
 
         public ExperimentManager(IConnectionManager connectionManager, 
-            IDeviceLibraryManager deviceLibraryManager, ISubject subject)
+            IDeviceLibraryManager deviceLibraryManager, IPublisher publisher)
         {
-            _connectionManager = connectionManager;
-            _deviceLibraryManager = deviceLibraryManager;
-            _subject = subject;
+            _connectionManager = connectionManager ?? throw new ArgumentNullException(nameof(connectionManager));
+            _deviceLibraryManager = deviceLibraryManager ?? throw new ArgumentNullException(nameof(deviceLibraryManager));
+            _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
         }
 
-        public ExperimentState GetExperimentSate()
+        public void ExperimentOrchestrator(AcquisitionConfig config, ExperimentDto experimentDto)
         {
-            return _subject.State;
+            // Create subscribers
+            InitializeSubscribers();
+
+            // Initialize Devices
+            InitializeDevices(config);
+
+            
         }
 
-        public void SetExperimentState(ExperimentState state)
+        private void InitializeSubscribers()
         {
-            _subject.State = state;
-            _subject.Notify();
+            FrontEndSubscriber = new FrontEndSubscriber(_publisher);
+            MailSubscriber = new MailSubscriber(_publisher);
+            SmsSubscriber = new SmsSubscriber(_publisher);
+
+            FrontEndSubscriber.Subscribe();
+            MailSubscriber.Subscribe();
+            SmsSubscriber.Subscribe();
+        }
+
+        private void InitializeDevices(AcquisitionConfig config)
+        {
+            // Notify subscribers
+            _publisher.Notify(ExperimentState.SetupDevices);
+
+            // Establish connection with the devices
+            _connectionManager.Connect(config.ConnectionTypeList);
         }
 
         public async Task GetExperimentData(AcquisitionConfig measurementInfo)

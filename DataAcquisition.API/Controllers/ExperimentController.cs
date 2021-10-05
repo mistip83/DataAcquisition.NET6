@@ -57,19 +57,6 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Delete Experiment
-        /// </summary>
-        /// <param name="id"></param>
-        [HttpDelete("delete-experiment/{id:int}")]
-        public async Task<IActionResult> DeleteExperiment(int id)
-        {
-            var experiment = await _experimentService.GetByIdAsync(id);
-            _experimentService.Remove(experiment);
-
-            return NoContent();
-        }
-
-        /// <summary>
         /// Create new experiment
         /// </summary>
         /// <param name="experimentDto"></param>
@@ -91,6 +78,19 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> StartExperiment(AcquisitionConfig config)
         {
             await _experimentService.StartNewExperiment(config);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Delete Experiment
+        /// </summary>
+        /// <param name="id"></param>
+        [HttpDelete("delete-experiment/{id:int}")]
+        public async Task<IActionResult> DeleteExperiment(int id)
+        {
+            var experiment = await _experimentService.GetByIdAsync(id);
+            _experimentService.Remove(experiment);
+
             return NoContent();
         }
     }

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { FacilityDto } from 'src/app/models/facilityDto';
 import { FacilityService } from 'src/app/services/facility.service';
 
-
 @Component({
   selector: 'app-facility-form',
   templateUrl: './facility-form.component.html',
@@ -14,7 +13,10 @@ export class FacilityFormComponent implements OnInit {
   facilityForm: FormGroup;
   facility = new FacilityDto();
 
-  constructor(private facilityService: FacilityService, private router: Router) {}
+  constructor(
+    private facilityService: FacilityService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.facilityForm = new FormGroup({
@@ -24,9 +26,10 @@ export class FacilityFormComponent implements OnInit {
     });
   }
 
-  saveFacility() {
+  addFacility() {
     console.log(this.facilityForm);
-    this.facilityService.addFacility(this.facilityForm.value);
-    console.log('Saved: ' + JSON.stringify(this.facilityForm.value));
+    this.facilityService
+      .addFacility(this.facilityForm.value)
+      .subscribe((res: FacilityDto) => this.router.navigate(['facility']));
   }
 }

@@ -1,6 +1,8 @@
 ﻿using DataAcquisition.Core.Interfaces.ConnectionManager;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.DeviceLibrary;
+using DataAcquisition.ExperimentManager.Publishers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAcquisition.ExperimentManager.Dependencies
@@ -11,6 +13,8 @@ namespace DataAcquisition.ExperimentManager.Dependencies
         {
             container.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
             container.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
+            container.AddScoped<IPublisher, ExperimentStatePublisher>();
+
 
             return container;
         }

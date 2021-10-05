@@ -3,7 +3,9 @@
     public enum ExperimentState
     {
         Created = 1,
-        CollectingData = 2,
-        Completed = 3
+        SetupDevices = 2,
+        CollectingData = 3,
+        ReleaseDevices = 4,
+        Completed = 5
     }
 }

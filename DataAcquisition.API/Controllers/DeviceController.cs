@@ -45,17 +45,6 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Edits Device properties
-        /// </summary>
-        /// <param name="deviceDto"></param>
-        [HttpPut("edit-device")]
-        public IActionResult EditDevice(DeviceDto deviceDto)
-        {
-            _deviceService.Update(_mapper.Map<Device>(deviceDto));
-            return NoContent();
-        }
-
-        /// <summary>
         /// Add new Device
         /// </summary>
         /// <param name="deviceDto"></param>
@@ -65,6 +54,17 @@ namespace DataAcquisition.API.Controllers
         {
             var newDevice = await _deviceService.AddAsync(_mapper.Map<Device>(deviceDto));
             return Created(string.Empty, _mapper.Map<DeviceDto>(newDevice));
+        }
+
+        /// <summary>
+        /// Edits Device properties
+        /// </summary>
+        /// <param name="deviceDto"></param>
+        [HttpPut("edit-device")]
+        public IActionResult EditDevice(DeviceDto deviceDto)
+        {
+            _deviceService.Update(_mapper.Map<Device>(deviceDto));
+            return NoContent();
         }
 
         /// <summary>

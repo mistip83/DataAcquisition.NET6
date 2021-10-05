@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAcquisition.Core.Enums;
 
 namespace DataAcquisition.Core.Models.Acquisition
 {
@@ -21,8 +22,18 @@ namespace DataAcquisition.Core.Models.Acquisition
         public TimeSpan StopTime { get; set; }
 
         /// <summary>
-        /// Contain channel properties for each device
+        /// List of device types used in experiment
+        /// </summary> 
+        public List<DeviceType> DeviceTypeList { get; set; }
+
+        /// <summary>
+        /// List of connection types of devices used in experiment
+        /// </summary> 
+        public List<ConnectionType> ConnectionTypeList { get; set; }
+
+        /// <summary>
+        /// Contain device types and channel properties for each device
         /// </summary>
-        public List<ChannelConfiguration> ChannelConfigList { get; set; }
+        public List<AcquisitionChannelSetup> ChannelSetup { get; set; }
     }
 }

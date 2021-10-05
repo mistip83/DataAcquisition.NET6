@@ -6,6 +6,7 @@ namespace DataAcquisition.Core.Interfaces.ExperimentManager
 {
     public interface IExperimentManager
     {
-        public Task GetExperimentData(AcquisitionConfig measurementInfo);
+        public void ExperimentOrchestrator(AcquisitionConfig config, ExperimentDto experimentDto);
+        public Task GetExperimentData(AcquisitionConfig config);
     }
 }

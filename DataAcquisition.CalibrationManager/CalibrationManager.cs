@@ -31,14 +31,19 @@ namespace DataAcquisition.CalibrationManager
         {
             // Establish connection with the device
             _connectionManager.Connect(device.ConnectionType);
+
             // Create calibrator regarding the device type
             var calibrator = CreateCalibrator(device.DeviceType);
+
             // Get all channel addresses for calibration 
             var channelAddressList = _deviceLibraryManager.GetChannelList(device.DeviceType);
+
             // Read data from each channel
             var calibrationData = calibrator.GetCalibrationData(channelAddressList);
+
             // Do calibration and update device's last calibration date
             device.LastCalibrationDate = calibrator.ApplyCalibrationData(calibrationData);
+
             // Close connection with device
             _connectionManager.Disconnect(device.ConnectionType);
 
