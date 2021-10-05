@@ -16,7 +16,7 @@ Container_Boundary(dataAcquisition, "DataAcquisition Projects") {
     Container(connection_manager, "Connection Manager", ".NET 5 Class Library", "Contains device communication business logic.")
     Container(ef, "DataAccessEF", ".NET 5 Class Library", "Entity Framework, crates DB schema and applies seed data and migrations.")
     Container(device_library, "Device Library", ".NET 5 Class Library", "Responsible for creating corresponding device object. Uses Factory design pattern.")
-    Container(experiment_manager, "Experiment Manager", ".NET 5 Class Library", "Contains experiment business logic.")
+    Container(experiment_manager, "Experiment Manager", ".NET 5 Class Library", "Contains experiment business logic. Uses Observer design pattern")
     Container(repository, "Repository", ".NET 5 Class Library", "Contains DB operations. Uses Repository and UnityOfWork design patterns.")
     Container(scanner, "Scanner", ".NET 5 Class Library", "Collects data from devices.")
     Container(service, "Service", ".NET 5 Class Library", "An architectural pattern to communicate with Web services.")
