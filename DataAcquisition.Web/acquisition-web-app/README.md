@@ -1,27 +1,37 @@
-# AcquisitionWebApp
+# Welcome to Data Acquisition App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
+This is a .NET5 + Angular 12 multi-layered web application to learn how to use some .NET and Angular features and how to implement some design patterns with real-life examples.
 
-## Development server
+Web UI project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## What does this application do?
 
-## Code scaffolding
+This application allows users to collect data from different type of data loggers and display experiment results on UI.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Each data logger device belong to a workstation, workstations belong to a facility, facilities belong to a company.
 
-## Build
+Users can add new facilities, workstations and devices to create experiments (test reports) regarding their companies' organization structure.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+### Backend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Choose DataAcquision.API as a startup project.
 
-## Running end-to-end tests
+2. In Package Manager Console, choose DataAcquisition.DataAccessEF as a Default Project and run `Update-Database` command. This will create local database and will apply seed data.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Frontend
 
-## Further help
+1. Install Nodejs LTS `14.16.1`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. On VS Code terminal or Powershell, go to acquisition-web-app folder and run `npm install` command.
+
+## Start the application
+
+1. Start DataAcquision.API, you will see the swagger document.
+
+2. In Angular project, run `ng serve` command and navigate to `http://localhost:4200/`.
+
+## Backend Project Structure
+
+![image](/backend-structure.png "Backend Project Structure")
