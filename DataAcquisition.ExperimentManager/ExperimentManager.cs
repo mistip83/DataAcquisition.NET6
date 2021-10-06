@@ -15,20 +15,19 @@ namespace DataAcquisition.ExperimentManager
         private readonly IDeviceLibraryManager _deviceLibraryManager;
         private readonly IConnectionManager _connectionManager;
         private readonly IPublisher _publisher;
+        private FrontEndSubscriber _frontEndSubscriber;
+        private MailSubscriber _mailSubscriber;
+        private SmsSubscriber _smsSubscriber;
 
-        private FrontEndSubscriber FrontEndSubscriber;
-        private MailSubscriber MailSubscriber;
-        private SmsSubscriber SmsSubscriber;
-
-        public ExperimentManager(IConnectionManager connectionManager, 
-            IDeviceLibraryManager deviceLibraryManager, IPublisher publisher)
+        public ExperimentManager(IConnectionManager connectionManager, IPublisher publisher,
+            IDeviceLibraryManager deviceLibraryManager)
         {
             _connectionManager = connectionManager ?? throw new ArgumentNullException(nameof(connectionManager));
             _deviceLibraryManager = deviceLibraryManager ?? throw new ArgumentNullException(nameof(deviceLibraryManager));
             _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
         }
 
-        public void ExperimentOrchestrator(AcquisitionConfig config, ExperimentDto experimentDto)
+        public void ExperimentOrchestrator(AcquisitionConfig config)
         {
             // Create subscribers
             InitializeSubscribers();
@@ -36,18 +35,18 @@ namespace DataAcquisition.ExperimentManager
             // Initialize Devices
             InitializeDevices(config);
 
-            
+
         }
 
         private void InitializeSubscribers()
         {
-            FrontEndSubscriber = new FrontEndSubscriber(_publisher);
-            MailSubscriber = new MailSubscriber(_publisher);
-            SmsSubscriber = new SmsSubscriber(_publisher);
+            _frontEndSubscriber = new FrontEndSubscriber(_publisher);
+            _mailSubscriber = new MailSubscriber(_publisher);
+            _smsSubscriber = new SmsSubscriber(_publisher);
 
-            FrontEndSubscriber.Subscribe();
-            MailSubscriber.Subscribe();
-            SmsSubscriber.Subscribe();
+            _frontEndSubscriber.Subscribe();
+            _mailSubscriber.Subscribe();
+            _smsSubscriber.Subscribe();
         }
 
         private void InitializeDevices(AcquisitionConfig config)

@@ -34,6 +34,6 @@ namespace DataAcquisition.Core.Models.Acquisition
         /// <summary>
         /// Contain device types and channel properties for each device
         /// </summary>
-        public List<AcquisitionChannelSetup> ChannelSetup { get; set; }
+        public List<AcquisitionChannelSetup> ChannelSetupList { get; set; }
     }
 }

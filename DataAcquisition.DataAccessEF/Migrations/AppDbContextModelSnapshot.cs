@@ -4,6 +4,7 @@ using DataAcquisition.DataAccessEF.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAcquisition.DataAccessEF.Migrations
 {
@@ -15,10 +16,10 @@ namespace DataAcquisition.DataAccessEF.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9")
+                .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.ApplicationInfo", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.ApplicationInfo", b =>
                 {
                     b.Property<string>("ApplicationName")
                         .HasColumnType("nvarchar(450)");
@@ -40,13 +41,13 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         new
                         {
                             ApplicationName = "DataAcquisition",
-                            FirstInstallDate = new DateTime(2021, 8, 17, 8, 23, 58, 529, DateTimeKind.Local).AddTicks(5716),
-                            LastUpdateDate = new DateTime(2021, 7, 17, 8, 23, 58, 532, DateTimeKind.Local).AddTicks(1121),
+                            FirstInstallDate = new DateTime(2021, 10, 5, 19, 16, 33, 768, DateTimeKind.Local).AddTicks(2686),
+                            LastUpdateDate = new DateTime(2021, 9, 5, 19, 16, 33, 770, DateTimeKind.Local).AddTicks(3573),
                             Version = "1.0.0"
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Company", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Company", b =>
                 {
                     b.Property<string>("CompanyName")
                         .HasMaxLength(100)
@@ -63,7 +64,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Device", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Device", b =>
                 {
                     b.Property<int>("DeviceId")
                         .ValueGeneratedOnAdd()
@@ -108,7 +109,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DAQ1",
                             DeviceType = 1,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2021, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(5598),
+                            LastCalibrationDate = new DateTime(2021, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8099),
                             WorkstationId = 1
                         },
                         new
@@ -118,7 +119,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "NetworkAnalyzer1",
                             DeviceType = 4,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6207),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8676),
                             WorkstationId = 1
                         },
                         new
@@ -128,7 +129,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6230),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8730),
                             WorkstationId = 1
                         },
                         new
@@ -138,7 +139,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "EnergyAnalyzer2",
                             DeviceType = 2,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6234),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8734),
                             WorkstationId = 1
                         },
                         new
@@ -148,7 +149,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6237),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8737),
                             WorkstationId = 1
                         },
                         new
@@ -158,7 +159,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6243),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8742),
                             WorkstationId = 1
                         },
                         new
@@ -168,7 +169,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter3",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6246),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8746),
                             WorkstationId = 1
                         },
                         new
@@ -178,7 +179,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DAQ1",
                             DeviceType = 1,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6249),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8749),
                             WorkstationId = 2
                         },
                         new
@@ -188,7 +189,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DAQ2",
                             DeviceType = 1,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6252),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8752),
                             WorkstationId = 2
                         },
                         new
@@ -198,7 +199,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6256),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8756),
                             WorkstationId = 3
                         },
                         new
@@ -208,7 +209,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6259),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8759),
                             WorkstationId = 4
                         },
                         new
@@ -218,7 +219,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6263),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8762),
                             WorkstationId = 4
                         },
                         new
@@ -228,7 +229,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "EnergyAnalyzer1",
                             DeviceType = 2,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6266),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8765),
                             WorkstationId = 5
                         },
                         new
@@ -238,7 +239,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter1",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6317),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8768),
                             WorkstationId = 4
                         },
                         new
@@ -248,27 +249,29 @@ namespace DataAcquisition.DataAccessEF.Migrations
                             DeviceName = "DigitalMultimeter2",
                             DeviceType = 3,
                             InstallationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastCalibrationDate = new DateTime(2019, 8, 17, 7, 23, 58, 534, DateTimeKind.Utc).AddTicks(6321),
+                            LastCalibrationDate = new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8771),
                             WorkstationId = 4
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Experiment", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Experiment", b =>
                 {
                     b.Property<int>("ExperimentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ChannelNames")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChannelUnits")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("ExperimentDataId")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("ExperimentDescription")
                         .HasColumnType("nvarchar(max)");
@@ -278,7 +281,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("WorkstationId")
@@ -293,28 +296,25 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.ToTable("Experiment");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.ExperimentData", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.ExperimentData", b =>
                 {
                     b.Property<int>("ExperimentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ChannelNames")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ChannelUnits")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Data")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("TimeInterval")
+                        .HasColumnType("time");
 
                     b.HasKey("ExperimentId");
 
                     b.ToTable("ExperimentData");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Facility", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Facility", b =>
                 {
                     b.Property<int>("FacilityId")
                         .ValueGeneratedOnAdd()
@@ -361,7 +361,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.User", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.User", b =>
                 {
                     b.Property<string>("Email")
                         .HasMaxLength(50)
@@ -408,7 +408,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Workstation", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Workstation", b =>
                 {
                     b.Property<int>("WorkstationId")
                         .ValueGeneratedOnAdd()
@@ -476,9 +476,9 @@ namespace DataAcquisition.DataAccessEF.Migrations
                         });
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Device", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Device", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.Workstation", "Workstation")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.Workstation", "Workstation")
                         .WithMany("Devices")
                         .HasForeignKey("WorkstationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -487,13 +487,13 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Navigation("Workstation");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Experiment", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Experiment", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.User", "User")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.User", "User")
                         .WithMany("Experiments")
                         .HasForeignKey("Email");
 
-                    b.HasOne("DataAcquisition.Model.Entities.Workstation", "WorkStation")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.Workstation", "WorkStation")
                         .WithMany("Experiments")
                         .HasForeignKey("WorkstationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -504,27 +504,27 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Navigation("WorkStation");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Facility", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Facility", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.Company", "Company")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.Company", "Company")
                         .WithMany("Facilities")
                         .HasForeignKey("CompanyName");
 
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.User", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.User", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.Company", "Company")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.Company", "Company")
                         .WithMany("Users")
                         .HasForeignKey("CompanyName");
 
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Workstation", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Workstation", b =>
                 {
-                    b.HasOne("DataAcquisition.Model.Entities.Facility", "Facility")
+                    b.HasOne("DataAcquisition.Core.Models.Entities.Facility", "Facility")
                         .WithMany("WorkStations")
                         .HasForeignKey("FacilityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -533,24 +533,24 @@ namespace DataAcquisition.DataAccessEF.Migrations
                     b.Navigation("Facility");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Company", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Company", b =>
                 {
                     b.Navigation("Facilities");
 
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Facility", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Facility", b =>
                 {
                     b.Navigation("WorkStations");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.User", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.User", b =>
                 {
                     b.Navigation("Experiments");
                 });
 
-            modelBuilder.Entity("DataAcquisition.Model.Entities.Workstation", b =>
+            modelBuilder.Entity("DataAcquisition.Core.Models.Entities.Workstation", b =>
                 {
                     b.Navigation("Devices");
 

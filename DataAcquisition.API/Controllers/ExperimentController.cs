@@ -70,18 +70,6 @@ namespace DataAcquisition.API.Controllers
         }
 
         /// <summary>
-        /// Start data acquisition
-        /// </summary>
-        /// <param name="config"></param>
-        [ValidationFilter]
-        [HttpPost("start-experiment")]
-        public async Task<IActionResult> StartExperiment(AcquisitionConfig config)
-        {
-            await _experimentService.StartNewExperiment(config);
-            return NoContent();
-        }
-
-        /// <summary>
         /// Delete Experiment
         /// </summary>
         /// <param name="id"></param>
