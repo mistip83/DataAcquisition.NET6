@@ -1,4 +1,7 @@
-﻿namespace DataAcquisition.Core.Interfaces.ScannerManager
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace DataAcquisition.Core.Interfaces.ScannerManager
 {
     public interface IScannerManager
     {
@@ -6,6 +9,6 @@
         /// Returns data from the device
         /// </summary>
         /// <param name="channelAddressList"></param>
-        string GetData(int[] channelAddressList);
+        Task<string> GetData(List<int> channelAddressList);
     }
 }

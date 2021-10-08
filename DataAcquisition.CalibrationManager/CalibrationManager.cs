@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using DataAcquisition.CalibrationManager.Decorator;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
@@ -27,7 +29,7 @@ namespace DataAcquisition.CalibrationManager
         /// Orchestrate calibration procedure
         /// </summary>
         /// <param name="device"></param>
-        public Device DoCalibration(Device device)
+        public async Task<Device> DoCalibrationAsync(Device device)
         {
             // Establish connection with the device
             _connectionManager.Connect(device.ConnectionType);
@@ -36,10 +38,10 @@ namespace DataAcquisition.CalibrationManager
             var calibrator = CreateCalibrator(device.DeviceType);
 
             // Get all channel addresses for calibration 
-            var channelAddressList = _deviceLibraryManager.GetChannelList(device.DeviceType);
+            var channelAddressList = _deviceLibraryManager.GetChannelList(device.DeviceType).ToList();
 
             // Read data from each channel
-            var calibrationData = calibrator.GetCalibrationData(channelAddressList);
+            var calibrationData = await calibrator.GetCalibrationData(channelAddressList);
 
             // Do calibration and update device's last calibration date
             device.LastCalibrationDate = calibrator.ApplyCalibrationData(calibrationData);

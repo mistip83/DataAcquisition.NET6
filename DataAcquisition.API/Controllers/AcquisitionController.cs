@@ -8,11 +8,11 @@ namespace DataAcquisition.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataAcquisitionController : Controller
+    public class AcquisitionController : Controller
     {
         private readonly IAcquisitionService _acquisitionService;
 
-        public DataAcquisitionController(IAcquisitionService acquisitionService)
+        public AcquisitionController(IAcquisitionService acquisitionService)
         {
             _acquisitionService = acquisitionService ?? throw new ArgumentNullException(nameof(acquisitionService));
         }
@@ -25,7 +25,6 @@ namespace DataAcquisition.API.Controllers
         [HttpPost("start-acquisition")]
         public IActionResult StartDataAcquisition(AcquisitionConfig config)
         {
-            
             _acquisitionService.StartDataAcquisition(config);
             return NoContent();
         }

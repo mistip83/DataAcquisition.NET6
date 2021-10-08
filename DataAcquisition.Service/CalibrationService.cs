@@ -26,7 +26,7 @@ namespace DataAcquisition.Service
         /// <param name="device"></param>
         public Device CalibrateDevice(Device device)
         {
-            var updatedDevice = _calibrationManager.DoCalibration(device);
+            var updatedDevice = _calibrationManager.DoCalibrationAsync(device).Result;
             _deviceService.Update(updatedDevice);
 
             return updatedDevice;

@@ -1,4 +1,5 @@
-﻿using DataAcquisition.Core.Models.Entities;
+﻿using System.Threading.Tasks;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Core.Interfaces.CalibrationManager
 {
@@ -8,6 +9,6 @@ namespace DataAcquisition.Core.Interfaces.CalibrationManager
     /// <param name="device"></param>
     public interface ICalibrationManager
     {
-        Device DoCalibration(Device device);
+        Task<Device> DoCalibrationAsync(Device device);
     }
 }

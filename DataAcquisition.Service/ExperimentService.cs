@@ -22,7 +22,7 @@ namespace DataAcquisition.Service
 
         public async Task StartNewExperiment(AcquisitionConfig config)
         {
-            await _experimentManager.GetExperimentData(config);
+            await _experimentManager.ExperimentOrchestrator(config);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 
 namespace DataAcquisition.CalibrationManager.Decorator
@@ -22,9 +24,9 @@ namespace DataAcquisition.CalibrationManager.Decorator
         /// Returns calibration data from scanner
         /// </summary>
         /// <param name="channelAddressList"></param>
-        public virtual string GetCalibrationData(int[] channelAddressList)
+        public virtual async Task<string> GetCalibrationData(List<int> channelAddressList)
         {
-            return _calibrator.GetCalibrationData(channelAddressList);
+            return await _calibrator.GetCalibrationData(channelAddressList);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.ScannerManager;
 
 namespace DataAcquisition.Scanner
@@ -8,21 +10,23 @@ namespace DataAcquisition.Scanner
         private const int ReadBufferSize = 8;
         private readonly Random _random = new Random();
 
-        public string GetData(int[] channelAddressList)
+        public async Task<string> GetData(List<int> channelAddressList)
         {
-            var data = new double[channelAddressList.Length];
-            for (var i = 0; i < channelAddressList.Length; i++)
+            var data = new List<double>();
+
+            foreach (var channel in channelAddressList)
             {
-                data[i] = ReadFromDevice(channelAddressList[i]);
+                data.Add(await ReadFromDevice(channel));
             }
 
             return FormatData(data);
         }
 
-        private double ReadFromDevice(int channelAddress)
+        private async Task<double> ReadFromDevice(int channelAddress)
         {
             var bytes = new byte[ReadBufferSize];
-            _random.NextBytes(bytes);
+
+            await Task.Run(() => _random.NextBytes(bytes));
 
             return ConvertRawData(bytes);
         }
@@ -32,7 +36,7 @@ namespace DataAcquisition.Scanner
             return BitConverter.ToDouble(rawData, 0);
         }
 
-        private static string FormatData(double[] data)
+        private static string FormatData(List<double> data)
         {
             return string.Join(";", data);
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.ScannerManager;
 
@@ -15,7 +17,9 @@ namespace DataAcquisition.CalibrationManager.Decorator
 
         public DateTime ApplyCalibrationData(string calibrationData) => DateTime.UtcNow;
 
-        public string GetCalibrationData(int[] channelAddressList) =>
-         _scannerManager.GetData(channelAddressList);
+        public async Task<string> GetCalibrationData(List<int> channelAddressList)
+        {
+            return await _scannerManager.GetData(channelAddressList);
+        }
     }
 }

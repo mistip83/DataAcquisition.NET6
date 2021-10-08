@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Timers;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 
@@ -11,10 +13,10 @@ namespace DataAcquisition.CalibrationManager.Decorator
         {
         }
 
-        public override string GetCalibrationData(int[] channelAddressList)
+        public override async Task<string> GetCalibrationData(List<int> channelAddressList)
         {
             SetTimer();
-            return base.GetCalibrationData(channelAddressList);
+            return await base.GetCalibrationData(channelAddressList);
         }
 
         private static void SetTimer()
@@ -27,7 +29,7 @@ namespace DataAcquisition.CalibrationManager.Decorator
             _timer.Enabled = true;
         }
 
-        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}",
                 e.SignalTime);

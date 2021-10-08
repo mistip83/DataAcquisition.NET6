@@ -6,12 +6,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="System.Linq.Async" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcquisition.ConnectionManager\DataAcquisition.ConnectionManager.csproj" />
     <ProjectReference Include="..\DataAcquisition.Core\DataAcquisition.Core.csproj" />
     <ProjectReference Include="..\DataAcquisition.DeviceLibrary\DataAcquisition.DeviceLibrary.csproj" />
+    <ProjectReference Include="..\DataAcquisition.Repository\DataAcquisition.Repository.csproj" />
     <ProjectReference Include="..\DataAcquisition.Scanner\DataAcquisition.Scanner.csproj" />
   </ItemGroup>
 

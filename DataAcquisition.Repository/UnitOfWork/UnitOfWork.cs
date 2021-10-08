@@ -17,12 +17,14 @@ namespace DataAcquisition.Repository.UnitOfWork
         private FacilityReposity _facilityRepository;
         private WorkstationRepository _workstationRepository;
         private ExperimentRepository _experimentRepository;
+        private AcquisitionRepository _acquisitionRepository;
 
         public IUserRepository User => _userRepository ??= new UserRepository(_context);
         public ICompanyRepository Company => _companyRepository ??= new CompanyRepository(_context);
         public IFacilityRepository Facility => _facilityRepository ??= new FacilityReposity(_context); 
         public IWorkstationRepository Workstation => _workstationRepository ??= new WorkstationRepository(_context);
         public IExperimentRepository Experiment => _experimentRepository ??= new ExperimentRepository(_context);
+        public IAcquisitionRepository Acquisition => _acquisitionRepository ??= new AcquisitionRepository(_context);
 
         public UnitOfWork(AppDbContext appDbContext)
         {
