@@ -3,9 +3,9 @@
     public interface IScannerManager
     {
         /// <summary>
-        /// Returns scanner object
+        /// Returns data from the device
         /// </summary>
         /// <param name="channelAddressList"></param>
-        public double[] ReadData(int[] channelAddressList);
+        string GetData(int[] channelAddressList);
     }
 }

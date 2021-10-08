@@ -13,9 +13,9 @@ namespace DataAcquisition.CalibrationManager.Decorator
             _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
         }
 
-        public DateTime ApplyCalibrationData(double[] calibrationData) => DateTime.UtcNow;
+        public DateTime ApplyCalibrationData(string calibrationData) => DateTime.UtcNow;
 
-        public double[] GetCalibrationData(int[] channelAddressList) =>
-         _scannerManager.ReadData(channelAddressList);
+        public string GetCalibrationData(int[] channelAddressList) =>
+         _scannerManager.GetData(channelAddressList);
     }
 }

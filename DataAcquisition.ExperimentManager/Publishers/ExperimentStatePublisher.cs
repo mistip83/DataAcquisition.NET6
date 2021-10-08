@@ -12,11 +12,6 @@ namespace DataAcquisition.ExperimentManager.Publishers
         public void Notify(ExperimentState state)
         {
             OnExperimentProcessed?.Invoke(this, new ExperimentProcessedEventArgs(state));
-
-            if (OnExperimentProcessed != null)
-            {
-                OnExperimentProcessed(this, new ExperimentProcessedEventArgs(state));
-            }
         }
     }
 }

@@ -16,13 +16,13 @@ namespace DataAcquisition.CalibrationManager.Decorator
         /// After calibration process completes, it returns last calibration date
         /// </summary>
         /// <param name="calibrationData"></param>
-        public DateTime ApplyCalibrationData(double[] calibrationData) => DateTime.UtcNow;
+        public DateTime ApplyCalibrationData(string calibrationData) => DateTime.UtcNow;
 
         /// <summary>
         /// Returns calibration data from scanner
         /// </summary>
         /// <param name="channelAddressList"></param>
-        public virtual double[] GetCalibrationData(int[] channelAddressList)
+        public virtual string GetCalibrationData(int[] channelAddressList)
         {
             return _calibrator.GetCalibrationData(channelAddressList);
         }

@@ -6,7 +6,6 @@ using AutoMapper;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.API.Filters;
-using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
@@ -43,7 +42,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetExperimentData(int id)
         {
             var experimentData = await _experimentService.GetExperimentDataAsync(id);
-            return Ok(_mapper.Map<AcquisitionData>(experimentData));
+            return Ok(_mapper.Map<ExperimentDataDto>(experimentData));
         }
 
         /// <summary>

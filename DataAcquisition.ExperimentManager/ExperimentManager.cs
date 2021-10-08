@@ -1,11 +1,12 @@
 ﻿using DataAcquisition.Core.Interfaces.ExperimentManager;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;
+using DataAcquisition.Core.Interfaces.ScannerManager;
 using DataAcquisition.Core.Models.Acquisition;
-using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.ExperimentManager.Subscribers;
 
 namespace DataAcquisition.ExperimentManager
@@ -15,15 +16,17 @@ namespace DataAcquisition.ExperimentManager
         private readonly IDeviceLibraryManager _deviceLibraryManager;
         private readonly IConnectionManager _connectionManager;
         private readonly IPublisher _publisher;
+        private readonly IScannerManager _scannerManager;
         private FrontEndSubscriber _frontEndSubscriber;
         private MailSubscriber _mailSubscriber;
         private SmsSubscriber _smsSubscriber;
 
         public ExperimentManager(IConnectionManager connectionManager, IPublisher publisher,
-            IDeviceLibraryManager deviceLibraryManager)
+            IDeviceLibraryManager deviceLibraryManager, IScannerManager scannerManager)
         {
             _connectionManager = connectionManager ?? throw new ArgumentNullException(nameof(connectionManager));
             _deviceLibraryManager = deviceLibraryManager ?? throw new ArgumentNullException(nameof(deviceLibraryManager));
+            _scannerManager = scannerManager ?? throw new ArgumentNullException(nameof(scannerManager));
             _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
         }
 
@@ -35,8 +38,32 @@ namespace DataAcquisition.ExperimentManager
             // Initialize Devices
             InitializeDevices(config);
 
-
+            // Start gathering data
+            StartAcquisition(config);
         }
+
+        private void StartAcquisition(AcquisitionConfig config)
+        {
+            // Notify subscribers
+            _publisher.Notify(ExperimentState.CollectingData);
+
+            // Get specific channel addresses to read data 
+            var channelIdList = GetChannelAddresses(config.DeviceType,
+                config.ChannelSetup.ChannelIdList);
+
+            // Get data from device
+            var remainingTime = config.StopTime;
+            var elapsedTime = TimeSpan.Zero;
+            while (remainingTime > TimeSpan.Zero)
+            {
+                var data = string.Join(";", GetDeviceData(channelIdList));
+                elapsedTime += config.TimeInterval;
+                remainingTime -= config.TimeInterval;
+            }
+        }
+
+        public string GetDeviceData(int[] channelAddressList) =>
+            _scannerManager.GetData(channelAddressList);
 
         private void InitializeSubscribers()
         {
@@ -54,8 +81,17 @@ namespace DataAcquisition.ExperimentManager
             // Notify subscribers
             _publisher.Notify(ExperimentState.SetupDevices);
 
-            // Establish connection with the devices
-            _connectionManager.Connect(config.ConnectionTypeList);
+            // Establish connection with the device
+            _connectionManager.Connect(config.ConnectionType);
+        }
+
+        private int[] GetChannelAddresses(DeviceType deviceType, int[] channelIds)
+        {
+            return _deviceLibraryManager.GetChannelList(deviceType)
+                .Join(channelIds,
+                    int1 => int1,
+                    int2 => int2,
+                    (int1, int2) => int1).ToArray();
         }
 
         public async Task GetExperimentData(AcquisitionConfig measurementInfo)

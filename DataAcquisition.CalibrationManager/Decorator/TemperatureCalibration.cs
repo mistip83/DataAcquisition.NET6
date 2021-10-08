@@ -11,7 +11,7 @@ namespace DataAcquisition.CalibrationManager.Decorator
         {
         }
 
-        public override double[] GetCalibrationData(int[] channelAddressList)
+        public override string GetCalibrationData(int[] channelAddressList)
         {
             SetTimer();
             return base.GetCalibrationData(channelAddressList);

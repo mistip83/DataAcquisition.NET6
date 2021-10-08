@@ -25,6 +25,8 @@ namespace DataAcquisition.API.Mapper
             CreateMap<ExperimentDto, Experiment>();
             CreateMap<Experiment, ExperimentNameDto>();
             CreateMap<ExperimentNameDto, Experiment>();
+            CreateMap<ExperimentData, ExperimentDataDto>();
+            CreateMap<ExperimentDataDto, ExperimentData>();
 
             CreateMap<Facility, FacilityDto>();
             CreateMap<FacilityDto, Facility>();

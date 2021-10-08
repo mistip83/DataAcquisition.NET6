@@ -1,6 +1,5 @@
 ﻿using System;
 using DataAcquisition.Core.Interfaces.ExperimentManager;
-using DataAcquisition.ExperimentManager.Events;
 
 namespace DataAcquisition.ExperimentManager.Subscribers
 {
