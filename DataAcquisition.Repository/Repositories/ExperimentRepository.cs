@@ -13,14 +13,5 @@ namespace DataAcquisition.Repository.Repositories
         public ExperimentRepository(AppDbContext context) : base(context)
         {
         }
-
-        /// <summary>
-        /// Implementation detail
-        /// </summary>
-        /// <param name="id"></param>
-        public async Task<ExperimentData> GetExperimentDataAsync(int id)
-        {
-            return await AppDbContext.ExperimentData.SingleOrDefaultAsync(e => e.ExperimentId == id);
-        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.ExperimentManager;
+﻿using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
@@ -8,21 +7,19 @@ using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Service
 {
-    /// <summary>
-    /// Communicate with the API
-    /// </summary>
-    public class ExperimentService : Service<Experiment>, IExperimentService
+    public class AcquisitionService : Service<ExperimentData>, IAcquisitionService
     {
         private readonly IExperimentManager _experimentManager;
-        public ExperimentService(IUnitOfWork unitOfWork, IRepository<Experiment> repository, 
+
+        public AcquisitionService(IUnitOfWork unitOfWork, IRepository<ExperimentData> repository, 
             IExperimentManager experimentManager) : base(unitOfWork, repository)
         {
             _experimentManager = experimentManager;
         }
 
-        public async Task StartNewExperiment(AcquisitionConfig config)
+        public void StartDataAcquisition(AcquisitionConfig config)
         {
-            await _experimentManager.GetExperimentData(config);
+            _experimentManager.ExperimentOrchestrator(config);
         }
     }
 }

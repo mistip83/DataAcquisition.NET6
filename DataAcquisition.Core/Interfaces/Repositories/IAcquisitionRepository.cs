@@ -2,7 +2,8 @@
 
 namespace DataAcquisition.Core.Interfaces.Repositories
 {
-    public interface IExperimentRepository : IRepository<Experiment>
+    public interface IAcquisitionRepository : IRepository<ExperimentData>
     {
+        
     }
 }

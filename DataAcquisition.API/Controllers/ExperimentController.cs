@@ -14,11 +14,14 @@ namespace DataAcquisition.API.Controllers
     [ApiController]
     public class ExperimentController : ControllerBase
     {
+        private readonly IAcquisitionService _acquisitionService;
         private readonly IExperimentService _experimentService;
         private readonly IMapper _mapper;
 
-        public ExperimentController(IExperimentService experimentService, IMapper mapper)
+        public ExperimentController(IAcquisitionService acquisitionService,
+            IExperimentService experimentService, IMapper mapper)
         {
+            _acquisitionService = acquisitionService ?? throw new ArgumentNullException(nameof(acquisitionService));
             _experimentService = experimentService ?? throw new ArgumentNullException(nameof(experimentService));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
@@ -41,7 +44,7 @@ namespace DataAcquisition.API.Controllers
         [HttpGet("experiment-data/{id:int}")]
         public async Task<IActionResult> GetExperimentData(int id)
         {
-            var experimentData = await _experimentService.GetExperimentDataAsync(id);
+            var experimentData = await _acquisitionService.GetByIdAsync(id);
             return Ok(_mapper.Map<ExperimentDataDto>(experimentData));
         }
 
@@ -64,7 +67,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> CreateExperiment(ExperimentDto experimentDto)
         {
             var newExperiment = await _experimentService.AddAsync(_mapper.Map<Experiment>(experimentDto));
-            return CreatedAtAction(nameof(GetExperiment), new { id = newExperiment.ExperimentId }, 
+            return CreatedAtAction(nameof(GetExperiment), new { id = newExperiment.ExperimentId },
                 _mapper.Map<ExperimentDto>(newExperiment));
         }
 

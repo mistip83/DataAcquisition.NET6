@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using DataAcquisition.API.Filters;
-using DataAcquisition.Core.Interfaces.DataAcquisition;
+using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.Acquisition;
 
 namespace DataAcquisition.API.Controllers
@@ -10,9 +10,9 @@ namespace DataAcquisition.API.Controllers
     [ApiController]
     public class DataAcquisitionController : Controller
     {
-        private readonly IDataAcquisitionService _acquisitionService;
+        private readonly IAcquisitionService _acquisitionService;
 
-        public DataAcquisitionController(IDataAcquisitionService acquisitionService)
+        public DataAcquisitionController(IAcquisitionService acquisitionService)
         {
             _acquisitionService = acquisitionService ?? throw new ArgumentNullException(nameof(acquisitionService));
         }
