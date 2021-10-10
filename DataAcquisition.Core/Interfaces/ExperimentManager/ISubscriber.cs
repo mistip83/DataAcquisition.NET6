@@ -1,6 +1,4 @@
-﻿using DataAcquisition.Core.Enums;
-
-namespace DataAcquisition.Core.Interfaces.ExperimentManager
+﻿namespace DataAcquisition.Core.Interfaces.ExperimentManager
 {
     public interface ISubscriber
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DataAcquisition.Core.Enums;
 
 namespace DataAcquisition.Core.Models.Acquisition
@@ -31,8 +32,8 @@ namespace DataAcquisition.Core.Models.Acquisition
         public ConnectionType ConnectionType { get; set; }
 
         /// <summary>
-        /// Contain device channel properties
+        /// Contain device channel id list
         /// </summary>
-        public ChannelSetup ChannelSetup { get; set; }
+        public List<int> ChannelIdList { get; set; }
     }
 }

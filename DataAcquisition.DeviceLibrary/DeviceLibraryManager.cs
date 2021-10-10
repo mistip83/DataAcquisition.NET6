@@ -18,7 +18,7 @@ namespace DataAcquisition.DeviceLibrary
         /// </summary>
         /// <param name="deviceType"></param>
         /// <returns></returns>
-        public int[] GetChannelList(DeviceType deviceType) => 
+        public int[] GetChannelList(DeviceType deviceType) =>
             ExecuteCreation(deviceType).ChannelAddressList();
 
         /// <summary>

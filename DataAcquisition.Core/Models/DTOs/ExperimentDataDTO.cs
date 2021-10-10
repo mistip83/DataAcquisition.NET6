@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAcquisition.Core.Models.Entities
+namespace DataAcquisition.Core.Models.DTOs
 {
     public class ExperimentDataDto
     {

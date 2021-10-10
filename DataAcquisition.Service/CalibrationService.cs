@@ -1,7 +1,6 @@
 ﻿using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.Entities;
-using System;
 
 namespace DataAcquisition.Service
 {

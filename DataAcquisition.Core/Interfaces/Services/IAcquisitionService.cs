@@ -1,10 +1,10 @@
-﻿using DataAcquisition.Core.Models.Acquisition;
-using DataAcquisition.Core.Models.Entities;
+﻿using System.Threading.Tasks;
+using DataAcquisition.Core.Models.Acquisition;
 
 namespace DataAcquisition.Core.Interfaces.Services
 {
     public interface IAcquisitionService : IService<ExperimentData>
     {
-        void StartDataAcquisition(AcquisitionConfig config);
+        Task StartDataAcquisition(AcquisitionConfig config);
     }
 }

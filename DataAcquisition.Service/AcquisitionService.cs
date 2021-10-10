@@ -1,9 +1,9 @@
-﻿using DataAcquisition.Core.Interfaces.ExperimentManager;
+﻿using System.Threading.Tasks;
+using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Acquisition;
-using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Service
 {
@@ -17,9 +17,9 @@ namespace DataAcquisition.Service
             _experimentManager = experimentManager;
         }
 
-        public void StartDataAcquisition(AcquisitionConfig config)
+        public async Task StartDataAcquisition(AcquisitionConfig config)
         {
-            _experimentManager.ExperimentOrchestrator(config);
+            await _experimentManager.ExperimentOrchestrator(config);
         }
     }
 }

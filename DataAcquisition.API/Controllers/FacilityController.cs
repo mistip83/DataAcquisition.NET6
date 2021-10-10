@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataAcquisition.API.Filters;
-using DataAcquisition.Core.Interfaces;
 using DataAcquisition.Core.Interfaces.Configuration;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;

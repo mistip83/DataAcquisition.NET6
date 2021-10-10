@@ -13,7 +13,6 @@ namespace DataAcquisition.DataAccessEF.DataAccess
 
         public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
         public DbSet<Experiment> Experiment { get; set; }
-        public DbSet<ExperimentData> ExperimentData { get; set; }
         public DbSet<Facility> Facility { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<User> User { get; set; }
@@ -25,7 +24,6 @@ namespace DataAcquisition.DataAccessEF.DataAccess
             // Apply configurations
             modelBuilder.ApplyConfiguration(new ApplicationInfoConfiguration());
             modelBuilder.ApplyConfiguration(new ExperimentConfiguration());
-            modelBuilder.ApplyConfiguration(new ExperimentDataConfiguration());
             modelBuilder.ApplyConfiguration(new DeviceConfiguration());
             modelBuilder.ApplyConfiguration(new FacilityConfiguration());
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());

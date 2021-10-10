@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DataAcquisition.API.Filters;
 using DataAcquisition.Core.Interfaces.Services;
@@ -23,9 +24,9 @@ namespace DataAcquisition.API.Controllers
         /// <param name="config"></param>
         [ValidationFilter]
         [HttpPost("start-acquisition")]
-        public IActionResult StartDataAcquisition(AcquisitionConfig config)
+        public async Task<IActionResult> StartDataAcquisition(AcquisitionConfig config)
         {
-            _acquisitionService.StartDataAcquisition(config);
+            await _acquisitionService.StartDataAcquisition(config);
             return NoContent();
         }
 

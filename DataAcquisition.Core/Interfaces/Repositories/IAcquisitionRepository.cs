@@ -1,4 +1,4 @@
-﻿using DataAcquisition.Core.Models.Entities;
+﻿using DataAcquisition.Core.Models.Acquisition;
 
 namespace DataAcquisition.Core.Interfaces.Repositories
 {

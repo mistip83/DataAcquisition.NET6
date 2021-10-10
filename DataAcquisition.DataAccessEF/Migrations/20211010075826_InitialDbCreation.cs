@@ -33,20 +33,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ExperimentData",
-                columns: table => new
-                {
-                    ExperimentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TimeInterval = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Data = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExperimentData", x => x.ExperimentId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Facility",
                 columns: table => new
                 {
@@ -173,7 +159,7 @@ namespace DataAcquisition.DataAccessEF.Migrations
             migrationBuilder.InsertData(
                 table: "ApplicationInfo",
                 columns: new[] { "ApplicationName", "FirstInstallDate", "LastUpdateDate", "Version" },
-                values: new object[] { "DataAcquisition", new DateTime(2021, 10, 5, 19, 16, 33, 768, DateTimeKind.Local).AddTicks(2686), new DateTime(2021, 9, 5, 19, 16, 33, 770, DateTimeKind.Local).AddTicks(3573), "1.0.0" });
+                values: new object[] { "DataAcquisition", new DateTime(2021, 10, 10, 8, 58, 26, 35, DateTimeKind.Local).AddTicks(3636), new DateTime(2021, 9, 10, 8, 58, 26, 37, DateTimeKind.Local).AddTicks(5404), "1.0.0" });
 
             migrationBuilder.InsertData(
                 table: "Company",
@@ -212,21 +198,21 @@ namespace DataAcquisition.DataAccessEF.Migrations
                 columns: new[] { "DeviceId", "ConnectionType", "DeviceName", "DeviceType", "InstallationDate", "LastCalibrationDate", "SerialNo", "WorkstationId" },
                 values: new object[,]
                 {
-                    { 1, 1, "DAQ1", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8099), null, 1 },
-                    { 2, 1, "NetworkAnalyzer1", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8676), null, 1 },
-                    { 3, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8730), null, 1 },
-                    { 4, 2, "EnergyAnalyzer2", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8734), null, 1 },
-                    { 5, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8737), null, 1 },
-                    { 6, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8742), null, 1 },
-                    { 7, 3, "DigitalMultimeter3", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8746), null, 1 },
-                    { 8, 1, "DAQ1", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8749), null, 2 },
-                    { 9, 1, "DAQ2", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8752), null, 2 },
-                    { 10, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8756), null, 3 },
-                    { 11, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8759), null, 4 },
-                    { 12, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8762), null, 4 },
-                    { 14, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8768), null, 4 },
-                    { 15, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8771), null, 4 },
-                    { 13, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 5, 18, 16, 33, 772, DateTimeKind.Utc).AddTicks(8765), null, 5 }
+                    { 1, 1, "DAQ1", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 10, 10, 7, 58, 26, 39, DateTimeKind.Utc).AddTicks(9641), null, 1 },
+                    { 2, 1, "NetworkAnalyzer1", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(207), null, 1 },
+                    { 3, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(231), null, 1 },
+                    { 4, 2, "EnergyAnalyzer2", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(235), null, 1 },
+                    { 5, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(238), null, 1 },
+                    { 6, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(272), null, 1 },
+                    { 7, 3, "DigitalMultimeter3", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(276), null, 1 },
+                    { 8, 1, "DAQ1", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(279), null, 2 },
+                    { 9, 1, "DAQ2", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(282), null, 2 },
+                    { 10, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(286), null, 3 },
+                    { 11, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(289), null, 4 },
+                    { 12, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(292), null, 4 },
+                    { 14, 3, "DigitalMultimeter1", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(298), null, 4 },
+                    { 15, 3, "DigitalMultimeter2", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(301), null, 4 },
+                    { 13, 2, "EnergyAnalyzer1", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2019, 10, 10, 7, 58, 26, 40, DateTimeKind.Utc).AddTicks(295), null, 5 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -270,9 +256,6 @@ namespace DataAcquisition.DataAccessEF.Migrations
 
             migrationBuilder.DropTable(
                 name: "Experiment");
-
-            migrationBuilder.DropTable(
-                name: "ExperimentData");
 
             migrationBuilder.DropTable(
                 name: "User");

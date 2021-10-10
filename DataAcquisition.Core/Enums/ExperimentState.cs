@@ -7,7 +7,7 @@
         CollectingData = 3,
         Paused = 4,
         Stopped = 5,
-        ReleaseDevices = 4,
-        Completed = 5
+        ReleaseDevices = 6,
+        Completed = 7
     }
 }

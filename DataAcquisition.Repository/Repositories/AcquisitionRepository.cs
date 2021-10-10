@@ -1,5 +1,5 @@
 ﻿using DataAcquisition.Core.Interfaces.Repositories;
-using DataAcquisition.Core.Models.Entities;
+using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.DataAccessEF.DataAccess;
 
 namespace DataAcquisition.Repository.Repositories

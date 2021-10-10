@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.Core.Models.Entities;
 
