@@ -1,12 +1,12 @@
 <mat-toolbar class="mat-elevation-z8">
-  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+  <!-- <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
       <mat-icon *ngIf="!sidenav.opened">
           menu
       </mat-icon>
       <mat-icon *ngIf="sidenav.opened">
           close
       </mat-icon>
-  </button>
+  </button>-->
   <h1>
     Data Acquisition 
   </h1>
@@ -19,8 +19,8 @@
   <button mat-button routerLink="/about">About</button>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+<mat-sidenav-container [hasBackdrop]="false">
+  <mat-sidenav  [opened]="true" class="mat-elevation-z8 overflow-x-hidden">
       <h4>Quick Menu</h4>
       <hr>
       <button mat-button class="menu-button" routerLink="/facility-form">
@@ -41,7 +41,7 @@
       </button>
 
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="common-content">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

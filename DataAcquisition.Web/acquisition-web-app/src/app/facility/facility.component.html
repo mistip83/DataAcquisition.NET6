@@ -1,20 +1,24 @@
-<ng-container *ngFor="let facility of facilityList">
-  <mat-card class="facility-card">
-    <mat-card-header>
-      <mat-card-title>{{ facility.facilityName }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p><b>Address:</b> {{ facility.address }}</p>
-      <p><b>Employees:</b> {{ facility.employees }}</p>
-      <p><b>List of Workstations:</b></p>
-      <ul>
-        <div *ngFor="let workstation of facility.workstations">
-          <li>{{ workstation.workstationName }}</li>
-        </div>
-      </ul>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>EDIT FACILITY</button>
-    </mat-card-actions>
-  </mat-card>
-</ng-container>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="15px">
+    <div fxFlex="20%" *ngFor="let facility of facilityList">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>{{ facility.facilityName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><b>Address:</b> {{ facility.address }}</p>
+          <p><b>Employees:</b> {{ facility.employees }}</p>
+          <p><b>List of Workstations:</b></p>
+          <ul>
+            <div *ngFor="let workstation of facility.workstations">
+              <li>{{ workstation.workstationName }}</li>
+            </div>
+          </ul>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/facility/{{ facility.facilityId }}">EDIT FACILITY</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

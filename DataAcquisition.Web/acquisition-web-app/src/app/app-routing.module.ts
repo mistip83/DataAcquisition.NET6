@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'organization', component: OrganizationComponent },
   { path: 'facility', component: FacilityComponent },
   { path: 'facility-form', component: FacilityFormComponent },
+  { path: 'facility/:id', component: FacilityFormComponent },
   { path: 'workstation', component: WorkstationComponent },
   { path: 'device', component: DeviceComponent },
   { path: 'experiment', component: ExperimentComponent },

@@ -1,7 +1,7 @@
-<div class="card">
-  <mat-card-title>Add a New Facility</mat-card-title>
+<div class="card p-3 page-body">
+  <mat-card-title>{{ header }}</mat-card-title>
   <div class="card-body">
-    <form novalidate (ngSubmit)="addFacility()" [formGroup]="facilityForm">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="facilityForm">
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label" for="facilityNameId">Facility Name</label>
         <div class="col-md-8">
@@ -28,7 +28,7 @@
       </div>
 
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label" for="addressId">Last Name</label>
+        <label class="col-md-2 col-form-label" for="addressId">Address</label>
         <div class="col-md-8">
           <input
             class="form-control"
@@ -65,8 +65,7 @@
                 (facilityForm.get('employees')?.touched ||
                   facilityForm.get('employees')?.dirty) &&
                 !facilityForm.get('employees')?.valid
-            }"
-          />
+            }"/>
         </div>
       </div>
 
@@ -76,11 +75,9 @@
             class="btn btn-primary mr-3"
             type="submit"
             style="width: 80px"
-            [title]="
-              facilityForm.valid
+            [title]=" facilityForm.valid
                 ? 'Save your entered data'
-                : 'Disabled until the form data is valid'
-            "
+                : 'Disabled until the form data is valid'"
             [disabled]="!facilityForm.valid">
             Save
           </button>

@@ -18,7 +18,7 @@ Users can add new facilities, workstations and devices to create experiments (te
 
 1. Choose DataAcquision.API as a startup project.
 
-2. In Package Manager Console, choose DataAcquisition.DataAccessEF as a Default Project and run `Update-Database` command. This will create local database and will apply seed data.
+2. In Package Manager Console, run `Update-Database` command. This will create local database and will apply database migration and seed data.
 
 ### Frontend
 

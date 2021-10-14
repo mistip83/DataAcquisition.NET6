@@ -11,6 +11,12 @@ export class FacilityService {
     private serverConfig: ServerConfig
   ) {}
 
+  getFacilityInfo(id: number): Observable<FacilityDto> {
+    return this.httpClient.get<FacilityDto>(
+      this.serverConfig.REST_API_SERVER_URL + 'facility/' + id
+    );
+  }
+
   getFacilityList(): Observable<FacilityDto[]> {
     return this.httpClient.get<FacilityDto[]>(
       this.serverConfig.REST_API_SERVER_URL + 'facility/facility-list'
@@ -23,5 +29,13 @@ export class FacilityService {
       JSON.stringify(facility),
       this.serverConfig.httpOptions
     );
+  }
+
+  editFacility(facility: FacilityDto): Observable<FacilityDto> {
+    return this.httpClient.put<FacilityDto>(
+      this.serverConfig.REST_API_SERVER_URL + 'facility/edit-facility',
+      JSON.stringify(facility),
+      this.serverConfig.httpOptions
+    )
   }
 }

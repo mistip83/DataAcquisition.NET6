@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './home/home.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { WorkstationComponent } from './workstation/workstation.component';
@@ -51,6 +52,7 @@ import { ServerConfig } from './services/serverConfig';
     MatExpansionModule,
     MatSidenavModule,
     MatDividerModule,
+    FlexLayoutModule
   ],
   providers: [ServerConfig],
   bootstrap: [AppComponent],
