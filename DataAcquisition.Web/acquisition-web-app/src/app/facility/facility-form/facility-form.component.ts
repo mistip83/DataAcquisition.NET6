@@ -70,7 +70,7 @@ export class FacilityFormComponent implements OnInit {
 
   editFacility() {
     this.facilityService
-      .editFacility(this.facilityForm.value)
+      .editFacility(this.id, this.facilityForm.value)
       .subscribe((res: FacilityDto) => this.router.navigate(['facility']));
   }
 }

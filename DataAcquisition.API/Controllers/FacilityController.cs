@@ -74,12 +74,14 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Edits Facility Properties
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="facilityDto"></param>
         [ValidationFilter]
-        [HttpPut("edit-facility")]
-        public IActionResult EditFacility(FacilityDto facilityDto)
+        [HttpPut("edit-facility/{id:int}")]
+        public IActionResult EditFacility(int id, FacilityDto facilityDto)
         {
             var facility = _mapper.Map<Facility>(facilityDto);
+            facility.FacilityId = id;
             facility.CompanyName = _appConfiguration.GetCompanyName();
 
             _facilityService.Update(facility);

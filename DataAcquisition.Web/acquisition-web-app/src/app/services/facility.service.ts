@@ -31,9 +31,9 @@ export class FacilityService {
     );
   }
 
-  editFacility(facility: FacilityDto): Observable<FacilityDto> {
+  editFacility(id: number, facility: FacilityDto): Observable<FacilityDto> {
     return this.httpClient.put<FacilityDto>(
-      this.serverConfig.REST_API_SERVER_URL + 'facility/edit-facility',
+      this.serverConfig.REST_API_SERVER_URL + 'facility/edit-facility/' + id,
       JSON.stringify(facility),
       this.serverConfig.httpOptions
     )
