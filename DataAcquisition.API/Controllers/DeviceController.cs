@@ -53,17 +53,22 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> AddDevice(DeviceDto deviceDto)
         {
             var newDevice = await _deviceService.AddAsync(_mapper.Map<Device>(deviceDto));
-            return Created(string.Empty, _mapper.Map<DeviceDto>(newDevice));
+            return CreatedAtAction(nameof(GetDeviceInfo), new { id = newDevice.DeviceId }, 
+                _mapper.Map<DeviceDto>(newDevice));
         }
 
         /// <summary>
         /// Edits Device properties
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="deviceDto"></param>
-        [HttpPut("edit-device")]
-        public IActionResult EditDevice(DeviceDto deviceDto)
+        [HttpPut("edit-device/{id:int}")]
+        public IActionResult EditDevice(int id, DeviceDto deviceDto)
         {
-            _deviceService.Update(_mapper.Map<Device>(deviceDto));
+            var device = _mapper.Map<Device>(deviceDto);
+            device.DeviceId = id;
+
+            _deviceService.Update(device);
             return NoContent();
         }
 
