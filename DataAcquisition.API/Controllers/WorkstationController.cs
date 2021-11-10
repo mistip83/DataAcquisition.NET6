@@ -58,11 +58,15 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Edits Workstation properties
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="workstationDto"></param>
-        [HttpPut("edit-workstation")]
-        public IActionResult EditWorkstation(WorkstationDto workstationDto)
+        [HttpPut("edit-workstation/{id:int}")]
+        public IActionResult EditWorkstation(int id, WorkstationDto workstationDto)
         {
-            _workstationService.Update(_mapper.Map<Workstation>(workstationDto));
+            var workstation = _mapper.Map<Workstation>(workstationDto);
+            workstation.WorkstationId = id;
+
+            _workstationService.Update(workstation);
             return NoContent();
         }
 
