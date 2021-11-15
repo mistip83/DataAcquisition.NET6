@@ -44,7 +44,8 @@ namespace DataAcquisition.API
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-
+            // Cross-origin resource sharing is a mechanism that allows restricted resources on a web page
+            // to be requested from another domain outside the domain from which the first resource was served.
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -58,6 +59,7 @@ namespace DataAcquisition.API
                 options.SuppressModelStateInvalidFilter = true;
             });
 
+            // Comes with .NET 5 by default
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DataAcquisition.API", Version = "v1" });
@@ -80,6 +82,8 @@ namespace DataAcquisition.API
 
             app.UseRouting();
 
+            // The call to UseCors must be placed after UseRouting, but before UseAuthorization.
+            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-6.0#middleware-order
             app.UseCors("CorsPolicy");
 
             app.UseAuthorization();

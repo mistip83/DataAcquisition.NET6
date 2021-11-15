@@ -39,10 +39,7 @@ export class FacilityFormComponent implements OnInit {
       this.header = 'Add New Facility';
     } else {
       this.header = 'Edit Facility';
-    }
-
-    // Get facility info for edit mode
-    if (!this.isAddMode) {
+      // Get facility info for edit mode
       this.getFacilityInfo();
     }
   }

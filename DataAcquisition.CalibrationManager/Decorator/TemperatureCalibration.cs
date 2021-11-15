@@ -22,11 +22,12 @@ namespace DataAcquisition.CalibrationManager.Decorator
         private static void SetTimer()
         {
             // Create a timer with a two second interval.
-            _timer = new Timer(2000);
-            // Hook up the Elapsed event for the timer. 
-            _timer.Elapsed += OnTimedEvent;
-            _timer.AutoReset = true;
-            _timer.Enabled = true;
+            _timer = new Timer(2000)
+            { 
+                // _timer.Elapsed += OnTimedEvent;
+                AutoReset = true,
+                Enabled = true
+            };
         }
 
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
