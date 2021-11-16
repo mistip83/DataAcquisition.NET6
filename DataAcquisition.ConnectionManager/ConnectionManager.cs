@@ -43,9 +43,6 @@ namespace DataAcquisition.ConnectionManager
                 default:
                     break;
             }
-
-            _serialPort.Close();
-            Console.WriteLine("Connected to Simulator");
         }
 
         private void ConnectToTcp()
@@ -82,6 +79,7 @@ namespace DataAcquisition.ConnectionManager
 
         private void DisconnectSerialPort()
         {
+            _serialPort.Close();
             Console.WriteLine("Disconnected from Device");
         }
     }
