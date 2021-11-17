@@ -3,7 +3,7 @@ using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.Core.Interfaces.Repositories
 {
-    public interface ICompanyRepository : IRepository<Company>
+    public interface ICompanyRepository
     {
         Task<Company> GetCompanyInfoAsync();
         Task<Company> GetCompanyWithFacilitiesAsync();
