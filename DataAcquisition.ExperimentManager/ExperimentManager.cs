@@ -44,7 +44,7 @@ namespace DataAcquisition.ExperimentManager
             // Create experiment data object
             CreateExperimentDataInstance(config);
 
-            // Start gathering data
+            // Start collecting data
             await StartAcquisitionAsync(config);
 
             ReleaseDevices(config);
@@ -90,15 +90,11 @@ namespace DataAcquisition.ExperimentManager
             await DoMeasurement(config, channelIdList);
         }
 
-        private IEnumerable<int> GetChannelAddressList(DeviceType deviceType,
-            List<int> channelIds)
+        private IEnumerable<int> GetChannelAddressList(DeviceType deviceType, List<int> channelIds)
         {
             var channelList = _deviceLibraryManager.GetChannelList(deviceType);
 
-            foreach (var index in channelIds)
-            {
-                yield return channelList.ElementAt(index);
-            }
+            return channelIds.Select(index => channelList.ElementAt(index));
         }
 
         private async Task DoMeasurement(AcquisitionConfig config, IEnumerable<int> channelIdList)

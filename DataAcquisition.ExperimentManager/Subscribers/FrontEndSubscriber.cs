@@ -24,7 +24,7 @@ namespace DataAcquisition.ExperimentManager.Subscribers
 
         private static void Update(object sender, IExperimentProcessedEvent e)
         {
-            // TODO: send state to UI via SignalR
+            // TODO: send state to UI
             Console.WriteLine($"ExperimentStatus: {e.ExperimentState}");
         }
     }
