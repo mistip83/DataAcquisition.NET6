@@ -2,8 +2,10 @@
 
 namespace DataAcquisition.DeviceLibrary.DeviceLibrary
 {
+    /// <summary>
+    /// Contains physical device properties and methods
+    /// </summary>
     public class DataLogger : IDevice
-
     {
         /// <summary>
         /// Contains all channels of the device

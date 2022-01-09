@@ -2,6 +2,9 @@
 
 namespace DataAcquisition.DeviceLibrary.DeviceLibrary
 {
+    /// <summary>
+    /// Contains physical device properties and methods
+    /// </summary>
     public class SpectrumAnalyzer : IDevice
     {
         /// <summary>

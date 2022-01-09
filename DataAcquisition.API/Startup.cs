@@ -76,7 +76,7 @@ namespace DataAcquisition.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DataAcquisition.API v1"));
             }
 
-            app.UseCustomErrorHandler();
+            app.UseCustomGlobalErrorHandler();
 
             app.UseHttpsRedirection();
 
