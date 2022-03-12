@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.Core", "Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcquisition.ExperimentManager", "DataAcquisition.ExperimentManager\DataAcquisition.ExperimentManager.csproj", "{9680F62F-A632-46DE-B364-3188DFEE10CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.API", "DataAcquisition.API\DataAcquisition.API.csproj", "{DC77D064-4795-4182-BC0F-40F3537A0943}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcquisition.API", "DataAcquisition.API.old\DataAcquisition.API.old.csproj", "{DC77D064-4795-4182-BC0F-40F3537A0943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
