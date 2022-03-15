@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using AutoMapper;
 using DataAcquisition.API.Filters;
 using DataAcquisition.Core.Interfaces.Configuration;
 using DataAcquisition.Core.Interfaces.Services;
@@ -17,13 +16,11 @@ namespace DataAcquisition.API.Controllers
     {
         private readonly IFacilityService _facilityService;
         private readonly IAppConfiguration _appConfiguration;
-        private readonly IMapper _mapper;
 
-        public FacilityController(IFacilityService facilityService, IAppConfiguration appConfiguration, IMapper mapper)
+        public FacilityController(IFacilityService facilityService, IAppConfiguration appConfiguration)
         {
             _facilityService = facilityService ?? throw new ArgumentNullException(nameof(facilityService));
             _appConfiguration = appConfiguration ?? throw new ArgumentNullException(nameof(appConfiguration));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
@@ -31,20 +28,19 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetFacilityInfo(int id)
+        public async Task<ActionResult<Facility>> GetFacilityInfo(int id)
         {
-            var facility = await _facilityService.GetByIdAsync(id);
-            return Ok(_mapper.Map<FacilityDto>(facility));
+            return await _facilityService.GetByIdAsync(id);
         }
 
         /// <summary>
         /// Returns Facility List
         /// </summary>
         [HttpGet("facility-list")]
-        public async Task<IActionResult> GetFacilityList()
+        public async Task<ActionResult<Facility>> GetFacilityList()
         {
             var facility = await _facilityService.GetFacilitiesWithWorkStationsAsync();
-            return Ok(_mapper.Map<IEnumerable<Facility>, IEnumerable<FacilityDto>>(facility));
+            return Ok(facility);
         }
 
         /// <summary>
@@ -52,23 +48,22 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id:int}/workstations")]
-        public async Task<IActionResult> GetFacilityWithWorkStations(int id)
+        public async Task<ActionResult<Facility>> GetFacilityWithWorkStations(int id)
         {
-            var facilityWithWorkstations = await _facilityService.GetFacilityWithWorkStationsAsync(id);
-            return Ok(_mapper.Map<FacilityWithWorkstationsDto>(facilityWithWorkstations));
+            return await _facilityService.GetFacilityWithWorkStationsAsync(id);
         }
 
         /// <summary>
         /// Add new facility
         /// </summary>
-        /// <param name="facilityDto"></param>
+        /// <param name="facility"></param>
         [ValidationFilter]
         [HttpPost("add-facility")]
-        public async Task<IActionResult> AddFacility(FacilityDto facilityDto)
+        public async Task<IActionResult> AddFacility(Facility facility)
         {
-            var newFacility = await _facilityService.AddAsync(_mapper.Map<Facility>(facilityDto));
+            var newFacility = await _facilityService.AddAsync(facility);
             return CreatedAtAction(nameof(GetFacilityInfo), new { id = newFacility.FacilityId }, 
-                _mapper.Map<FacilityDto>(newFacility));
+                newFacility);
         }
 
         /// <summary>
@@ -78,9 +73,8 @@ namespace DataAcquisition.API.Controllers
         /// <param name="facilityDto"></param>
         [ValidationFilter]
         [HttpPut("edit-facility/{id:int}")]
-        public IActionResult EditFacility(int id, FacilityDto facilityDto)
+        public IActionResult EditFacility(int id, Facility facility)
         {
-            var facility = _mapper.Map<Facility>(facilityDto);
             facility.FacilityId = id;
             facility.CompanyName = _appConfiguration.GetCompanyName();
 

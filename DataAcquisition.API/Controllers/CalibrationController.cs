@@ -1,9 +1,8 @@
-﻿using AutoMapper;
-using DataAcquisition.Core.Interfaces.Services;
-using DataAcquisition.Core.Models.DTOs;
+﻿using DataAcquisition.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
 {
@@ -13,14 +12,12 @@ namespace DataAcquisition.API.Controllers
     {
         private readonly ICalibrationService _calibrationService;
         private readonly IDeviceService _deviceService;
-        private readonly IMapper _mapper;
 
         public CalibrationController(ICalibrationService calibrationService, 
-            IDeviceService deviceService, IMapper mapper)
+            IDeviceService deviceService)
         {
             _calibrationService = calibrationService ?? throw new ArgumentNullException(nameof(calibrationService));
             _deviceService = deviceService ?? throw new ArgumentNullException(nameof(deviceService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
@@ -28,12 +25,10 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> CalibrateDevice(int id)
+        public async Task<ActionResult<Device>> CalibrateDevice(int id)
         {
             var device = await _deviceService.GetByIdAsync(id);
-            device = _calibrationService.CalibrateDevice(device);
-
-            return Ok(_mapper.Map<DeviceDto>(device));
+            return _calibrationService.CalibrateDevice(device);
         }
     }
 }

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using DataAcquisition.API.Filters;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;
@@ -15,12 +14,10 @@ namespace DataAcquisition.API.Controllers
     public class WorkstationController : ControllerBase
     {
         private readonly IWorkstationService _workstationService;
-        private readonly IMapper _mapper;
 
-        public WorkstationController(IWorkstationService workstationService, IMapper mapper)
+        public WorkstationController(IWorkstationService workstationService)
         {
             _workstationService = workstationService ?? throw new ArgumentNullException(nameof(workstationService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
@@ -28,10 +25,9 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetWorkstationInfo(int id)
+        public async Task<ActionResult<Workstation>> GetWorkstationInfo(int id)
         {
-            var workstation = await _workstationService.GetByIdAsync(id);
-            return Ok(_mapper.Map<WorkstationDto>(workstation));
+            return await _workstationService.GetByIdAsync(id);
         }
 
         /// <summary>
@@ -41,7 +37,7 @@ namespace DataAcquisition.API.Controllers
         public async Task<IActionResult> GetWorkstationList()
         {
             var workstationList = await _workstationService.GetAllAsync();
-            return Ok(_mapper.Map<IEnumerable<Workstation>, IEnumerable<WorkstationDto>>(workstationList));
+            return Ok(workstationList);
         }
 
         /// <summary>
@@ -49,10 +45,9 @@ namespace DataAcquisition.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id:int}/devices-experiments")]
-        public async Task<IActionResult> GetWorkstationWithDevicesAndExperiments(int id)
+        public async Task<ActionResult<Workstation>> GetWorkstationWithDevicesAndExperiments(int id)
         {
-            var workstationList = await _workstationService.GetWorkstationWithDevicesAndExperimentsAsync(id);
-            return Ok(_mapper.Map<WorkstationWithDevicesAndExps>(workstationList));
+            return await _workstationService.GetWorkstationWithDevicesAndExperimentsAsync(id);
         }
 
         /// <summary>
@@ -61,9 +56,8 @@ namespace DataAcquisition.API.Controllers
         /// <param name="id"></param>
         /// <param name="workstationDto"></param>
         [HttpPut("edit-workstation/{id:int}")]
-        public IActionResult EditWorkstation(int id, WorkstationDto workstationDto)
+        public IActionResult EditWorkstation(int id, Workstation workstation)
         {
-            var workstation = _mapper.Map<Workstation>(workstationDto);
             workstation.WorkstationId = id;
 
             _workstationService.Update(workstation);
@@ -76,11 +70,11 @@ namespace DataAcquisition.API.Controllers
         /// <param name="workstationDto"></param>
         [ValidationFilter]
         [HttpPost("add-workstation")]
-        public async Task<IActionResult> AddWorkstation(WorkstationDto workstationDto)
+        public async Task<ActionResult> AddWorkstation(Workstation workstation)
         {
-            var newWorkstation = await _workstationService.AddAsync(_mapper.Map<Workstation>(workstationDto));
+            var newWorkstation = await _workstationService.AddAsync(workstation);
             return CreatedAtAction(nameof(GetWorkstationInfo), new { id = newWorkstation.WorkstationId }, 
-                _mapper.Map<WorkstationDto>(newWorkstation));
+                newWorkstation);
         }
 
         /// <summary>

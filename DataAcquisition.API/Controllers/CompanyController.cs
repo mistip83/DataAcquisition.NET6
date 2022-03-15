@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using AutoMapper;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.DTOs;
+using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers
 {
@@ -12,32 +12,29 @@ namespace DataAcquisition.API.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyService _companyService;
-        private readonly IMapper _mapper;
 
-        public CompanyController(ICompanyService companyService, IMapper mapper)
+        public CompanyController(ICompanyService companyService)
         {
             _companyService = companyService ?? throw new ArgumentNullException(nameof(companyService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         /// <summary>
         /// Returns Company Name
         /// </summary>
         [HttpGet("company-info")]
-        public async Task<IActionResult> GetCompanyInfo()
+        public async Task<ActionResult<Company>> GetCompanyInfo()
         {
-            var company = await _companyService.GetCompanyInfoAsync();
-            return Ok(_mapper.Map<CompanyDto>(company));
+            return await _companyService.GetCompanyInfoAsync();
+            
         }
 
         /// <summary>
         /// Returns Company, Facilities, Workstations, Devices and Experiments
         /// </summary>
         [HttpGet("organization-layout")]
-        public async Task<IActionResult> GetOrganizationLayout()
+        public async Task<ActionResult<Company>> GetOrganizationLayout()
         {
-            var organizationLayout = await _companyService.GetOrganizationLayoutAsync();
-            return Ok(_mapper.Map<OrganizationDto>(organizationLayout));
+            return await _companyService.GetOrganizationLayoutAsync();
         }
     }
 }
