@@ -9,7 +9,6 @@ namespace DataAcquisition.API.Dependencies
     {
         public static IServiceCollection RegisterCommonDependencies(this IServiceCollection container)
         {
-            container.AddAutoMapper(typeof(Startup));
             container.AddScoped(typeof(IService<>), typeof(Service<>));
             container.AddScoped<ICompanyService, CompanyService>();
             container.AddScoped<IFacilityService, FacilityService>();

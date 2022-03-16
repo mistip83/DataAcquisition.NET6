@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.Services;
-using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.Core.Models.Entities;
 
 namespace DataAcquisition.API.Controllers

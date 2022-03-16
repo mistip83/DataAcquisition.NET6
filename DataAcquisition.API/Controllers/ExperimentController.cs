@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.Services;
-using DataAcquisition.Core.Models.DTOs;
 using DataAcquisition.API.Filters;
 using DataAcquisition.Core.Models.Acquisition;
 using DataAcquisition.Core.Models.Entities;
