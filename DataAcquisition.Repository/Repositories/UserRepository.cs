@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.Repositories;
+﻿using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Models.Entities;
 using DataAcquisition.DataAccessEF.DataAccess;
 using Microsoft.EntityFrameworkCore;

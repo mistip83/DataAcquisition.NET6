@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.Repositories;
+﻿using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.DataAccessEF.DataAccess;
 using DataAcquisition.Repository.Repositories;
