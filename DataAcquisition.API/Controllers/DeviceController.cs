@@ -56,7 +56,7 @@ namespace DataAcquisition.API.Controllers
         /// Edits Device properties
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="deviceDto"></param>
+        /// <param name="device"></param>
         [HttpPut("edit-device/{id:int}")]
         public IActionResult EditDevice(int id, Device device)
         {

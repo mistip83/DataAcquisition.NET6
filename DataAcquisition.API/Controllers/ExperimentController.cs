@@ -58,7 +58,7 @@ namespace DataAcquisition.API.Controllers
         /// <param name="experiment"></param>
         [ValidationFilter]
         [HttpPost("create-experiment")]
-        public async Task<IActionResult> CreateExperiment(Experiment experiment)
+        public async Task<ActionResult> CreateExperiment(Experiment experiment)
         {
             var newExperiment = await _experimentService.AddAsync(experiment);
             return CreatedAtAction(nameof(CreateExperiment), new { id = newExperiment.ExperimentId },

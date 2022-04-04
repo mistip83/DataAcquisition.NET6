@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using DataAcquisition.API.Filters;
@@ -35,7 +36,7 @@ namespace DataAcquisition.API.Controllers
         /// Returns Facility List
         /// </summary>
         [HttpGet("facility-list")]
-        public async Task<ActionResult<Facility>> GetFacilityList()
+        public async Task<ActionResult<IEnumerable<Facility>>> GetFacilityList()
         {
             var facility = await _facilityService.GetFacilitiesWithWorkStationsAsync();
             return Ok(facility);
@@ -57,7 +58,7 @@ namespace DataAcquisition.API.Controllers
         /// <param name="facility"></param>
         [ValidationFilter]
         [HttpPost("add-facility")]
-        public async Task<IActionResult> AddFacility(Facility facility)
+        public async Task<ActionResult> AddFacility(Facility facility)
         {
             var newFacility = await _facilityService.AddAsync(facility);
             return CreatedAtAction(nameof(GetFacilityInfo), new { id = newFacility.FacilityId }, 
@@ -68,10 +69,10 @@ namespace DataAcquisition.API.Controllers
         /// Edits Facility Properties
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="facilityDto"></param>
+        /// <param name="facility"></param>
         [ValidationFilter]
         [HttpPut("edit-facility/{id:int}")]
-        public IActionResult EditFacility(int id, Facility facility)
+        public ActionResult EditFacility(int id, Facility facility)
         {
             facility.FacilityId = id;
             facility.CompanyName = _appConfiguration.GetCompanyName();

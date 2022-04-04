@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using DataAcquisition.API.Filters;
@@ -32,7 +33,7 @@ namespace DataAcquisition.API.Controllers
         /// Returns Workstation List
         /// </summary>
         [HttpGet("workstation-list")]
-        public async Task<IActionResult> GetWorkstationList()
+        public async Task<ActionResult<IEnumerable<Workstation>>> GetWorkstationList()
         {
             var workstationList = await _workstationService.GetAllAsync();
             return Ok(workstationList);
@@ -52,7 +53,7 @@ namespace DataAcquisition.API.Controllers
         /// Edits Workstation properties
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="workstationDto"></param>
+        /// <param name="workstation"></param>
         [HttpPut("edit-workstation/{id:int}")]
         public IActionResult EditWorkstation(int id, Workstation workstation)
         {
@@ -65,7 +66,7 @@ namespace DataAcquisition.API.Controllers
         /// <summary>
         /// Adds new workstation
         /// </summary>
-        /// <param name="workstationDto"></param>
+        /// <param name="workstation"></param>
         [ValidationFilter]
         [HttpPost("add-workstation")]
         public async Task<ActionResult> AddWorkstation(Workstation workstation)

@@ -24,7 +24,7 @@ namespace DataAcquisition.API.Controllers
         /// <param name="config"></param>
         [ValidationFilter]
         [HttpPost("start-acquisition")]
-        public async Task<IActionResult> StartDataAcquisition(AcquisitionConfig config)
+        public async Task<ActionResult> StartDataAcquisition(AcquisitionConfig config)
         {
             await _acquisitionService.StartDataAcquisition(config);
             return NoContent();
