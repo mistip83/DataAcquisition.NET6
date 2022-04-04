@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Timers;
+﻿using System.Timers;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 
 namespace DataAcquisition.CalibrationManager.Decorator;

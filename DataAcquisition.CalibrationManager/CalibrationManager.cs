@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using DataAcquisition.CalibrationManager.Decorator;
+﻿using DataAcquisition.CalibrationManager.Decorator;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.CalibrationManager;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
