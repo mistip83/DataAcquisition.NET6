@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
 using DataAcquisition.Core.Models.Entities;
 
-namespace DataAcquisition.Core.Interfaces.Repositories
+namespace DataAcquisition.Core.Interfaces.Repositories;
+
+public interface ICompanyRepository
 {
-    public interface ICompanyRepository
-    {
-        Task<Company> GetCompanyInfoAsync();
-        Task<Company> GetCompanyWithFacilitiesAsync();
-        Task<Company> GetOrganizationLayoutAsync();
-    }
+    Task<Company> GetCompanyInfoAsync();
+    Task<Company> GetCompanyWithFacilitiesAsync();
+    Task<Company> GetOrganizationLayoutAsync();
 }

@@ -3,42 +3,41 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DataAcquisition.Core.Interfaces.ScannerManager;
 
-namespace DataAcquisition.Scanner
+namespace DataAcquisition.Scanner;
+
+public class ScannerManager : IScannerManager
 {
-    public class ScannerManager : IScannerManager
+    private const int ReadBufferSize = 8;
+    private readonly Random _random = new Random();
+
+    public async Task<string> GetData(List<int> channelAddressList)
     {
-        private const int ReadBufferSize = 8;
-        private readonly Random _random = new Random();
+        var data = new List<double>();
 
-        public async Task<string> GetData(List<int> channelAddressList)
+        foreach (var channel in channelAddressList)
         {
-            var data = new List<double>();
-
-            foreach (var channel in channelAddressList)
-            {
-                data.Add(await ReadFromDevice(channel));
-            }
-
-            return FormatData(data);
+            data.Add(await ReadFromDevice(channel));
         }
 
-        private async Task<double> ReadFromDevice(int channelAddress)
-        {
-            var bytes = new byte[ReadBufferSize];
+        return FormatData(data);
+    }
 
-            await Task.Run(() => _random.NextBytes(bytes));
+    private async Task<double> ReadFromDevice(int channelAddress)
+    {
+        var bytes = new byte[ReadBufferSize];
 
-            return ConvertRawData(bytes);
-        }
+        await Task.Run(() => _random.NextBytes(bytes));
 
-        private static double ConvertRawData(byte[] rawData)
-        {
-            return BitConverter.ToDouble(rawData, 0);
-        }
+        return ConvertRawData(bytes);
+    }
 
-        private static string FormatData(List<double> data)
-        {
-            return string.Join(";", data);
-        }
+    private static double ConvertRawData(byte[] rawData)
+    {
+        return BitConverter.ToDouble(rawData, 0);
+    }
+
+    private static string FormatData(List<double> data)
+    {
+        return string.Join(";", data);
     }
 }

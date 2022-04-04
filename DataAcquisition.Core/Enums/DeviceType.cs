@@ -1,10 +1,9 @@
-﻿namespace DataAcquisition.Core.Enums
+﻿namespace DataAcquisition.Core.Enums;
+
+public enum DeviceType
 {
-    public enum DeviceType
-    {
-        DataLogger = 1,
-        EnergyAnalyzer = 2,
-        DigitalMultimeter = 3,
-        SpectrumAnalyzer = 4
-    }
+    DataLogger = 1,
+    EnergyAnalyzer = 2,
+    DigitalMultimeter = 3,
+    SpectrumAnalyzer = 4
 }

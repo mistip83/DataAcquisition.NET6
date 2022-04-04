@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
 using DataAcquisition.Core.Models.Acquisition;
 
-namespace DataAcquisition.Core.Interfaces.ExperimentManager
+namespace DataAcquisition.Core.Interfaces.ExperimentManager;
+
+public interface IExperimentManager
 {
-    public interface IExperimentManager
-    {
-        Task ExperimentOrchestrator(AcquisitionConfig config);
-    }
+    Task ExperimentOrchestrator(AcquisitionConfig config);
 }

@@ -1,13 +1,12 @@
 ﻿using DataAcquisition.Core.Enums;
 
-namespace DataAcquisition.Core.Interfaces.DeviceLibrary
+namespace DataAcquisition.Core.Interfaces.DeviceLibrary;
+
+public interface IDeviceLibraryManager
 {
-    public interface IDeviceLibraryManager
-    {
-        /// <summary>
-        /// Returns address list regarding the device type
-        /// </summary>
-        /// <param name="deviceType"></param>
-        int[] GetChannelList(DeviceType deviceType);
-    }
+    /// <summary>
+    /// Returns address list regarding the device type
+    /// </summary>
+    /// <param name="deviceType"></param>
+    int[] GetChannelList(DeviceType deviceType);
 }

@@ -1,10 +1,9 @@
-﻿namespace DataAcquisition.Core.Interfaces.DeviceLibrary
+﻿namespace DataAcquisition.Core.Interfaces.DeviceLibrary;
+
+public interface IDevice
 {
-    public interface IDevice
-    {
-        /// <summary>
-        /// Contains all channels of the device
-        /// </summary>
-        public int[] ChannelAddressList();
-    }
+    /// <summary>
+    /// Contains all channels of the device
+    /// </summary>
+    public int[] ChannelAddressList();
 }

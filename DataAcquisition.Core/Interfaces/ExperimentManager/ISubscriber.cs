@@ -1,15 +1,14 @@
-﻿namespace DataAcquisition.Core.Interfaces.ExperimentManager
-{
-    public interface ISubscriber
-    {
-        /// <summary>
-        /// Subscribe to a publisher
-        /// </summary>
-        void Subscribe();
+﻿namespace DataAcquisition.Core.Interfaces.ExperimentManager;
 
-        /// <summary>
-        /// Unsubscribe from a publisher
-        /// </summary>
-        void UnSubscribe();
-    }
+public interface ISubscriber
+{
+    /// <summary>
+    /// Subscribe to a publisher
+    /// </summary>
+    void Subscribe();
+
+    /// <summary>
+    /// Unsubscribe from a publisher
+    /// </summary>
+    void UnSubscribe();
 }

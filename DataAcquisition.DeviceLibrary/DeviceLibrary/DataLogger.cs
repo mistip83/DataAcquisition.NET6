@@ -1,19 +1,19 @@
 ﻿using DataAcquisition.Core.Interfaces.DeviceLibrary;
 
-namespace DataAcquisition.DeviceLibrary.DeviceLibrary
+namespace DataAcquisition.DeviceLibrary.DeviceLibrary;
+
+/// <summary>
+/// Contains physical device properties and methods
+/// </summary>
+public class DataLogger : IDevice
 {
     /// <summary>
-    /// Contains physical device properties and methods
+    /// Contains all channels of the device
     /// </summary>
-    public class DataLogger : IDevice
+    public int[] ChannelAddressList()
     {
-        /// <summary>
-        /// Contains all channels of the device
-        /// </summary>
-        public int[] ChannelAddressList()
+        return new int[]
         {
-            return new int[]
-            {
             100,
             101,
             102,
@@ -34,7 +34,6 @@ namespace DataAcquisition.DeviceLibrary.DeviceLibrary
             207,
             208,
             209
-            };
-        }
+        };
     }
 }

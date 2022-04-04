@@ -6,18 +6,17 @@ using DataAcquisition.Repository.Repositories;
 using DataAcquisition.Repository.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DataAcquisition.Service.Dependencies
-{
-    public static class ServiceCollectionExtension
-    {
-        public static IServiceCollection RegisterServiceDependencies(this IServiceCollection container)
-        {
-            container.AddScoped<ICalibrationManager, CalibrationManager.CalibrationManager>();
-            container.AddScoped<IExperimentManager, ExperimentManager.ExperimentManager>();
-            container.AddScoped<IUnitOfWork, UnitOfWork>();
-            container.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+namespace DataAcquisition.Service.Dependencies;
 
-            return container;
-        }
+public static class ServiceCollectionExtension
+{
+    public static IServiceCollection RegisterServiceDependencies(this IServiceCollection container)
+    {
+        container.AddScoped<ICalibrationManager, CalibrationManager.CalibrationManager>();
+        container.AddScoped<IExperimentManager, ExperimentManager.ExperimentManager>();
+        container.AddScoped<IUnitOfWork, UnitOfWork>();
+        container.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+        return container;
     }
 }

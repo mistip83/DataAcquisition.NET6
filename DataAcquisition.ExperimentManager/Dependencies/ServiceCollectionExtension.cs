@@ -5,17 +5,16 @@ using DataAcquisition.DeviceLibrary;
 using DataAcquisition.ExperimentManager.Publishers;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DataAcquisition.ExperimentManager.Dependencies
-{
-    public static class ServiceCollectionExtension
-    {
-        public static IServiceCollection RegisterExperimentManagerDependencies(this IServiceCollection container)
-        {
-            container.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
-            container.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
-            container.AddScoped<IPublisher, ExperimentStatePublisher>();
+namespace DataAcquisition.ExperimentManager.Dependencies;
 
-            return container;
-        }
+public static class ServiceCollectionExtension
+{
+    public static IServiceCollection RegisterExperimentManagerDependencies(this IServiceCollection container)
+    {
+        container.AddScoped<IConnectionManager, ConnectionManager.ConnectionManager>();
+        container.AddScoped<IDeviceLibraryManager, DeviceLibraryManager>();
+        container.AddScoped<IPublisher, ExperimentStatePublisher>();
+
+        return container;
     }
 }

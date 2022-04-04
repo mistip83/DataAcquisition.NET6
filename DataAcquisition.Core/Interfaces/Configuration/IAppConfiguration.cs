@@ -1,7 +1,6 @@
-﻿namespace DataAcquisition.Core.Interfaces.Configuration
+﻿namespace DataAcquisition.Core.Interfaces.Configuration;
+
+public interface IAppConfiguration
 {
-    public interface IAppConfiguration
-    {
-        public string GetCompanyName();
-    }
+    public string GetCompanyName();
 }

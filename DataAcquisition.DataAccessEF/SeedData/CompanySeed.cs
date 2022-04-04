@@ -2,17 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataAcquisition.DataAccessEF.SeedData
-{
-    public class CompanySeed : IEntityTypeConfiguration<Company>
-    {
+namespace DataAcquisition.DataAccessEF.SeedData;
 
-        public void Configure(EntityTypeBuilder<Company> builder)
+public class CompanySeed : IEntityTypeConfiguration<Company>
+{
+
+    public void Configure(EntityTypeBuilder<Company> builder)
+    {
+        builder.HasData(new Company()
         {
-            builder.HasData(new Company()
-            {
-                CompanyName = "AcmeCompany"
-            });
-        }
+            CompanyName = "AcmeCompany"
+        });
     }
 }

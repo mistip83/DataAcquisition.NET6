@@ -1,7 +1,6 @@
-﻿namespace DataAcquisition.API.Dependencies
+﻿namespace DataAcquisition.API.Dependencies;
+
+public static class AppSettingKeys
 {
-    public static class AppSettingKeys
-    {
-        public const string CompanyName = nameof(CompanyName);
-    }
+    public const string CompanyName = nameof(CompanyName);
 }

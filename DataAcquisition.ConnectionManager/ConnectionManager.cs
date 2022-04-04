@@ -3,84 +3,83 @@ using System.IO.Ports;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
 
-namespace DataAcquisition.ConnectionManager
+namespace DataAcquisition.ConnectionManager;
+
+// TODO: Refactor
+public class ConnectionManager : IConnectionManager
 {
-    // TODO: Refactor
-    public class ConnectionManager : IConnectionManager
+    private SerialPort _serialPort;
+    public void Connect(ConnectionType connectionType)
     {
-        private SerialPort _serialPort;
-        public void Connect(ConnectionType connectionType)
+        switch (connectionType)
         {
-            switch (connectionType)
-            {
-                case ConnectionType.TcpIp:
-                    ConnectToTcp();
-                    break;
-                case ConnectionType.Usb:
-                    ConnectToUsb();
-                    break;
-                case ConnectionType.Rs485:
-                    ConnectToSerialPort();
-                    break;
-                default:
-                    break;
-            }
+            case ConnectionType.TcpIp:
+                ConnectToTcp();
+                break;
+            case ConnectionType.Usb:
+                ConnectToUsb();
+                break;
+            case ConnectionType.Rs485:
+                ConnectToSerialPort();
+                break;
+            default:
+                break;
         }
+    }
 
-        public void Disconnect(ConnectionType connectionType)
+    public void Disconnect(ConnectionType connectionType)
+    {
+        switch (connectionType)
         {
-            switch (connectionType)
-            {
-                case ConnectionType.TcpIp:
-                    DisconnectTcp();
-                    break;
-                case ConnectionType.Usb:
-                    DisconnectUsb();
-                    break;
-                case ConnectionType.Rs485:
-                    DisconnectSerialPort();
-                    break;
-                default:
-                    break;
-            }
+            case ConnectionType.TcpIp:
+                DisconnectTcp();
+                break;
+            case ConnectionType.Usb:
+                DisconnectUsb();
+                break;
+            case ConnectionType.Rs485:
+                DisconnectSerialPort();
+                break;
+            default:
+                break;
         }
+    }
 
-        private void ConnectToTcp()
+    private void ConnectToTcp()
+    {
+        Console.WriteLine("Connected to Device");
+    }
+
+    private void ConnectToUsb()
+    {
+        Console.WriteLine("Connected to Device");
+    }
+
+    private void ConnectToSerialPort()
+    {
+        _serialPort = new SerialPort("COM1", 19200, Parity.None, 8, StopBits.One)
         {
-            Console.WriteLine("Connected to Device");
-        }
+            Handshake = Handshake.None,
+            WriteTimeout = 500
+        };
 
-        private void ConnectToUsb()
-        {
-            Console.WriteLine("Connected to Device");
-        }
+        _serialPort.Open();
+        Console.WriteLine("Connected to Device");
+    }
 
-        private void ConnectToSerialPort()
-        {
-            _serialPort = new SerialPort("COM1", 19200, Parity.None, 8, StopBits.One)
-            {
-                Handshake = Handshake.None,
-                WriteTimeout = 500
-            };
+    private void DisconnectTcp()
+    {
+        Console.WriteLine("Disconnected from Device");
+    }
 
-            _serialPort.Open();
-            Console.WriteLine("Connected to Device");
-        }
+    private void DisconnectUsb()
+    {
+        Console.WriteLine("Disconnected from Device");
+    }
 
-        private void DisconnectTcp()
-        {
-            Console.WriteLine("Disconnected from Device");
-        }
-
-        private void DisconnectUsb()
-        {
-            Console.WriteLine("Disconnected from Device");
-        }
-
-        private void DisconnectSerialPort()
-        {
-            _serialPort.Close();
-            Console.WriteLine("Disconnected from Device");
-        }
+    private void DisconnectSerialPort()
+    {
+        _serialPort.Close();
+        Console.WriteLine("Disconnected from Device");
     }
 }

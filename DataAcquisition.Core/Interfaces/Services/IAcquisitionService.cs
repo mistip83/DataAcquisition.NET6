@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
 using DataAcquisition.Core.Models.Acquisition;
 
-namespace DataAcquisition.Core.Interfaces.Services
+namespace DataAcquisition.Core.Interfaces.Services;
+
+public interface IAcquisitionService : IService<ExperimentData>
 {
-    public interface IAcquisitionService : IService<ExperimentData>
-    {
-        Task StartDataAcquisition(AcquisitionConfig config);
-    }
+    Task StartDataAcquisition(AcquisitionConfig config);
 }

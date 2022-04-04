@@ -2,13 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataAcquisition.DataAccessEF.Configurations
+namespace DataAcquisition.DataAccessEF.Configurations;
+
+public class ApplicationInfoConfiguration : IEntityTypeConfiguration<ApplicationInfo>
 {
-    public class ApplicationInfoConfiguration : IEntityTypeConfiguration<ApplicationInfo>
+    public void Configure(EntityTypeBuilder<ApplicationInfo> builder)
     {
-        public void Configure(EntityTypeBuilder<ApplicationInfo> builder)
-        {
-            builder.HasKey(k => k.ApplicationName);
-        }
+        builder.HasKey(k => k.ApplicationName);
     }
 }

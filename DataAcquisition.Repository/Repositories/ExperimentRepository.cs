@@ -2,14 +2,13 @@
 using DataAcquisition.Core.Models.Entities;
 using DataAcquisition.DataAccessEF.DataAccess;
 
-namespace DataAcquisition.Repository.Repositories
-{
-    public class ExperimentRepository : Repository<Experiment>, IExperimentRepository
-    {
-        private AppDbContext AppDbContext => Context;
+namespace DataAcquisition.Repository.Repositories;
 
-        public ExperimentRepository(AppDbContext context) : base(context)
-        {
-        }
+public class ExperimentRepository : Repository<Experiment>, IExperimentRepository
+{
+    private AppDbContext AppDbContext => Context;
+
+    public ExperimentRepository(AppDbContext context) : base(context)
+    {
     }
 }

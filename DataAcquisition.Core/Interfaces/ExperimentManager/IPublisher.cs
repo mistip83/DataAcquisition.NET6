@@ -1,11 +1,10 @@
 ﻿using System;
 using DataAcquisition.Core.Enums;
 
-namespace DataAcquisition.Core.Interfaces.ExperimentManager
+namespace DataAcquisition.Core.Interfaces.ExperimentManager;
+
+public interface IPublisher
 {
-    public interface IPublisher
-    {
-        event EventHandler<IExperimentProcessedEvent> OnExperimentProcessed;
-        void Notify(ExperimentState state);
-    }
+    event EventHandler<IExperimentProcessedEvent> OnExperimentProcessed;
+    void Notify(ExperimentState state);
 }

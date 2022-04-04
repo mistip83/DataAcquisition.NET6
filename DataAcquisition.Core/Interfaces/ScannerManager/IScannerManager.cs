@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DataAcquisition.Core.Interfaces.ScannerManager
+namespace DataAcquisition.Core.Interfaces.ScannerManager;
+
+public interface IScannerManager
 {
-    public interface IScannerManager
-    {
-        /// <summary>
-        /// Returns data from the device
-        /// </summary>
-        /// <param name="channelAddressList"></param>
-        Task<string> GetData(List<int> channelAddressList);
-    }
+    /// <summary>
+    /// Returns data from the device
+    /// </summary>
+    /// <param name="channelAddressList"></param>
+    Task<string> GetData(List<int> channelAddressList);
 }

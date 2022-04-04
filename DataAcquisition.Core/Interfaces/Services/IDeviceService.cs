@@ -1,8 +1,7 @@
 ﻿using DataAcquisition.Core.Models.Entities;
 
-namespace DataAcquisition.Core.Interfaces.Services
+namespace DataAcquisition.Core.Interfaces.Services;
+
+public interface IDeviceService : IService<Device>
 {
-    public interface IDeviceService : IService<Device>
-    {
-    }
 }

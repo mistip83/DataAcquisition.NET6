@@ -1,9 +1,8 @@
-﻿namespace DataAcquisition.Core.Enums
+﻿namespace DataAcquisition.Core.Enums;
+
+public enum ConnectionType
 {
-    public enum ConnectionType
-    {
-        TcpIp = 1,
-        Usb = 2,
-        Rs485 = 3
-    }
+    TcpIp = 1,
+    Usb = 2,
+    Rs485 = 3
 }

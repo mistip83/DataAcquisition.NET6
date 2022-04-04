@@ -1,9 +1,8 @@
 ﻿using DataAcquisition.Core.Interfaces.DeviceLibrary;
 
-namespace DataAcquisition.DeviceLibrary.DeviceFactory
+namespace DataAcquisition.DeviceLibrary.DeviceFactory;
+
+public abstract class AbstractFactory
 {
-    public abstract class AbstractFactory
-    {
-        public abstract IDevice Create();
-    }
+    public abstract IDevice Create();
 }
