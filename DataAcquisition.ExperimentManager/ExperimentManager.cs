@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
 using DataAcquisition.Core.Interfaces.DeviceLibrary;

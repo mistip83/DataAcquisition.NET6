@@ -1,5 +1,4 @@
-﻿using System;
-using DataAcquisition.Core.Interfaces.ExperimentManager;
+﻿using DataAcquisition.Core.Interfaces.ExperimentManager;
 
 namespace DataAcquisition.ExperimentManager.Subscribers;
 

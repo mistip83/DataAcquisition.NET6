@@ -1,5 +1,4 @@
-﻿using System;
-using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.ExperimentManager;
 using DataAcquisition.ExperimentManager.Events;
 
