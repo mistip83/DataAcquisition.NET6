@@ -1,5 +1,4 @@
-﻿using System;
-using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
