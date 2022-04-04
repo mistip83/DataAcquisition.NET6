@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.Repositories;
+﻿using DataAcquisition.Core.Interfaces.Repositories;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Interfaces.UnitOfWorks;
 using DataAcquisition.Core.Models.Entities;
