@@ -17,7 +17,7 @@ public class DeviceController : ControllerBase
     }
 
     /// <summary>
-    /// Returns Device Dto by id
+    /// Returns Device by id
     /// </summary>
     /// <param name="id"></param>
     [HttpGet("{id:int}")]
@@ -32,8 +32,7 @@ public class DeviceController : ControllerBase
     [HttpGet("device-list")]
     public async Task<ActionResult<IEnumerable<Device>>> GetDeviceList()
     {
-        var deviceList = await _deviceService.GetAllAsync();
-        return Ok(deviceList);
+        return Ok(await _deviceService.GetAllAsync());
     }
 
     /// <summary>

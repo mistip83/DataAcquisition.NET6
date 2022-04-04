@@ -17,7 +17,7 @@ public class WorkstationController : ControllerBase
     }
 
     /// <summary>
-    /// Returns Workstation Dto by id
+    /// Returns Workstation by id
     /// </summary>
     /// <param name="id"></param>
     [HttpGet("{id:int}")]

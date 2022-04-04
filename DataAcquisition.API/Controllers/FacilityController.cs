@@ -20,7 +20,7 @@ public class FacilityController : ControllerBase
     }
 
     /// <summary>
-    /// Returns Facility Dto by id
+    /// Returns Facility by id
     /// </summary>
     /// <param name="id"></param>
     [HttpGet("{id:int}")]
