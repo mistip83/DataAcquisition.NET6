@@ -59,7 +59,6 @@ public class Startup
             options.SuppressModelStateInvalidFilter = true;
         });
 
-        // Comes with .NET 5 by default
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "DataAcquisition.API", Version = "v1" });
