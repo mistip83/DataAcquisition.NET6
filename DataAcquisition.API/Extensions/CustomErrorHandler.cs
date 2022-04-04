@@ -1,7 +1,5 @@
 ﻿using DataAcquisition.Core.Models.Utilities;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace DataAcquisition.API.Extensions;

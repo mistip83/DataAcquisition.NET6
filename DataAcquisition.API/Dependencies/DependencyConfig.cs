@@ -1,7 +1,6 @@
 ﻿using DataAcquisition.Core.Interfaces.Configuration;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Service;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAcquisition.API.Dependencies;
 

@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 using DataAcquisition.Core.Interfaces.Services;
 using DataAcquisition.Core.Models.Entities;
 

@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using DataAcquisition.Core.Models.Utilities;
+﻿using DataAcquisition.Core.Models.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
