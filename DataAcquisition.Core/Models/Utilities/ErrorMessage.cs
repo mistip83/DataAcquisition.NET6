@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DataAcquisition.Core.Models.Utilities;
+﻿namespace DataAcquisition.Core.Models.Utilities;
 
 public class ErrorMessage
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Enums;
 
 namespace DataAcquisition.Core.Models.Entities;
 

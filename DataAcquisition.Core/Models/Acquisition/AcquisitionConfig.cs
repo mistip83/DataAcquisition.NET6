@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DataAcquisition.Core.Enums;
+﻿using DataAcquisition.Core.Enums;
 
 namespace DataAcquisition.Core.Models.Acquisition;
 
