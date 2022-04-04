@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using DataAcquisition.Core.Interfaces.ScannerManager;
+﻿using DataAcquisition.Core.Interfaces.ScannerManager;
 
 namespace DataAcquisition.Scanner;
 
