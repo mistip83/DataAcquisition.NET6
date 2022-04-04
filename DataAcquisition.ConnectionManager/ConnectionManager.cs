@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO.Ports;
+﻿using System.IO.Ports;
 using DataAcquisition.Core.Enums;
 using DataAcquisition.Core.Interfaces.ConnectionManager;
 
