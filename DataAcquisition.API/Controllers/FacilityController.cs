@@ -33,10 +33,9 @@ public class FacilityController : ControllerBase
     /// Returns Facility List
     /// </summary>
     [HttpGet("facility-list")]
-    public async Task<ActionResult<IEnumerable<Facility>>> GetFacilityList()
+    public async Task<ActionResult<List<Facility>>> GetFacilityList()
     {
-        var facility = await _facilityService.GetFacilitiesWithWorkStationsAsync();
-        return Ok(facility);
+        return (await _facilityService.GetFacilitiesWithWorkStationsAsync()).ToList();
     }
 
     /// <summary>

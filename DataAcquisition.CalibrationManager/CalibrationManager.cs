@@ -28,6 +28,8 @@ public class CalibrationManager : ICalibrationManager
     /// <param name="device"></param>
     public async Task<Device> DoCalibrationAsync(Device device)
     {
+        ArgumentNullException.ThrowIfNull(device);
+
         // Establish connection with the device
         _connectionManager.Connect(device.ConnectionType);
 

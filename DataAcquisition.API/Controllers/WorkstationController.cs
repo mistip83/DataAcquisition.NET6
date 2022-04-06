@@ -30,10 +30,9 @@ public class WorkstationController : ControllerBase
     /// Returns Workstation List
     /// </summary>
     [HttpGet("workstation-list")]
-    public async Task<ActionResult<IEnumerable<Workstation>>> GetWorkstationList()
+    public async Task<ActionResult<List<Workstation>>> GetWorkstationList()
     {
-        var workstationList = await _workstationService.GetAllAsync();
-        return Ok(workstationList);
+        return (await _workstationService.GetAllAsync()).ToList();
     }
 
     /// <summary>

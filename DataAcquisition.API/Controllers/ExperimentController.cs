@@ -44,10 +44,9 @@ public class ExperimentController : ControllerBase
     /// Returns Experiment List
     /// </summary>
     [HttpGet("experiment-list")]
-    public async Task<IActionResult> GetExperimentList()
+    public async Task<ActionResult<List<Experiment>>> GetExperimentList()
     {
-        var experimentList = await _experimentService.GetAllAsync();
-        return Ok(experimentList);
+        return (await _experimentService.GetAllAsync()).ToList();
     }
 
     /// <summary>

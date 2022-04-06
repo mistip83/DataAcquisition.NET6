@@ -30,9 +30,9 @@ public class DeviceController : ControllerBase
     /// Returns Device List
     /// </summary>
     [HttpGet("device-list")]
-    public async Task<ActionResult<IEnumerable<Device>>> GetDeviceList()
+    public async Task<ActionResult<List<Device>>> GetDeviceList()
     {
-        return Ok(await _deviceService.GetAllAsync());
+        return (await _deviceService.GetAllAsync()).ToList();
     }
 
     /// <summary>
@@ -57,8 +57,8 @@ public class DeviceController : ControllerBase
     public IActionResult EditDevice(int id, Device device)
     {
         device.DeviceId = id;
-
         _deviceService.Update(device);
+
         return NoContent();
     }
 
