@@ -2,13 +2,25 @@
 using DataAcquisition.DataAccessEF.Configurations;
 using DataAcquisition.DataAccessEF.SeedData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAcquisition.DataAccessEF.DataAccess;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    protected readonly IConfiguration Configuration;
+
+    public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) : base(options)
     {
+        Configuration = configuration;
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    {
+        options.UseSqlServer(Configuration["ConnectionStrings:SqlConnectionString"], o =>
+        {
+            o.MigrationsAssembly("DataAcquisition.DataAccessEF");
+        });
     }
 
     public DbSet<ApplicationInfo> ApplicationInfo { get; set; }
